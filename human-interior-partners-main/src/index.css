@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap');
+
+@layer base {
+  :root {
+    /* Human Interior Brand Kit - Light Luxury Theme */
+    /* Primary: Titanium Gold (Metallic, Champagne Gold shade) */
+    --primary: 37 47% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary/Neutral: Concrete Grey (Tấm Cemboard) */
+    --background: 40 20% 98%;
+    --foreground: 30 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 10% 15%;
+
+    --secondary: 40 15% 93%;
+    --secondary-foreground: 30 10% 25%;
+
+    --muted: 40 10% 90%;
+    --muted-foreground: 30 5% 45%;
+
+    --accent: 37 47% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 10% 88%;
+    --input: 40 10% 88%;
+    --ring: 37 47% 58%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --gold: 37 47% 58%;
+    --gold-light: 37 50% 68%;
+    --gold-dark: 37 45% 45%;
+    --charcoal: 30 10% 15%;
+    --charcoal-light: 30 8% 25%;
+
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(37 47% 58%), hsl(35 50% 50%), hsl(37 47% 58%));
+    --gradient-gold-text: linear-gradient(90deg, hsl(37 45% 45%), hsl(35 50% 50%), hsl(37 47% 58%));
+    --gradient-light: linear-gradient(180deg, hsl(40 20% 98%), hsl(40 15% 95%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(40 15% 97%));
+
+    /* Shadows */
+    --shadow-gold: 0 0 40px hsl(37 47% 58% / 0.15);
+    --shadow-gold-intense: 0 0 60px hsl(37 47% 58% / 0.25);
+    --shadow-card: 0 20px 40px hsl(30 10% 20% / 0.08);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    line-height: 1.2;
+  }
+}
+
+@layer components {
+  .gradient-gold-text {
+    background: var(--gradient-gold-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-gold-bg {
+    background: var(--gradient-gold);
+  }
+
+  .glow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .glow-gold-intense {
+    box-shadow: var(--shadow-gold-intense);
+  }
+
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-gold {
+    animation: pulse-gold 2s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes pulse-gold {
+
+    0%,
+    100% {
+      box-shadow: 0 0 20px hsl(43 74% 49% / 0.3);
+    }
+
+    50% {
+      box-shadow: 0 0 40px hsl(43 74% 49% / 0.5);
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+}

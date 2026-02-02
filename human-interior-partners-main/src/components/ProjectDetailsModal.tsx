@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { X, ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 
 interface ProjectDetailsModalProps {
     isOpen: boolean;
@@ -52,9 +53,9 @@ const ProjectDetailsModal = ({ isOpen, onClose, project }: ProjectDetailsModalPr
                 {/* Close Button */}
                 <button
                     onClick={onClose}
-                    className="absolute top-6 right-6 z-50 w-10 h-10 rounded-full bg-black/20 text-white flex items-center justify-center hover:bg-black/40 transition-colors"
+                    className="absolute top-6 right-6 z-50 w-10 h-10 rounded-full bg-black/20 text-white flex items-center justify-center hover:bg-black/40 transition-colors backdrop-blur-md"
                 >
-                    <span className="material-symbols-outlined whitespace-nowrap overflow-visible">close</span>
+                    <X size={20} />
                 </button>
 
                 {/* Hero Image Section */}
@@ -68,15 +69,15 @@ const ProjectDetailsModal = ({ isOpen, onClose, project }: ProjectDetailsModalPr
                     {/* Nav Arrows */}
                     <button
                         onClick={() => setActiveIndex((prev) => (prev === 0 ? project.images.length - 1 : prev - 1))}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 text-white backdrop-blur-md flex items-center justify-center hover:bg-white/20 transition-all"
+                        className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 text-white backdrop-blur-md flex items-center justify-center hover:bg-white/20 transition-all border border-white/10"
                     >
-                        <span className="material-symbols-outlined whitespace-nowrap overflow-visible">chevron_left</span>
+                        <ChevronLeft size={24} />
                     </button>
                     <button
                         onClick={() => setActiveIndex((prev) => (prev === project.images.length - 1 ? 0 : prev + 1))}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 text-white backdrop-blur-md flex items-center justify-center hover:bg-white/20 transition-all"
+                        className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 text-white backdrop-blur-md flex items-center justify-center hover:bg-white/20 transition-all border border-white/10"
                     >
-                        <span className="material-symbols-outlined whitespace-nowrap overflow-visible">chevron_right</span>
+                        <ChevronRight size={24} />
                     </button>
 
                     <div className="absolute bottom-6 left-1/2 -translate-x-1/2 px-4 py-2 bg-black/40 backdrop-blur-md rounded-full text-white text-xs font-medium tracking-widest">
@@ -90,8 +91,8 @@ const ProjectDetailsModal = ({ isOpen, onClose, project }: ProjectDetailsModalPr
                         <div className="mb-6">
                             <span className="text-[#D4AF37] text-[10px] font-bold tracking-[0.2em] uppercase mb-2 block">Project Details</span>
                             <h2 className="text-2xl md:text-3xl font-display font-bold text-[#171717] mb-3">{project.title}</h2>
-                            <div className="flex items-center gap-2 text-gray-500 text-xs">
-                                <span className="material-symbols-outlined text-[#D4AF37] text-lg whitespace-nowrap overflow-visible">location_on</span>
+                            <div className="flex items-center gap-1.5 text-gray-500 text-xs">
+                                <MapPin size={14} className="text-[#D4AF37]" />
                                 <span>{project.location}</span>
                             </div>
                         </div>

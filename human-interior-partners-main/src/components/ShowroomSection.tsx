@@ -1,4 +1,7 @@
+"use client";
 
+import { useEffect, useState } from "react";
+import { X, ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import {
     Carousel,
@@ -7,14 +10,12 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel";
-import showroom1 from "@/assets/showroom-1.png";
-import showroom2 from "@/assets/showroom-2.png";
-import heroShowroom from "@/assets/hero-showroom.jpg";
-
 const showroomImages = [
-    heroShowroom,
-    showroom1,
-    showroom2,
+    "/images/projects/japfa/A1.webp",
+    "/images/projects/model-house-2br-v1/V1.webp",
+    "/images/projects/model-house-1br-v2/A1.webp",
+    "/images/projects/japfa/B1.webp",
+    "/images/projects/model-house-2br-v2/B1.webp",
 ];
 
 const ShowroomSection = () => {

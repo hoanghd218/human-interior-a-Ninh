@@ -55,27 +55,27 @@ const Navbar = () => {
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden md:flex space-x-8 items-center text-sm font-medium text-[#555]">
-                        <Link href="#value-props" className="hover:text-[#E05C3E] transition-colors scroll-smooth">
+                    <div className="hidden lg:flex space-x-6 items-center text-sm font-medium text-[#555]">
+                        <Link href="#value-props" className="hover:text-[#E05C3E] transition-colors scroll-smooth whitespace-nowrap">
                             VỀ CHÚNG TÔI
                         </Link>
-                        <Link href="#featured-projects" className="hover:text-[#E05C3E] transition-colors scroll-smooth">
+                        <Link href="#featured-projects" className="hover:text-[#E05C3E] transition-colors scroll-smooth whitespace-nowrap">
                             DỰ ÁN THI CÔNG
                         </Link>
-                        <Link href="#testimonials" className="hover:text-[#E05C3E] transition-colors scroll-smooth">
+                        <Link href="#testimonials" className="hover:text-[#E05C3E] transition-colors scroll-smooth whitespace-nowrap">
                             CÔNG TRÌNH THỰC TẾ
                         </Link>
-                        <Link href="#vip-benefits" className="hover:text-[#E05C3E] transition-colors scroll-smooth">
+                        <Link href="#vip-benefits" className="hover:text-[#E05C3E] transition-colors scroll-smooth whitespace-nowrap">
                             ƯU ĐÃI
                         </Link>
                     </div>
 
                     {/* CTA Button */}
-                    <div className="hidden md:flex">
+                    <div className="hidden lg:flex">
                         <Link
                             href="https://ai.hispace.ai"
                             target="_blank"
-                            className="bg-[#E05C3E] text-white hover:bg-[#C8482D] px-6 py-2.5 rounded-lg font-bold transition-all duration-300 uppercase text-xs tracking-wide flex items-center gap-2 shadow-lg animate-ripple"
+                            className="bg-[#E05C3E] text-white hover:bg-[#C8482D] px-5 py-2.5 rounded-lg font-bold transition-all duration-300 uppercase text-xs tracking-wide flex items-center gap-2 shadow-lg animate-ripple whitespace-nowrap"
                         >
                             TỰ TAY THIẾT KẾ - NHẬN BÁO GIÁ NGAY
                             <span className="material-symbols-outlined text-[18px]">open_in_new</span>
@@ -83,7 +83,7 @@ const Navbar = () => {
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <div className="md:hidden flex items-center">
+                    <div className="lg:hidden flex items-center">
                         <button
                             className="text-[#333] hover:text-[#E05C3E] cursor-pointer"
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -98,7 +98,7 @@ const Navbar = () => {
 
             {/* Mobile Menu Overlay */}
             <div
-                className={`md:hidden fixed inset-0 z-40 bg-white/95 backdrop-blur-xl transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+                className={`lg:hidden fixed inset-0 z-40 bg-white/95 backdrop-blur-xl transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
                     }`}
                 style={{ top: '80px' }} // Start below the header
             >

@@ -65,7 +65,7 @@ const HeroSection = () => {
                 </h1>
 
                 {/* Countdown Timer */}
-                <div className="flex gap-4 md:gap-8 mb-12 items-start justify-center">
+                <div className="flex gap-4 md:gap-8 mb-12 items-start justify-center liquid-glass-dark px-8 py-6 rounded-2xl">
                     <div className="text-center w-[70px] md:w-[100px]">
                         <div className="text-4xl md:text-6xl font-thin text-white font-sans tabular-nums">
                             {String(timeLeft.days).padStart(2, '0')}
@@ -107,7 +107,7 @@ const HeroSection = () => {
                 <Link
                     href="https://ai.hispace.ai"
                     target="_blank"
-                    className="btn-gradient-gold text-white font-bold py-4 px-12 rounded-lg shadow-glow hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 uppercase tracking-wider text-base md:text-lg animate-ripple-gold"
+                    className="btn-gradient-gold text-white font-bold py-4 px-12 rounded-lg shadow-glow hover:shadow-lg transform hover:-translate-y-1 transition-all duration-400 flex items-center justify-center gap-3 uppercase tracking-wider text-base md:text-lg animate-ripple-gold iridescent-border"
                 >
                     <span>GIỮ CHỖ VIP & NHẬN QUÀ TẶNG</span>
                     <span className="material-symbols-outlined">confirmation_number</span>

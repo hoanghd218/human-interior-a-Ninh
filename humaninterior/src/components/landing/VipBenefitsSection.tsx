@@ -7,7 +7,7 @@ const VipBenefitsSection = () => {
         <section id="vip-benefits" className="py-[100px] bg-[#F9F9F9]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16 space-y-6">
-                    <h2 className="text-4xl md:text-5xl font-display leading-[1.3] md:leading-normal font-medium text-[#171717] uppercase tracking-[0.05em]">
+                    <h2 className="text-4xl md:text-5xl font-display leading-[1.3] md:leading-normal font-medium text-[#1C1917] uppercase tracking-[0.05em]">
                         <span className="text-[#E05C3E] font-bold inline-block mr-2">ĐẶC QUYỀN VIP</span>
                         GIỚI HẠN TRONG SỰ KIỆN
                     </h2>
@@ -16,14 +16,14 @@ const VipBenefitsSection = () => {
                         <Link
                             href="https://ai.hispace.ai"
                             target="_blank"
-                            className="group relative inline-flex items-center gap-4 px-8 py-4 overflow-hidden rounded-sm transition-all duration-300 border border-[#D4AF37] hover:bg-[#D4AF37]/5 w-full md:w-auto max-w-3xl"
+                            className="group relative inline-flex items-center gap-4 px-8 py-4 overflow-hidden rounded-sm transition-all duration-400 border border-[#D4AF37] hover:bg-[#D4AF37]/10 w-full md:w-auto max-w-3xl liquid-glass iridescent-border"
                         >
                             <div className="flex flex-col md:flex-row items-center justify-center w-full">
-                                <span className="font-serif text-lg text-[#171717] italic text-center leading-relaxed">
+                                <span className="font-sans text-lg text-[#1C1917] italic text-center leading-relaxed">
                                     Chỉ còn <span className="text-[#E05C3E] font-bold">12/50</span> suất quà tặng đặc biệt dành cho khách mời đăng ký sớm
                                 </span>
                             </div>
-                            <span className="material-symbols-outlined text-[#D4AF37] text-2xl group-hover:translate-x-1 transition-transform">
+                            <span className="material-symbols-outlined text-[#D4AF37] text-2xl group-hover:translate-x-1 transition-transform duration-400">
                                 arrow_forward
                             </span>
                         </Link>

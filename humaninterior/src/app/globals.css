@@ -1,0 +1,244 @@
+@import "tailwindcss";
+
+/* ========================================
+   Human Interior - Brand Styles
+   Powered by hispace.ai
+   ======================================== */
+
+:root {
+  /* Primary Colors */
+  --color-primary: #E05C3E;
+  --color-primary-hover: #C8482D;
+
+  /* Gold Accent */
+  --color-gold: #D4AF37;
+  --color-gold-light: #F2D06B;
+  --color-gold-dark: #B8860B;
+
+  /* Neutrals */
+  --color-charcoal: #171717;
+  --color-dark-grey: #262626;
+  --color-body-text: #404040;
+  --color-surface: #FFFFFF;
+  --color-background: #F9F9F9;
+  --color-muted: #F5F5F5;
+}
+
+@theme {
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-gold: var(--color-gold);
+  --color-charcoal: var(--color-charcoal);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-expo);
+}
+
+/* ========================================
+   Custom Scrollbar
+   ======================================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A1A1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E05C3E;
+}
+
+/* ========================================
+   Glass Effects
+   ======================================== */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ========================================
+   Material Symbols
+   ======================================== */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+}
+
+.icon-filled {
+  font-variation-settings: 'FILL' 1, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ========================================
+   Gold Gradient Text
+   ======================================== */
+.text-gradient-gold {
+  background: linear-gradient(to right, #D4AF37, #F2D06B, #D4AF37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% auto;
+  animation: shine 5s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* ========================================
+   Gold Gradient Button
+   ======================================== */
+.btn-gradient-gold {
+  background: linear-gradient(45deg, #D4AF37, #F2D06B, #B8860B);
+  background-size: 200% auto;
+  transition: 0.5s;
+}
+
+.btn-gradient-gold:hover {
+  background-position: right center;
+}
+
+/* ========================================
+   Custom Shadows
+   ======================================== */
+.shadow-soft {
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-glow {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.shadow-golden {
+  box-shadow: 0 10px 30px -5px rgba(212, 175, 55, 0.15), 0 5px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.hover-golden:hover {
+  box-shadow: 0 20px 40px -10px rgba(212, 175, 55, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   Ripple/Pulse Animation for CTAs
+   ======================================== */
+@keyframes ripple-wave {
+  0% {
+    box-shadow: 0 0 0 0 rgba(224, 92, 62, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 15px rgba(224, 92, 62, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(224, 92, 62, 0);
+  }
+}
+
+.animate-ripple {
+  position: relative;
+  z-index: 1;
+  /* Ensure button stays on top */
+}
+
+/* Create the ripple on a pseudo-element so it doesn't conflict with the button's own shadow */
+.animate-ripple::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: -1;
+  animation: ripple-wave 2s infinite cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* Gold Ripple for VIP buttons */
+@keyframes ripple-gold {
+  0% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+  }
+}
+
+/* ========================================
+   Marquee Animation
+   ======================================== */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+@keyframes fade-in-scale {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-scale {
+  animation: fade-in-scale 0.4s cubic-bezier(0, 0, 0.2, 1) forwards;
+}
+
+@keyframes bounce-interval {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #E05C3E;
+}

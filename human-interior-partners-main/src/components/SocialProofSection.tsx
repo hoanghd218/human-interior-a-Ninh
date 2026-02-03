@@ -128,8 +128,8 @@ const SocialProofSection = () => {
 
       </div>
 
-      {/* Full Width Slider Container */}
-      <div className="relative w-full">
+      {/* Slider Container - Inside Container */}
+      <div className="container px-4 md:px-6 relative">
         {/* Navigation Arrows */}
         <button
           onClick={() => scroll("left")}

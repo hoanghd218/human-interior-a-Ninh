@@ -57,66 +57,66 @@ const ShowroomSection = () => {
                         Trải nghiệm không gian nội thất đẳng cấp, nơi khách hàng của bạn sẽ được tư vấn và chăm sóc tận tình.
                     </p>
                 </motion.div>
-            </div>
 
-            {/* Full Width Carousel */}
-            <div className="relative w-full">
-                <Carousel
-                    setApi={setApi}
-                    opts={{
-                        align: "start",
-                        loop: true,
-                    }}
-                    plugins={[
-                        Autoplay({
-                            delay: 3000,
-                            stopOnInteraction: false,
-                        }),
-                    ]}
-                    className="w-full"
-                >
-                    <CarouselContent className="-ml-2 md:-ml-4">
-                        {showroomImages.map((image, index) => (
-                            <CarouselItem key={index} className="pl-2 md:pl-4 basis-[80%] sm:basis-[70%] md:basis-1/2 lg:basis-1/3">
-                                <motion.div
-                                    className="p-1"
-                                    initial={{ opacity: 0, scale: 0.95 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.1 }}
-                                >
-                                    <div className="overflow-hidden rounded-lg md:rounded-xl border border-border/50 bg-secondary/20 shadow-lg aspect-video relative group">
-                                        <img
-                                            src={image}
-                                            alt={`Human Interior Showroom ${index + 1}`}
-                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                            loading="lazy"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                                    </div>
-                                </motion.div>
-                            </CarouselItem>
+                {/* Carousel - Inside Container */}
+                <div className="relative">
+                    <Carousel
+                        setApi={setApi}
+                        opts={{
+                            align: "start",
+                            loop: true,
+                        }}
+                        plugins={[
+                            Autoplay({
+                                delay: 3000,
+                                stopOnInteraction: false,
+                            }),
+                        ]}
+                        className="w-full"
+                    >
+                        <CarouselContent className="-ml-2 md:-ml-4">
+                            {showroomImages.map((image, index) => (
+                                <CarouselItem key={index} className="pl-2 md:pl-4 basis-[80%] sm:basis-[70%] md:basis-1/2 lg:basis-1/3">
+                                    <motion.div
+                                        className="p-1"
+                                        initial={{ opacity: 0, scale: 0.95 }}
+                                        whileInView={{ opacity: 1, scale: 1 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: index * 0.1 }}
+                                    >
+                                        <div className="overflow-hidden rounded-lg md:rounded-xl border border-border/50 bg-secondary/20 shadow-lg aspect-video relative group">
+                                            <img
+                                                src={image}
+                                                alt={`Human Interior Showroom ${index + 1}`}
+                                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                                loading="lazy"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                                        </div>
+                                    </motion.div>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+
+                        {/* Desktop Navigation Arrows */}
+                        <CarouselPrevious className="hidden md:flex left-4 lg:left-8 border-primary/20 hover:bg-primary/10 hover:text-primary w-10 h-10 lg:w-12 lg:h-12" />
+                        <CarouselNext className="hidden md:flex right-4 lg:right-8 border-primary/20 hover:bg-primary/10 hover:text-primary w-10 h-10 lg:w-12 lg:h-12" />
+                    </Carousel>
+
+                    {/* Mobile Dot Indicators */}
+                    <div className="flex md:hidden justify-center mt-4 gap-2 px-4">
+                        {showroomImages.map((_, index) => (
+                            <button
+                                key={index}
+                                onClick={() => api?.scrollTo(index)}
+                                className={`w-2 h-2 rounded-full transition-all duration-300 ${current === index
+                                    ? "bg-primary w-6"
+                                    : "bg-primary/30"
+                                    }`}
+                                aria-label={`Go to slide ${index + 1}`}
+                            />
                         ))}
-                    </CarouselContent>
-
-                    {/* Desktop Navigation Arrows */}
-                    <CarouselPrevious className="hidden md:flex left-4 lg:left-8 border-primary/20 hover:bg-primary/10 hover:text-primary w-10 h-10 lg:w-12 lg:h-12" />
-                    <CarouselNext className="hidden md:flex right-4 lg:right-8 border-primary/20 hover:bg-primary/10 hover:text-primary w-10 h-10 lg:w-12 lg:h-12" />
-                </Carousel>
-
-                {/* Mobile Dot Indicators */}
-                <div className="flex md:hidden justify-center mt-4 gap-2 px-4">
-                    {showroomImages.map((_, index) => (
-                        <button
-                            key={index}
-                            onClick={() => api?.scrollTo(index)}
-                            className={`w-2 h-2 rounded-full transition-all duration-300 ${current === index
-                                ? "bg-primary w-6"
-                                : "bg-primary/30"
-                                }`}
-                            aria-label={`Go to slide ${index + 1}`}
-                        />
-                    ))}
+                    </div>
                 </div>
             </div>
         </section>
@@ -124,5 +124,3 @@ const ShowroomSection = () => {
 };
 
 export default ShowroomSection;
-
-

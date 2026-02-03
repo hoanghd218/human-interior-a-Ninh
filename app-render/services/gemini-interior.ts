@@ -6,9 +6,9 @@ import { DesignStyle, BudgetRange } from "@/data/interior-design";
 const getClient = () => {
     let apiKey = process.env.GEMINI_API_KEY || process.env.API_KEY;
 
-    apiKey = "AIzaSyCIBQhBhHd5hRw_wrCLS9R2YNZ7K3aNmuI"
 
 
+    console.log("apiKey", apiKey)
     if (!apiKey) {
         console.error("GEMINI_API_KEY is missing from environment variables");
     }
@@ -31,8 +31,6 @@ export const generateInteriorDesigns = async (
     const ai = getClient();
     const model = 'gemini-2.5-flash-image';
 
-    const styleText = styles.join(', ');
-
     // Build reference image instruction if provided
     const referenceInstruction = referenceImage
         ? `
@@ -45,24 +43,23 @@ export const generateInteriorDesigns = async (
     Kết hợp phong cách từ ảnh tham chiếu với không gian từ ảnh gốc.`
         : '';
 
-    const promptTemplate = `
+    // Generate ONE image per style selected
+    const promises = styles.map(async (style, index) => {
+        const promptTemplate = `
     Bạn là một chuyên gia thiết kế nội thất kiến trúc. 
-    Hãy thiết kế lại căn phòng trong bức ảnh này theo phong cách: ${styleText}.
+    Hãy thiết kế lại căn phòng trong bức ảnh này theo phong cách: ${style}.
     Ngân sách thi công: ${budget}.
     ${referenceInstruction}
     
     Yêu cầu quan trọng:
     1. Giữ nguyên cấu trúc phòng (tường, cửa sổ, sàn).
-    2. Thay đổi nội thất, màu sắc, ánh sáng cho phù hợp phong cách đã chọn.
+    2. Thay đổi nội thất, màu sắc, ánh sáng cho phù hợp phong cách ${style}.
     3. Hình ảnh phải chân thực (photorealistic), chất lượng cao.
     4. Phù hợp với bối cảnh nhà ở Việt Nam.
     ${referenceImage ? '5. Đặc biệt chú ý học theo phong cách từ ảnh tham chiếu.' : ''}
     
-    Hãy tạo ra một phương án thiết kế ấn tượng.
+    Hãy tạo ra một phương án thiết kế ấn tượng theo phong cách ${style}.
   `;
-
-    // We need 3 variations. Make 3 parallel calls with slightly different prompts.
-    const promises = [1, 2, 3].map(async (i) => {
         try {
             // Build content parts
             const parts: Array<{ inlineData?: { mimeType: string; data: string }; text?: string }> = [
@@ -86,7 +83,7 @@ export const generateInteriorDesigns = async (
 
             // Add text prompt
             parts.push({
-                text: `${promptTemplate} (Phương án số ${i}: Hãy sáng tạo khác biệt một chút về cách bố trí hoặc tông màu)`,
+                text: `${promptTemplate} (Phương án phống cách ${style})`,
             });
 
             const response = await ai.models.generateContent({
@@ -96,7 +93,7 @@ export const generateInteriorDesigns = async (
                 },
                 config: {
                     // High creativity
-                    temperature: 0.8 + (i * 0.1),
+                    temperature: 0.8 + (index * 0.1),
                 }
             });
 
@@ -110,7 +107,7 @@ export const generateInteriorDesigns = async (
             }
             return null;
         } catch (error) {
-            console.error(`Error generating design ${i}:`, error);
+            console.error(`Error generating design for ${style}:`, error);
             return null;
         }
     });

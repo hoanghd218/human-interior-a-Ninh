@@ -2,7 +2,7 @@
 
 import React, { useState, useRef } from 'react';
 import { DesignStyle, BudgetRange, Lead, STYLES, BUDGETS } from '@/data/interior-design';
-import { generateInteriorDesigns, editInteriorDesign } from '@/services/gemini-interior';
+import { generateInteriorDesigns } from '@/services/gemini-interior';
 import LeadForm from './LeadForm';
 
 interface DesignFlowProps {
@@ -107,25 +107,20 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
     const [showRegisterModal, setShowRegisterModal] = useState(false);
     const [hasResults, setHasResults] = useState(false);
     const [isGenerating, setIsGenerating] = useState(false);
-    const [isEditing, setIsEditing] = useState(false);
-    const [isProcessingEdit, setIsProcessingEdit] = useState(false);
+    const [lightboxImage, setLightboxImage] = useState<string | null>(null);
     const [image, setImage] = useState<string | null>(null);
     const [referenceImage, setReferenceImage] = useState<string | null>(null);
     const [selectedStyles, setSelectedStyles] = useState<DesignStyle[]>([]);
-    const [selectedBudget, setSelectedBudget] = useState<BudgetRange | null>(null);
+    const [selectedBudget] = useState<BudgetRange>('300 – 600 triệu');
     const [generatedImages, setGeneratedImages] = useState<string[]>([]);
-    const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
-    const [prompt, setPrompt] = useState('');
 
     const resultsRef = useRef<HTMLDivElement>(null);
-    const editAreaRef = useRef<HTMLDivElement>(null);
 
     const executeGeneration = async (currentUserInfo: UserInfo) => {
-        if (!image || selectedStyles.length === 0 || !selectedBudget) return;
+        if (!image || selectedStyles.length === 0) return;
 
         setIsGenerating(true);
         setHasResults(false);
-        setIsEditing(false);
 
         setTimeout(() => {
             resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -202,7 +197,7 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
     };
 
     const handleGenerateClick = () => {
-        if (!image || selectedStyles.length === 0 || !selectedBudget) return;
+        if (!image || selectedStyles.length === 0) return;
 
         if (!userInfo) {
             setShowRegisterModal(true);
@@ -212,54 +207,10 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
         executeGeneration(userInfo);
     };
 
-    const handleEdit = async () => {
-        if (selectedImageIndex === null || !prompt.trim()) return;
-        const currentImage = generatedImages[selectedImageIndex];
 
-        setIsProcessingEdit(true);
-        try {
-            const newImage = await editInteriorDesign(currentImage, prompt.trim());
-            if (newImage) {
-                const newImages = [...generatedImages];
-                newImages[selectedImageIndex] = newImage;
-                setGeneratedImages(newImages);
-                setPrompt('');
-            } else {
-                alert("Không thể chỉnh sửa ảnh. Vui lòng thử lại.");
-            }
-        } catch (error) {
-            console.error(error);
-            alert("Lỗi khi chỉnh sửa.");
-        } finally {
-            setIsProcessingEdit(false);
-        }
-    };
 
-    const handleFinalSubmit = () => {
-        if (!image || !selectedBudget || !userInfo) return;
-
-        const newLead: Lead = {
-            id: crypto.randomUUID(),
-            name: userInfo.name,
-            phone: userInfo.phone,
-            email: userInfo.email,
-            designRequest: {
-                originalImage: image,
-                styles: selectedStyles,
-                budget: selectedBudget,
-            },
-            selectedDesignId: selectedImageIndex !== null ? selectedImageIndex.toString() : undefined,
-            createdAt: Date.now(),
-        };
-        onComplete(newLead);
-    };
-
-    const enterEditMode = (idx: number) => {
-        setSelectedImageIndex(idx);
-        setIsEditing(true);
-        setTimeout(() => {
-            editAreaRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 100);
+    const openLightbox = (imgUrl: string) => {
+        setLightboxImage(imgUrl);
     };
 
     const renderLoading = () => (
@@ -268,10 +219,10 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
                 <SparklesIcon size={40} />
             </div>
             <h3 className="text-3xl font-bold text-slate-900 font-display mb-3">AI đang phân tích & thiết kế...</h3>
-            <p className="text-slate-500 max-w-md mx-auto mb-10">Hệ thống đang xử lý dữ liệu không gian để tạo ra 3 phương án tối ưu nhất.</p>
+            <p className="text-slate-500 max-w-md mx-auto mb-10">Hệ thống đang xử lý dữ liệu không gian để tạo ra {selectedStyles.length} phương án tối ưu nhất.</p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4 opacity-40">
-                {[1, 2, 3].map(i => (
+            <div className={`grid grid-cols-1 ${selectedStyles.length === 1 ? 'md:grid-cols-1 max-w-2xl' : selectedStyles.length === 2 ? 'md:grid-cols-2 max-w-4xl' : 'md:grid-cols-3 max-w-6xl'} gap-6 mx-auto px-4 opacity-40`}>
+                {Array.from({ length: selectedStyles.length }, (_, i) => i + 1).map(i => (
                     <div key={i} className="aspect-4/3 bg-slate-200 rounded-2xl animate-pulse"></div>
                 ))}
             </div>
@@ -279,28 +230,31 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
     );
 
     const renderResults = () => (
-        <div className="max-w-6xl mx-auto py-12 px-4 animate-fadeIn">
+        <div className={`${generatedImages.length === 1 ? 'max-w-2xl' : generatedImages.length === 2 ? 'max-w-4xl' : 'max-w-6xl'} mx-auto py-12 px-4 animate-fadeIn`}>
             <h2 className="text-4xl font-bold text-slate-900 font-display mb-8 text-center">
-                <span className="gradient-text-hero">3 Phương án</span> dành cho bạn
+                <span className="gradient-text-hero">{generatedImages.length} Phương án</span> dành cho bạn
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className={`grid grid-cols-1 ${generatedImages.length === 1 ? 'md:grid-cols-1' : generatedImages.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3'} gap-8 mb-12`}>
                 {generatedImages.map((imgUrl, idx) => (
                     <div key={idx} className="flex flex-col group animate-scaleIn" style={{ animationDelay: `${idx * 0.1}s` }}>
                         <div
                             className="aspect-4/3 bg-slate-100 rounded-2xl overflow-hidden mb-5 shadow-lg border border-slate-100 relative cursor-pointer group-hover:shadow-2xl group-hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300"
-                            onClick={() => enterEditMode(idx)}
+                            onClick={() => openLightbox(imgUrl)}
                         >
                             <img src={imgUrl} alt={`Plan ${idx + 1}`} className="w-full h-full object-cover" />
                             <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/20 transition-all duration-300 flex items-center justify-center">
                                 <button className="bg-white/95 backdrop-blur-sm text-slate-900 px-6 py-3 rounded-xl font-bold shadow-xl opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 flex items-center gap-2 hover:scale-105 active:scale-95">
-                                    <EditIcon size={18} /> Chọn & Chỉnh sửa
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /><path d="M11 8v6" /><path d="M8 11h6" />
+                                    </svg>
+                                    Xem phóng to
                                 </button>
                             </div>
                         </div>
                         <div className="text-center">
-                            <h3 className="font-bold text-xl text-slate-900 font-display mb-2">Phương án {idx + 1}</h3>
-                            <p className="text-sm text-slate-500 mb-4">{selectedStyles.join(', ')}</p>
+                            <h3 className="font-bold text-xl text-slate-900 font-display mb-2">Phong cách {selectedStyles[idx]}</h3>
+                            <p className="text-sm text-slate-500 mb-4">Phương án {idx + 1}</p>
                             <a
                                 href="https://zalo.me/g/yooqhx505"
                                 target="_blank"
@@ -318,115 +272,41 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
             </div>
 
             <div className="text-center border-t border-slate-100 pt-8">
-                <p className="text-slate-500 mb-4">Chưa ưng ý? Hãy thử thay đổi phong cách ở trên và tạo lại.</p>
+                <p className="text-slate-500 mb-4">Bạn có muốn được Kiến trúc sư tư vấn 1-1 cho ngôi nhà của bạn không?</p>
+                <a
+                    href="https://zalo.me/g/yooqhx505"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary-hover text-white px-6 py-3 rounded-xl font-bold shadow-lg shadow-primary/30 hover:shadow-xl hover:-translate-y-0.5 transition-all"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+                    </svg>
+                    Nhận tư vấn miễn phí
+                </a>
             </div>
         </div>
     );
 
-    const renderEditor = () => {
-        if (selectedImageIndex === null) return null;
+    const renderLightbox = () => {
+        if (!lightboxImage) return null;
         return (
-            <div className="max-w-6xl mx-auto py-12 px-4" ref={editAreaRef}>
-                <div className="glass-liquid rounded-3xl shadow-2xl overflow-hidden">
-                    <div className="border-b border-slate-100/50 p-5 flex items-center justify-between bg-white/30">
-                        <h3 className="font-bold text-xl text-slate-900 font-display flex items-center gap-2">
-                            <EditIcon size={20} />
-                            Chỉnh sửa Phương án {selectedImageIndex + 1}
-                        </h3>
-                        <button onClick={() => setIsEditing(false)} className="text-slate-400 hover:text-slate-900 transition-colors p-2 hover:bg-slate-100 rounded-lg">
-                            <XIcon size={24} />
-                        </button>
-                    </div>
-
-                    <div className="flex flex-col lg:flex-row">
-                        <div className="flex-1 bg-gradient-to-br from-slate-50 to-slate-100 relative min-h-[400px] lg:min-h-[600px] flex items-center justify-center overflow-hidden">
-                            <img
-                                src={generatedImages[selectedImageIndex]}
-                                alt="Editing"
-                                className="w-full h-full object-contain absolute inset-0 transition-opacity duration-300"
-                                style={{ opacity: isProcessingEdit ? 0.5 : 1 }}
-                            />
-                            {isProcessingEdit && (
-                                <div className="absolute inset-0 flex flex-col items-center justify-center z-10 backdrop-blur-sm bg-white/30">
-                                    <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mb-4"></div>
-                                    <div className="bg-white/95 px-6 py-3 rounded-full font-bold text-primary shadow-xl animate-pulse">
-                                        AI đang chỉnh sửa...
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-
-                        <div className="w-full lg:w-96 p-8 bg-white border-l border-slate-100 flex flex-col">
-                            <div className="flex-1 space-y-6">
-                                <div>
-                                    <label className="block text-sm font-bold text-slate-900 mb-2">Yêu cầu chỉnh sửa AI</label>
-                                    <p className="text-sm text-slate-500 mb-3">Mô tả chi tiết để AI tối ưu lại không gian.</p>
-                                    <textarea
-                                        value={prompt}
-                                        onChange={(e) => setPrompt(e.target.value)}
-                                        placeholder="Ví dụ: Đổi màu sofa sang màu kem, thêm thảm trải sàn, thay đèn trần..."
-                                        className="w-full h-32 px-4 py-3 rounded-xl border-2 border-slate-200 focus:ring-4 focus:ring-primary/10 focus:border-primary/50 outline-none resize-none text-sm bg-slate-50 focus:bg-white disabled:bg-slate-100 disabled:opacity-50 transition-all"
-                                        disabled={isProcessingEdit}
-                                    ></textarea>
-                                </div>
-
-                                <div className="flex flex-wrap gap-2">
-                                    {['Tông màu sáng hơn', 'Thêm cây xanh', 'Sàn gỗ sồi', 'Đèn vàng ấm'].map(p => (
-                                        <button
-                                            key={p}
-                                            onClick={() => setPrompt(p)}
-                                            disabled={isProcessingEdit}
-                                            className="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-2 rounded-full transition-all disabled:opacity-50 hover:scale-105 active:scale-95"
-                                        >
-                                            {p}
-                                        </button>
-                                    ))}
-                                </div>
-
-                                <button
-                                    onClick={handleEdit}
-                                    disabled={!prompt.trim() || isProcessingEdit}
-                                    className="w-full py-4 bg-gradient-to-r from-primary to-primary-hover text-white rounded-xl font-bold shadow-lg shadow-primary/30 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-2 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0"
-                                >
-                                    {isProcessingEdit ? (
-                                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                                    ) : (
-                                        <WandIcon size={18} />
-                                    )}
-                                    {isProcessingEdit ? 'Đang thực hiện...' : 'AI Chỉnh sửa'}
-                                </button>
-                            </div>
-
-                            <div className="mt-8 pt-8 border-t border-slate-100">
-                                <div className="bg-gradient-to-br from-primary/5 to-primary/10 p-6 rounded-2xl border border-primary/20 text-center">
-                                    <h4 className="font-bold text-primary mb-2">Đã ưng ý với thiết kế này?</h4>
-                                    <button
-                                        onClick={handleFinalSubmit}
-                                        className="w-full py-3 bg-gradient-to-r from-primary to-primary-hover text-white rounded-xl font-bold shadow-xl shadow-primary/30 transition-all flex items-center justify-center gap-2 mt-4 hover:shadow-2xl hover:shadow-primary/40 hover:-translate-y-0.5 active:translate-y-0"
-                                    >
-                                        Nhận hồ sơ thiết kế
-                                        <ArrowRightIcon size={18} />
-                                    </button>
-
-                                    <div className="mt-4 pt-4 border-t border-primary/10">
-                                        <p className="text-xs text-slate-500 mb-2">Cần tư vấn thêm về thi công & vật liệu?</p>
-                                        <a
-                                            href="https://zalo.me/g/yooqhx505"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-primary-hover transition-colors"
-                                        >
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
-                                            </svg>
-                                            Chat với Kiến trúc sư
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div
+                className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/80 backdrop-blur-md p-4 animate-fadeIn cursor-pointer"
+                onClick={() => setLightboxImage(null)}
+            >
+                <button
+                    onClick={() => setLightboxImage(null)}
+                    className="absolute top-6 right-6 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full p-3 transition-all z-10"
+                >
+                    <XIcon size={28} />
+                </button>
+                <img
+                    src={lightboxImage}
+                    alt="Phóng to"
+                    className="max-w-full max-h-[90vh] object-contain rounded-2xl shadow-2xl"
+                    onClick={(e) => e.stopPropagation()}
+                />
             </div>
         );
     };
@@ -449,7 +329,7 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
                     </span>
                 </h1>
                 <p className="text-lg text-slate-500 max-w-2xl mx-auto mb-8 font-light">
-                    Tải ảnh phòng hiện tại, chọn phong cách và để AI kiến tạo 3 phương án thiết kế thông minh cho ngôi nhà của bạn.
+                    Tải ảnh phòng hiện tại, chọn phong cách (1-3) và để AI kiến tạo thiết kế thông minh cho ngôi nhà của bạn.
                 </p>
             </div>
 
@@ -589,10 +469,10 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
                         <div className="mt-auto pt-6 border-t border-slate-100">
                             <button
                                 onClick={handleGenerateClick}
-                                disabled={!image || selectedStyles.length === 0 || !selectedBudget || isGenerating}
+                                disabled={!image || selectedStyles.length === 0 || isGenerating}
                                 className={`
                                     w-full py-4 rounded-xl font-bold text-lg shadow-xl transition-all flex items-center justify-center gap-2
-                                    ${(!image || selectedStyles.length === 0 || !selectedBudget || isGenerating)
+                                    ${(!image || selectedStyles.length === 0 || isGenerating)
                                         ? 'bg-slate-200 text-slate-400 cursor-not-allowed'
                                         : 'bg-gradient-to-r from-primary to-primary-hover text-white shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-0.5 active:translate-y-0'
                                     }
@@ -618,9 +498,10 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
 
             <div ref={resultsRef} className="scroll-mt-32">
                 {isGenerating && renderLoading()}
-                {!isGenerating && isEditing && renderEditor()}
-                {!isGenerating && !isEditing && hasResults && renderResults()}
+                {!isGenerating && hasResults && renderResults()}
             </div>
+
+            {renderLightbox()}
 
             <div className="container px-4 mx-auto pb-12 pt-12 border-t border-slate-100 mt-12">
                 <div className="bg-gradient-to-r from-primary to-primary-hover rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 text-white shadow-2xl shadow-primary/30 relative overflow-hidden animate-fadeIn">

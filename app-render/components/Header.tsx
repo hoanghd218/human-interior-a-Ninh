@@ -9,7 +9,7 @@ export default function Header() {
     const isActive = (path: string) => pathname === path;
 
     return (
-        <header className="fixed top-4 left-4 right-4 md:left-6 md:right-6 lg:left-8 lg:right-8 z-50 animate-fadeIn">
+        <header className="hidden md:block fixed top-4 left-4 right-4 md:left-6 md:right-6 lg:left-8 lg:right-8 z-50 animate-fadeIn">
             <div className="max-w-7xl mx-auto">
                 <div className="glass-liquid rounded-2xl shadow-xl shadow-primary/5 px-4 md:px-6 py-3 flex items-center justify-between">
                     <div className="flex items-center gap-6">

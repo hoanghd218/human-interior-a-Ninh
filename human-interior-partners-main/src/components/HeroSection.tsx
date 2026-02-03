@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { Flame, Check, ArrowRight } from "lucide-react";
 import Logo from "./Logo";
 import heroImage from "@/assets/hero-showroom.jpg";
 import partnerImage from "@/assets/hero-partner.png";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-[85dvh] lg:min-h-[90vh] flex items-center overflow-hidden py-16 lg:py-0">
       {/* Header with Logo */}
       <header className="absolute top-0 left-0 right-0 z-50 py-6">
         <div className="container flex items-center justify-between">
@@ -32,14 +33,14 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="container relative z-10 pt-32 pb-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container relative z-10 pt-24 md:pt-32 pb-12 md:pb-20 px-4 md:px-6">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left - Text */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-8"
+            className="space-y-5 md:space-y-8"
           >
             {/* Badge */}
             <motion.div
@@ -48,44 +49,48 @@ const HeroSection = () => {
               transition={{ delay: 0.2 }}
               className="inline-block"
             >
-              <span className="px-4 py-2 rounded-full border border-primary/50 text-primary text-sm font-medium">
-                🔥 Chỉ còn 10 suất ĐẠI LÝ tháng này
+              <span className="px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-primary/50 text-primary text-xs md:text-sm font-medium inline-flex items-center gap-2">
+                <Flame className="w-3 h-3 md:w-4 md:h-4" /> Chỉ còn 10 suất ĐẠI LÝ tháng này
               </span>
             </motion.div>
 
             {/* Headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight">
               <span className="block text-foreground">Bạn Có Khách –</span>
               <span className="block gradient-gold-text">Chúng Tôi Chốt Đơn</span>
             </h1>
 
             {/* Sub-headline */}
-            <p className="text-xl md:text-2xl font-bold text-primary">
-              Hoa Hồng Nội Thất HÀNG CHỤC TRIỆU / THÁNG
-              <br />
-              <span className="text-muted-foreground font-normal text-lg">
+            <div className="space-y-1">
+              <p className="text-base md:text-xl lg:text-2xl font-bold text-primary leading-snug">
+                Hoa Hồng Nội Thất
+                <br className="md:hidden" />
+                <span className="md:ml-1">HÀNG CHỤC TRIỆU / THÁNG</span>
+              </p>
+              <p className="text-muted-foreground font-normal text-sm md:text-lg">
                 Không Cần Vốn – Không Giam Thời Gian
-              </span>
-            </p>
+              </p>
+            </div>
 
             {/* Pain points solved */}
-            <div className="space-y-3 text-lg text-muted-foreground">
-              <p className="flex items-center gap-3">
-                <span className="text-primary text-2xl">✓</span>
+            <div className="space-y-2 md:space-y-3 text-base md:text-lg text-muted-foreground">
+              <p className="flex items-center gap-2 md:gap-3">
+                <Check className="w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0" />
                 Bạn không cần ngồi văn phòng
               </p>
-              <p className="flex items-center gap-3">
-                <span className="text-primary text-2xl">✓</span>
+              <p className="flex items-center gap-2 md:gap-3">
+                <Check className="w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0" />
                 Không cần chạy quảng cáo
               </p>
-              <p className="flex items-center gap-3">
-                <span className="text-primary text-2xl">✓</span>
+              <p className="flex items-center gap-2 md:gap-3">
+                <Check className="w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0" />
                 Không cần hiểu sâu kỹ thuật
               </p>
             </div>
 
-            <p className="text-foreground text-xl font-medium">
-              👉 Bạn chỉ cần kết nối khách hàng – <span className="text-primary">Human Interior</span> lo TẤT CẢ phần còn lại.
+            <p className="text-foreground text-sm md:text-xl font-medium flex items-start gap-2">
+              <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0 mt-0.5" />
+              <span>Bạn chỉ cần kết nối khách hàng – <span className="text-primary">Human Interior</span> lo TẤT CẢ phần còn lại.</span>
             </p>
 
             {/* CTA */}
@@ -93,10 +98,12 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 pt-4"
+              className="flex flex-col sm:flex-row gap-4 pt-2 md:pt-4"
             >
-              <Button variant="hero" size="xxl" className="text-base">
-                👉 ĐĂNG KÝ NHẬN BỘ VŨ KHÍ SALE AI – MIỄN PHÍ
+              <Button variant="hero" size="xxl" className="text-xs md:text-base inline-flex items-center gap-2 w-full sm:w-auto justify-center px-4 md:px-6">
+                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
+                <span className="hidden sm:inline">ĐĂNG KÝ NHẬN BỘ VŨ KHÍ SALE AI – MIỄN PHÍ</span>
+                <span className="sm:hidden">ĐĂNG KÝ NGAY – MIỄN PHÍ</span>
               </Button>
             </motion.div>
           </motion.div>
@@ -141,18 +148,6 @@ const HeroSection = () => {
           </motion.div>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground"
-      >
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-sm">Kéo xuống để xem thêm</span>
-          <span className="text-2xl">↓</span>
-        </div>
-      </motion.div>
     </section >
   );
 };

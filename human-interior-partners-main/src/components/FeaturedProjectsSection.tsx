@@ -74,19 +74,19 @@ const FeaturedProjectsSection = () => {
         : PROJECTS.filter(p => p.category === activeCategory);
 
     return (
-        <section id="featured-projects" className="py-24 bg-background relative overflow-hidden">
-            <div className="container relative z-10">
+        <section id="featured-projects" className="py-12 md:py-24 bg-background relative overflow-hidden">
+            <div className="container px-4 md:px-6 relative z-10">
                 {/* Header */}
-                <div className="mb-16 text-center">
-                    <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">
+                <div className="mb-10 md:mb-16 text-center">
+                    <span className="inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-semibold mb-4 md:mb-6">
                         DỰ ÁN TIÊU BIỂU
                     </span>
-                    <h2 className="text-3xl md:text-5xl font-black mb-8">
+                    <h2 className="text-2xl md:text-4xl lg:text-5xl font-black mb-6 md:mb-8">
                         Kiến Tạo <span className="gradient-gold-text">Không Gian Đẳng Cấp</span>
                     </h2>
 
                     {/* Filters */}
-                    <div className="flex flex-wrap justify-center gap-3 mb-12">
+                    <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-12">
                         {[
                             { id: 'all', label: 'Tất cả' },
                             { id: 'japan', label: 'Tiêu chuẩn Nhật Bản' },
@@ -95,7 +95,7 @@ const FeaturedProjectsSection = () => {
                             <button
                                 key={category.id}
                                 onClick={() => setActiveCategory(category.id)}
-                                className={`px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 border
+                                className={`px-4 py-2 md:px-6 md:py-2.5 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wide md:tracking-widest transition-all duration-300 border
                                     ${activeCategory === category.id
                                         ? 'bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/20'
                                         : 'bg-white text-muted-foreground border-border hover:border-primary/50'
@@ -108,12 +108,12 @@ const FeaturedProjectsSection = () => {
                 </div>
 
                 {/* Grid Layout */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
                     {filteredProjects.map((project) => (
                         <div
                             key={project.id}
                             onClick={() => setSelectedProject(project)}
-                            className="group relative bg-card rounded-2xl overflow-hidden border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer"
+                            className="group relative bg-card rounded-xl md:rounded-2xl overflow-hidden border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer"
                         >
                             {/* Image Container */}
                             <div className="relative aspect-[4/3] overflow-hidden">
@@ -143,7 +143,7 @@ const FeaturedProjectsSection = () => {
                                             {project.area}
                                         </div>
                                     </div>
-                                    <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors duration-300">
+                                    <h3 className="text-lg md:text-xl font-bold text-white group-hover:text-primary transition-colors duration-300">
                                         {project.title}
                                     </h3>
                                 </div>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, Building2, Shield, Users } from "lucide-react";
+import { CheckCircle2, Building2, Shield, Users, ArrowRight } from "lucide-react";
 
 const benefits = [
   {
@@ -24,35 +24,34 @@ const benefits = [
 
 const SolutionSection = () => {
   return (
-    <section className="py-24 bg-card relative overflow-hidden">
+    <section className="py-12 md:py-24 bg-card relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-primary/10 rounded-full blur-3xl" />
 
-      <div className="container relative z-10">
+      <div className="container px-4 md:px-6 relative z-10">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
-          <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">
+          <span className="inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-semibold mb-4 md:mb-6">
             GIẢI PHÁP
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black mb-4 md:mb-6 leading-tight">
             <span className="text-primary">Human Interior</span>
             <br />
-            Nơi Bạn Không CẦN CHỐT GIỎI
-            <br />
-            <span className="gradient-gold-text">VẪN CÓ TIỀN</span>
+            <span className="block mt-1">Nơi Bạn Không CẦN CHỐT GIỎI</span>
+            <span className="gradient-gold-text block mt-1">VẪN CÓ TIỀN</span>
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-base md:text-xl text-muted-foreground">
             Lợi thế "đè chết đối thủ":
           </p>
         </motion.div>
 
         {/* Benefits */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto mb-10 md:mb-16">
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
@@ -60,24 +59,23 @@ const SolutionSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.15 }}
-              className={`relative rounded-2xl p-8 border transition-all duration-300 hover:scale-105 ${
-                benefit.highlight 
-                  ? "bg-primary/5 border-primary/50 glow-gold" 
-                  : "card-gradient border-border/50"
-              }`}
+              className={`relative rounded-xl md:rounded-2xl p-6 md:p-8 border transition-all duration-300 hover:scale-105 ${benefit.highlight
+                ? "bg-primary/5 border-primary/50 glow-gold"
+                : "card-gradient border-border/50"
+                }`}
             >
-              <div className="absolute -top-4 left-8">
-                <div className="w-12 h-12 rounded-xl gradient-gold-bg flex items-center justify-center shadow-lg">
-                  <benefit.icon className="w-6 h-6 text-primary-foreground" />
+              <div className="absolute -top-3 md:-top-4 left-6 md:left-8">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl gradient-gold-bg flex items-center justify-center shadow-lg">
+                  <benefit.icon className="w-5 h-5 md:w-6 md:h-6 text-primary-foreground" />
                 </div>
               </div>
-              
-              <div className="pt-8">
-                <h3 className="text-xl font-bold text-foreground mb-4 flex items-start gap-2">
-                  <span className="text-primary mt-1">✅</span>
-                  {benefit.title}
+
+              <div className="pt-6 md:pt-8">
+                <h3 className="text-base md:text-xl font-bold text-foreground mb-3 md:mb-4 flex items-start gap-2">
+                  <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0 mt-0.5" />
+                  <span>{benefit.title}</span>
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                   {benefit.description}
                 </p>
               </div>
@@ -92,10 +90,9 @@ const SolutionSection = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="inline-block bg-secondary rounded-2xl p-8 border border-primary/30">
-            <p className="text-2xl md:text-3xl font-bold text-foreground">
-              👉 Bạn chỉ cần mang khách đến –
-              <br />
+          <div className="inline-block bg-secondary rounded-xl md:rounded-2xl p-5 md:p-8 border border-primary/30">
+            <p className="text-lg md:text-2xl lg:text-3xl font-bold text-foreground flex flex-col items-center gap-1 md:gap-2">
+              <span className="flex items-center gap-2"><ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-primary" /> Bạn chỉ cần mang khách đến –</span>
               <span className="gradient-gold-text">phần còn lại đội Human Interior xử lý.</span>
             </p>
           </div>
@@ -106,3 +103,4 @@ const SolutionSection = () => {
 };
 
 export default SolutionSection;
+

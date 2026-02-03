@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
@@ -12,24 +11,14 @@ export default function Header() {
     return (
         <header className="fixed top-4 left-4 right-4 md:left-6 md:right-6 lg:left-8 lg:right-8 z-50 animate-fadeIn">
             <div className="max-w-7xl mx-auto">
-                <div className="glass-strong rounded-2xl shadow-xl shadow-primary/5 px-4 md:px-6 py-3 flex items-center justify-between">
+                <div className="glass-liquid rounded-2xl shadow-xl shadow-primary/5 px-4 md:px-6 py-3 flex items-center justify-between">
                     <div className="flex items-center gap-6">
                         <Link
                             href="/"
-                            className="flex items-center gap-3 hover:opacity-80 transition-opacity group"
+                            className="flex items-center gap-3 hover:opacity-90 transition-opacity duration-300 group cursor-pointer"
                         >
-                            <div className="relative w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-primary-hover p-0.5 group-hover:scale-110 group-hover:rotate-2 transition-all duration-300 cursor-pointer">
-                                <div className="w-full h-full rounded-xl bg-white flex items-center justify-center">
-                                    <Image
-                                        src="/logo.png"
-                                        alt="HiSpace"
-                                        fill
-                                        className="object-contain p-1"
-                                    />
-                                </div>
-                            </div>
                             <div className="hidden sm:block">
-                                <h1 className="text-lg font-bold text-slate-900 tracking-tight font-display">
+                                <h1 className="text-xl font-semibold tracking-wide text-slate-900 font-display">
                                     Hi<span className="text-primary">Space</span>
                                 </h1>
                             </div>
@@ -39,10 +28,10 @@ export default function Header() {
                             <Link
                                 href="/"
                                 className={`
-                                    text-sm font-medium px-4 py-2 rounded-xl flex items-center gap-2 transition-all duration-200 cursor-pointer
+                                    text-sm font-medium px-4 py-2.5 rounded-xl flex items-center gap-2 transition-all duration-300 cursor-pointer
                                     ${isActive("/")
-                                        ? "text-white bg-gradient-to-r from-primary to-primary-hover shadow-lg shadow-primary/30 border border-primary/40"
-                                        : "text-slate-600 hover:text-slate-900 hover:bg-slate-100/80 hover:border-slate-200 border border-transparent"
+                                        ? "text-white bg-gradient-to-r from-primary to-primary-hover shadow-lg shadow-primary/25 border border-primary/20"
+                                        : "text-slate-600 hover:text-slate-900 hover:bg-white/60 border border-transparent hover:border-slate-200/50"
                                     }
                                 `}
                             >
@@ -53,14 +42,9 @@ export default function Header() {
                             </Link>
                         </nav>
                     </div>
-
-                    <div className="flex items-center gap-3">
-                        <button className="px-5 py-2.5 text-sm font-semibold text-primary bg-gradient-to-r from-primary/5 to-primary/10 hover:from-primary/10 hover:to-primary/15 border border-primary/30 hover:border-primary/50 rounded-xl transition-all duration-200 hover:shadow-md hover:shadow-primary/20 hover:scale-105 active:scale-95 cursor-pointer">
-                            Đăng nhập
-                        </button>
-                    </div>
                 </div>
             </div>
         </header>
     );
 }
+

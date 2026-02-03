@@ -71,9 +71,11 @@ export default function HomePage() {
             </main>
 
             {/* Footer */}
-            <footer className="w-full bg-white border-t border-accent-border py-8">
-                <div className="max-w-7xl mx-auto px-4 text-center text-gray-500 text-sm">
-                    <p>© 2024 HiSpace - Serving Star-Rating Living Spaces</p>
+            <footer className="w-full bg-white/80 backdrop-blur-sm border-t border-slate-100 py-10">
+                <div className="max-w-7xl mx-auto px-4 text-center">
+                    <p className="text-slate-500 text-sm font-light tracking-wide">
+                        © 2024 <span className="font-display font-medium text-slate-700">HiSpace</span> — Serving Star-Rating Living Spaces
+                    </p>
                 </div>
             </footer>
         </div>

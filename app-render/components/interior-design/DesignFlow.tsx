@@ -110,6 +110,7 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [isProcessingEdit, setIsProcessingEdit] = useState(false);
     const [image, setImage] = useState<string | null>(null);
+    const [referenceImage, setReferenceImage] = useState<string | null>(null);
     const [selectedStyles, setSelectedStyles] = useState<DesignStyle[]>([]);
     const [selectedBudget, setSelectedBudget] = useState<BudgetRange | null>(null);
     const [generatedImages, setGeneratedImages] = useState<string[]>([]);
@@ -131,7 +132,7 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
         }, 100);
 
         try {
-            const results = await generateInteriorDesigns(image, selectedStyles, selectedBudget);
+            const results = await generateInteriorDesigns(image, selectedStyles, selectedBudget, referenceImage || undefined);
             setGeneratedImages(results);
             if (results.length > 0) {
                 setHasResults(true);
@@ -163,6 +164,23 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
             };
             reader.readAsDataURL(e.target.files[0]);
         }
+    };
+
+    const handleReferenceImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files && e.target.files[0]) {
+            const reader = new FileReader();
+            reader.onload = (ev) => {
+                if (ev.target?.result) {
+                    setReferenceImage(ev.target.result as string);
+                }
+            };
+            reader.readAsDataURL(e.target.files[0]);
+        }
+    };
+
+    const removeReferenceImage = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        setReferenceImage(null);
     };
 
     const removeImage = (e: React.MouseEvent) => {
@@ -309,8 +327,8 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
         if (selectedImageIndex === null) return null;
         return (
             <div className="max-w-6xl mx-auto py-12 px-4" ref={editAreaRef}>
-                <div className="glass-strong rounded-3xl shadow-2xl border border-white/40 overflow-hidden">
-                    <div className="border-b border-slate-100 p-5 flex items-center justify-between bg-white/50">
+                <div className="glass-liquid rounded-3xl shadow-2xl overflow-hidden">
+                    <div className="border-b border-slate-100/50 p-5 flex items-center justify-between bg-white/30">
                         <h3 className="font-bold text-xl text-slate-900 font-display flex items-center gap-2">
                             <EditIcon size={20} />
                             Chỉnh sửa Phương án {selectedImageIndex + 1}
@@ -436,7 +454,7 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
             </div>
 
             <div className="container mx-auto px-4 mb-12">
-                <div className="max-w-6xl mx-auto glass-strong rounded-3xl shadow-2xl shadow-primary/5 border border-white/40 overflow-hidden flex flex-col lg:flex-row animate-fadeIn" style={{ animationDelay: '0.2s' }}>
+                <div className="max-w-6xl mx-auto glass-liquid rounded-3xl shadow-2xl shadow-primary/5 overflow-hidden flex flex-col lg:flex-row animate-fadeIn" style={{ animationDelay: '0.2s' }}>
 
                     <div className="w-full lg:w-7/12 p-6 md:p-10 border-b lg:border-b-0 lg:border-r border-slate-100 bg-gradient-to-br from-slate-50 to-slate-100/50">
                         <h3 className="text-xl font-bold text-slate-900 mb-5 font-display flex items-center gap-2">
@@ -468,6 +486,66 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
                             )}
                             <input type="file" className="hidden" accept="image/*" onChange={handleImageUpload} />
                         </label>
+
+                        {/* Reference Image Upload Section */}
+                        <div className="mt-6">
+                            <div className="flex items-center gap-2 mb-3">
+                                <h4 className="text-sm font-semibold text-slate-700 flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                                        <circle cx="9" cy="9" r="2" />
+                                        <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
+                                    </svg>
+                                    Ảnh tham chiếu <span className="text-slate-400 font-normal">(tuỳ chọn)</span>
+                                </h4>
+                                <div className="relative group">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-slate-400 cursor-help">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                                        <path d="M12 17h.01" />
+                                    </svg>
+                                    <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-64 p-3 bg-slate-900 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 shadow-xl">
+                                        <div className="font-semibold mb-1">💡 Ảnh tham chiếu phong cách</div>
+                                        <p>Tải lên ảnh mẫu thiết kế nội thất mà bạn yêu thích. AI sẽ học hỏi phong cách, màu sắc và bố cục từ ảnh này để áp dụng vào không gian của bạn.</p>
+                                        <div className="absolute left-1/2 -translate-x-1/2 top-full -mt-1 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-900"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <label className={`
+                                flex items-center justify-center w-full h-24 border-2 border-dashed rounded-xl cursor-pointer transition-all relative group overflow-hidden bg-white/50
+                                ${referenceImage ? 'border-primary/50 ring-2 ring-primary/10' : 'border-slate-200 hover:border-primary/30 hover:bg-primary/5'}
+                            `}>
+                                {referenceImage ? (
+                                    <>
+                                        <img src={referenceImage} alt="Reference" className="h-full w-auto object-cover rounded-lg" />
+                                        <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/30 transition-all duration-300 flex items-center justify-center gap-2">
+                                            <button onClick={(e) => { e.preventDefault(); }} className="px-3 py-1.5 bg-white text-slate-900 rounded-lg text-xs font-semibold shadow-lg hover:bg-slate-100 transition-all opacity-0 group-hover:opacity-100">Thay</button>
+                                            <button onClick={removeReferenceImage} className="p-1.5 bg-red-500 text-white rounded-lg shadow-lg hover:bg-red-600 transition-all opacity-0 group-hover:opacity-100">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                    <path d="M3 6h18" /><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" /><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </>
+                                ) : (
+                                    <div className="flex items-center gap-3 p-4">
+                                        <div className="w-10 h-10 bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400 rounded-lg flex items-center justify-center group-hover:text-primary/70 transition-colors">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                                <polyline points="17 8 12 3 7 8" />
+                                                <line x1="12" y1="3" x2="12" y2="15" />
+                                            </svg>
+                                        </div>
+                                        <div className="text-left">
+                                            <p className="text-sm text-slate-600 font-medium">Thêm ảnh mẫu phong cách</p>
+                                            <p className="text-xs text-slate-400">AI sẽ học theo phong cách từ ảnh này</p>
+                                        </div>
+                                    </div>
+                                )}
+                                <input type="file" className="hidden" accept="image/*" onChange={handleReferenceImageUpload} />
+                            </label>
+                        </div>
                     </div>
 
                     <div className="w-full lg:w-5/12 p-6 md:p-10 bg-white flex flex-col h-full">
@@ -507,29 +585,6 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
                             </div>
                         </div>
 
-                        <div className="mb-8">
-                            <h3 className="text-xl font-bold text-slate-900 mb-5 font-display flex items-center gap-2">
-                                <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 text-primary font-bold">3</span>
-                                Ngân sách
-                            </h3>
-                            <div className="grid grid-cols-2 gap-3">
-                                {BUDGETS.map((budget) => (
-                                    <div
-                                        key={budget}
-                                        onClick={() => setSelectedBudget(budget)}
-                                        className={`
-                                            px-4 py-3 rounded-xl border cursor-pointer font-medium text-sm text-center transition-all hover:scale-[1.02] active:scale-[0.98]
-                                            ${selectedBudget === budget
-                                                ? 'border-primary bg-gradient-to-br from-primary/5 to-primary/10 text-primary font-semibold'
-                                                : 'border-slate-100 bg-white text-slate-500 hover:border-slate-200 hover:bg-slate-50'
-                                            }
-                                        `}
-                                    >
-                                        {budget}
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
 
                         <div className="mt-auto pt-6 border-t border-slate-100">
                             <button
@@ -578,10 +633,10 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
                                     <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" />
                                 </svg>
                             </div>
-                            <h3 className="text-2xl md:text-3xl font-bold font-display">Cộng đồng Bản đồ xây nhà</h3>
+                            <h3 className="text-2xl md:text-3xl font-bold font-display">Đăng ký tư vấn cùng kiến trúc sư ngay</h3>
                         </div>
                         <p className="text-white/90 text-lg max-w-xl font-light leading-relaxed">
-                            Tham gia nhóm Zalo để được Kiến trúc sư tư vấn miễn phí, chia sẻ kinh nghiệm xây nhà và nhận ưu đãi độc quyền.
+                            Tham gia nhóm Zalo để được Kiến trúc sư tư vấn.
                         </p>
                     </div>
 
@@ -600,8 +655,8 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
             </div>
 
             {showRegisterModal && (
-                <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4 animate-fadeIn">
-                    <div className="relative w-full max-w-md glass-strong rounded-3xl shadow-2xl overflow-hidden border border-white/40">
+                <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/60 backdrop-blur-md p-4 animate-fadeIn">
+                    <div className="relative w-full max-w-md glass-liquid rounded-3xl shadow-2xl overflow-hidden">
                         <button
                             onClick={() => setShowRegisterModal(false)}
                             className="absolute top-5 right-5 z-10 text-slate-400 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 rounded-full p-2 transition-colors"

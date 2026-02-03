@@ -25,22 +25,38 @@ const getMimeType = (b64: string) => {
 export const generateInteriorDesigns = async (
     base64Image: string,
     styles: DesignStyle[],
-    budget: BudgetRange
+    budget: BudgetRange,
+    referenceImage?: string
 ): Promise<string[]> => {
     const ai = getClient();
     const model = 'gemini-2.5-flash-image';
 
     const styleText = styles.join(', ');
+
+    // Build reference image instruction if provided
+    const referenceInstruction = referenceImage
+        ? `
+    QUAN TRỌNG - ẢNH THAM CHIẾU:
+    Ảnh thứ 2 là ảnh tham chiếu phong cách. Hãy học hỏi và áp dụng:
+    - Phong cách thiết kế, bố cục nội thất
+    - Tông màu, palette màu sắc
+    - Phong cách đồ nội thất, vật liệu
+    - Ánh sáng, không khí của không gian
+    Kết hợp phong cách từ ảnh tham chiếu với không gian từ ảnh gốc.`
+        : '';
+
     const promptTemplate = `
     Bạn là một chuyên gia thiết kế nội thất kiến trúc. 
     Hãy thiết kế lại căn phòng trong bức ảnh này theo phong cách: ${styleText}.
     Ngân sách thi công: ${budget}.
+    ${referenceInstruction}
     
     Yêu cầu quan trọng:
     1. Giữ nguyên cấu trúc phòng (tường, cửa sổ, sàn).
     2. Thay đổi nội thất, màu sắc, ánh sáng cho phù hợp phong cách đã chọn.
     3. Hình ảnh phải chân thực (photorealistic), chất lượng cao.
     4. Phù hợp với bối cảnh nhà ở Việt Nam.
+    ${referenceImage ? '5. Đặc biệt chú ý học theo phong cách từ ảnh tham chiếu.' : ''}
     
     Hãy tạo ra một phương án thiết kế ấn tượng.
   `;
@@ -48,20 +64,35 @@ export const generateInteriorDesigns = async (
     // We need 3 variations. Make 3 parallel calls with slightly different prompts.
     const promises = [1, 2, 3].map(async (i) => {
         try {
+            // Build content parts
+            const parts: Array<{ inlineData?: { mimeType: string; data: string }; text?: string }> = [
+                {
+                    inlineData: {
+                        mimeType: getMimeType(base64Image),
+                        data: cleanBase64(base64Image),
+                    },
+                },
+            ];
+
+            // Add reference image if provided
+            if (referenceImage) {
+                parts.push({
+                    inlineData: {
+                        mimeType: getMimeType(referenceImage),
+                        data: cleanBase64(referenceImage),
+                    },
+                });
+            }
+
+            // Add text prompt
+            parts.push({
+                text: `${promptTemplate} (Phương án số ${i}: Hãy sáng tạo khác biệt một chút về cách bố trí hoặc tông màu)`,
+            });
+
             const response = await ai.models.generateContent({
                 model: model,
                 contents: {
-                    parts: [
-                        {
-                            inlineData: {
-                                mimeType: getMimeType(base64Image),
-                                data: cleanBase64(base64Image),
-                            },
-                        },
-                        {
-                            text: `${promptTemplate} (Phương án số ${i}: Hãy sáng tạo khác biệt một chút về cách bố trí hoặc tông màu)`,
-                        },
-                    ],
+                    parts,
                 },
                 config: {
                     // High creativity

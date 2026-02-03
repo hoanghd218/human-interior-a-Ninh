@@ -171,7 +171,7 @@ export default function LandingPage() {
             <div className="hidden md:flex items-center gap-2 lg:gap-3 shrink-0">
 
               <Link
-                href="https://ai.hispace.ai"
+                href="https://human-interior-a-ninh-app-render.vercel.app/"
                 target="_blank"
                 className="bg-[#E05C3E] text-white px-4 py-2 lg:px-6 lg:py-3 rounded-xl lg:rounded-2xl font-black text-[10px] lg:text-[11px] tracking-wide transition-all duration-300 uppercase flex items-center gap-2 lg:gap-3 shadow-golden hover:translate-y-[-2px] hover:shadow-golden cursor-pointer whitespace-nowrap focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#E05C3E]"
               >
@@ -242,7 +242,7 @@ export default function LandingPage() {
             </Link>
             <div className="pt-8 border-t border-gray-100">
               <Link
-                href="https://ai.hispace.ai"
+                href="https://human-interior-a-ninh-app-render.vercel.app/"
                 target="_blank"
                 className="bg-[#E05C3E] text-white hover:bg-[#C8482D] w-full py-3 rounded-lg font-bold transition-all duration-300 uppercase text-xs tracking-wide flex items-center justify-center gap-2 shadow-lg animate-ripple"
               >

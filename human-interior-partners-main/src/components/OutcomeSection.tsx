@@ -4,7 +4,7 @@ import { Check, Wallet, Clock, Target, Network, TrendingUp } from "lucide-react"
 const outcomes = [
   {
     icon: Wallet,
-    text: "Có thêm 30–50–100 triệu/tháng từ chính mối quan hệ bạn đang có"
+    text: "Có thêm 30–50–100 triệu/tháng chỉ bằng việc trải nghiệm, thấy mê & giới thiệu app Thiết Kế AI cho Khách Hàng. QUÁ ĐƠN GIẢN & THỜI THƯỢNG ĐÚNG KHÔNG NÀO ?"
   },
   {
     icon: Clock,
@@ -20,7 +20,7 @@ const outcomes = [
   },
   {
     icon: TrendingUp,
-    text: "Biến mỗi khách quen thành tài sản tạo tiền lâu dài"
+    text: "Biến mỗi khách quen thành Đại Lý cấp dưới, bạn lại có thêm Hoa Hồng từ Network chất lượng của Khách Hàng"
   }
 ];
 
@@ -68,8 +68,42 @@ const OutcomeSection = () => {
               {/* Text */}
               <div className="flex items-center gap-2 md:gap-4 flex-1">
                 <Check className="w-4 h-4 md:w-6 md:h-6 text-primary flex-shrink-0" />
-                <p className="text-sm md:text-lg lg:text-xl text-foreground font-medium">
-                  {outcome.text}
+                <p className="text-sm md:text-lg lg:text-xl text-foreground font-medium leading-relaxed">
+                  {index === 0 ? (
+                    <>
+                      Có thêm <span className="font-black text-primary text-base md:text-xl lg:text-2xl">30–50–100 triệu/tháng</span>{" "}
+                      chỉ bằng việc{" "}
+                      <span className="font-bold text-foreground">trải nghiệm, thấy mê & giới thiệu</span>{" "}
+                      <span className="gradient-gold-text font-black">app Thiết Kế AI</span>{" "}
+                      cho Khách Hàng.
+                      <br />
+                      <span className="text-primary font-black text-base md:text-xl lg:text-2xl">QUÁ ĐƠN GIẢN & THỜI THƯỢNG</span>{" "}
+                      <span className="text-foreground/80">đúng không nào?</span>
+                    </>
+                  ) : index === 1 ? (
+                    <>
+                      <span className="font-bold">Không bị trói</span>{" "}
+                      <span className="text-primary font-black">giờ giấc</span>
+                    </>
+                  ) : index === 2 ? (
+                    <>
+                      <span className="font-bold">Không áp lực</span>{" "}
+                      <span className="text-primary font-black">KPI vô lý</span>
+                    </>
+                  ) : index === 3 ? (
+                    <>
+                      <span className="font-bold">Vừa làm – vừa mở rộng</span>{" "}
+                      <span className="text-primary font-black">network cao cấp</span>
+                    </>
+                  ) : (
+                    <>
+                      Biến mỗi <span className="font-bold text-foreground">khách quen</span> thành{" "}
+                      <span className="text-primary font-black">Đại Lý cấp dưới</span>,
+                      <br />
+                      bạn lại có thêm <span className="gradient-gold-text font-black">Hoa Hồng</span>{" "}
+                      từ <span className="font-bold">Network chất lượng</span> của Khách Hàng
+                    </>
+                  )}
                 </p>
               </div>
             </motion.div>

@@ -16,13 +16,13 @@ const TransitionSection = () => {
         >
           <h2 className="text-xl md:text-3xl lg:text-4xl xl:text-5xl font-black leading-tight">
             <span className="block mb-1 md:mb-0 md:inline">Sale giỏi không cần làm nhiều hơn –</span>
-            <span className="gradient-gold-text block md:inline">chỉ cần đứng đúng chỗ.</span>
+            <span className="gradient-gold-text block md:inline">chỉ cần chọn đúng mô hình hỗ trợ tối đa.</span>
           </h2>
 
           <p className="text-base md:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
             <span className="text-primary font-bold">Human Interior</span> được tạo ra để trở thành{" "}
             <span className="text-foreground font-semibold">bệ phóng kiếm tiền</span> cho những người có{" "}
-            <span className="text-foreground font-semibold">mối quan hệ & tư duy kinh doanh</span>.
+            <span className="text-foreground font-semibold">khao khát làm kinh doanh BÀI BẢN & không muốn tụt hậu thời đại A.I bùng nổ</span>.
           </p>
 
           {/* Arrow down */}

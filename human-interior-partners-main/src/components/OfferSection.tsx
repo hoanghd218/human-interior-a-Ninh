@@ -4,21 +4,23 @@ import { Gift, Bot, Banknote, Sparkles, Zap, CheckCircle2 } from "lucide-react";
 const offers = [
   {
     icon: Gift,
-    title: "Sales Kit Cao Cấp",
+    title: "Website bán hàng cá nhân hóa cho Đại Lý",
     items: [
-      "Catalogue in ấn sang trọng",
+      "Catalogue online thuận tiện định hướng phong cách yêu thích cho khách hàng",
       "Profile công ty chuyên nghiệp",
-      "Namecard cá nhân hóa"
+      "Trợ lý A.I thay mặt Đại Lý giải đáp cho khách hàng 24/7 theo chuẩn chính sách công ty"
     ],
     color: "from-amber-500 to-yellow-400"
   },
   {
     icon: Bot,
-    title: "VŨ KHÍ AI – KHÁCH XEM LÀ MUỐN ĐẶT CỌC",
+    title: "VŨ KHÍ AI – KHÁCH XEM LÀ MUỐN HẸN GẶP",
     items: [
-      "Tạo concept nội thất trong 5 phút",
+      "App tạo concept 3d không gian hiện trạng và phong cách khách hàng mong muốn trong 30s",
       "Gửi khách xem ngay trên Zalo",
-      "Khách \"wow\" → tin → xuống tiền nhanh"
+      "Khách \"wow\" → tin → hẹn gặp tư vấn cùng kiến trúc sư",
+      "App dùng cho Đại Lý Tuỳ Chỉnh Thiết Kế theo Vật Liệu, đồ Nội Thất, đồ DECOR Khách Hàng yêu cầu",
+      "CHỐT KHÁCH không phụ thuộc Kiến Trúc Sư"
     ],
     color: "from-primary to-gold-light",
     highlight: true
@@ -28,9 +30,9 @@ const offers = [
     title: "Hoa hồng CAO – RÕ – TRẢ THẲNG",
     items: [
       "% cao hơn mặt bằng thị trường",
-      "Không giam tiền",
-      "Không nợ lương",
-      "Không mập mờ"
+      "Đa dạng nguồn thu nhập",
+      "App quản lý Thu Nhập cho Đại Lý",
+      "Hợp đồng Đại Lý được Pháp Luật Bảo Vệ"
     ],
     color: "from-green-500 to-emerald-400"
   }
@@ -56,7 +58,8 @@ const OfferSection = () => {
           </span>
           <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black mb-3 md:mb-4 leading-tight">
             <span className="block">Gia Nhập Ngay –</span>
-            <span className="gradient-gold-text">Nhận Trọn Bộ VŨ KHÍ KIẾM TIỀN</span>
+            <span className="gradient-gold-text">Nhận Trọn NỀN TẢNG HỖ TRỢ ĐẠI LÝ NỘI THẤT</span>
+            <span className="block">Giúp bạn trở thành chuyên gia, tạo sức hút dễ dàng với khách hàng</span>
           </h2>
         </motion.div>
 
@@ -112,6 +115,63 @@ const OfferSection = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Full-width Event & Campaign Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          whileHover={{
+            y: -5,
+            transition: { duration: 0.3, ease: "easeOut" }
+          }}
+          className="relative rounded-xl md:rounded-2xl overflow-hidden cursor-pointer mt-8 md:mt-12 max-w-6xl mx-auto"
+        >
+          {/* Card background */}
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 card-gradient" />
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-400 opacity-5" />
+          </div>
+
+          {/* Highlight badge */}
+          <div className="absolute -top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-pink-400" />
+
+          {/* Content */}
+          <div className="relative p-6 md:p-10 lg:p-12">
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8">
+              {/* Icon */}
+              <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-400 flex items-center justify-center shadow-lg flex-shrink-0">
+                <Sparkles className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-background" />
+              </div>
+
+              {/* Text content */}
+              <div className="flex-1">
+                <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-foreground mb-4 md:mb-6">
+                  SỰ KIỆN & CHIẾN DỊCH
+                </h3>
+
+                <ul className="space-y-4 md:space-y-5">
+                  <li className="flex items-start gap-3 md:gap-4">
+                    <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0 mt-1" />
+                    <span className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed">
+                      Liên tục tổ chức các Sự kiện Tư vấn miễn phí cùng Đội ngũ Kiến trúc sư tại Showroom. Hỗ trợ Đại lý chốt khách trong sự An tâm
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3 md:gap-4">
+                    <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0 mt-1" />
+                    <span className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed">
+                      Được nhận Lead Khách hàng Chiến dịch Quảng cáo theo Sự kiện
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Border */}
+          <div className="absolute inset-0 rounded-xl md:rounded-2xl border border-purple-500/30 pointer-events-none" />
+        </motion.div>
       </div>
     </section>
   );

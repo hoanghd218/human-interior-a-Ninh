@@ -13,7 +13,7 @@ const painPoints = [
   },
   {
     title: "Tự bơi, tự chết",
-    description: "Không showroom. Không công cụ thuyết phục. Khách hỏi sâu là… cứng họng → mất khách trong im lặng."
+    description: "Mất quá nhiều thời gian, sức lực cho các công cụ Marketing phức tạp"
   },
   {
     title: "Bán bằng miệng, không có thứ gì khiến khách \"WOW\" ngay lập tức",
@@ -86,7 +86,7 @@ const ProblemSection = () => {
               Sự thật đau lòng:
             </p>
             <p className="text-base md:text-xl text-muted-foreground mb-1 md:mb-2">
-              Không phải bạn kém.
+              Bạn chọn sai mô hình để hợp tác.
             </p>
             <p className="text-lg md:text-2xl font-bold gradient-gold-text flex items-center justify-center gap-2">
               <ArrowRight className="w-5 h-5 md:w-6 md:h-6" /> Bạn đang đứng sai nền tảng.

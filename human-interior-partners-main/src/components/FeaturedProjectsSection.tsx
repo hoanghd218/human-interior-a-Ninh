@@ -6,18 +6,18 @@ import ProjectDetailsModal from "./ProjectDetailsModal";
 const PROJECTS = [
     {
         id: 1,
-        title: "Dự án Căn hộ 2 Phòng Ngủ - V1",
-        category: "japan",
-        location: "Concept 01",
-        area: "85m²",
-        image: "/images/projects/model-house-2br-v1/V1.webp",
-        images: Array.from({ length: 12 }, (_, i) => `/images/projects/model-house-2br-v1/V${i + 1}.webp`),
-        standard: "Tiêu chuẩn Nhân Bản",
-        description: "Bản phối cảnh 3D chi tiết cho căn hộ 2 phòng ngủ theo phong cách hiện đại Nhật Bản, tối ưu hóa không gian và ánh sáng tự nhiên."
+        title: "Căn hộ ORCHARD HILL Sycamore",
+        category: "singapore",
+        location: "Tiêu chuẩn Singapore",
+        area: "120m²",
+        image: "/images/orchard-hill-sycamore/A1.webp",
+        images: Array.from({ length: 24 }, (_, i) => `/images/orchard-hill-sycamore/A${i + 1}.webp`),
+        standard: "Tiêu chuẩn Singapore",
+        description: "Dự án căn hộ cao cấp theo tiêu chuẩn Singapore với thiết kế hiện đại, vật liệu nhập khẩu và thi công đẳng cấp quốc tế."
     },
     {
         id: 2,
-        title: "Dự án Japfa Bình Dương",
+        title: "Dự án JAPFA Bình Dương",
         category: "international",
         location: "Văn phòng & Showroom",
         area: "350m²",
@@ -27,11 +27,22 @@ const PROJECTS = [
             ...Array.from({ length: 25 }, (_, i) => `/images/projects/japfa/B${i + 1}.webp`),
             ...Array.from({ length: 4 }, (_, i) => `/images/projects/japfa/C${i + 1}.webp`),
         ],
-        standard: "Tiêu chuẩn Quốc Tế",
+        standard: "Tiêu chuẩn Tập đoàn Đa quốc gia",
         description: "Tổ hợp văn phòng làm việc và khu trưng bày sản phẩm đẳng cấp, mang đậm dấu ấn thương hiệu và sự chuyên nghiệp."
     },
     {
         id: 3,
+        title: "Dự án Căn hộ 2 Phòng Ngủ - V1",
+        category: "japan",
+        location: "Concept 01",
+        area: "85m²",
+        image: "/images/projects/model-house-2br-v1/V1.webp",
+        images: Array.from({ length: 12 }, (_, i) => `/images/projects/model-house-2br-v1/V${i + 1}.webp`),
+        standard: "Tiêu chuẩn Nhật Bản",
+        description: "Bản phối cảnh 3D chi tiết cho căn hộ 2 phòng ngủ theo phong cách hiện đại Nhật Bản, tối ưu hóa không gian và ánh sáng tự nhiên."
+    },
+    {
+        id: 4,
         title: "Căn hộ 1 Phòng Ngủ - D1",
         category: "japan",
         location: "Concept 01",
@@ -42,7 +53,7 @@ const PROJECTS = [
         description: "Thiết kế tối giản nhưng tinh tế cho căn hộ 1 phòng ngủ, phù hợp với lối sống hiện đại và năng động."
     },
     {
-        id: 4,
+        id: 5,
         title: "Căn hộ 1 Phòng Ngủ - A1",
         category: "international",
         location: "Concept 02",
@@ -53,7 +64,7 @@ const PROJECTS = [
         description: "Sự kết hợp hoàn hảo giữa vật liệu cao cấp và giải pháp không gian thông minh cho căn hộ diện tích vừa phải."
     },
     {
-        id: 5,
+        id: 6,
         title: "Căn hộ 2 Phòng Ngủ - B1",
         category: "japan",
         location: "Concept 02",
@@ -89,8 +100,9 @@ const FeaturedProjectsSection = () => {
                     <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-12">
                         {[
                             { id: 'all', label: 'Tất cả' },
-                            { id: 'japan', label: 'Tiêu chuẩn Nhật Bản' },
-                            { id: 'international', label: 'Tiêu chuẩn Quốc tế' }
+                            { id: 'singapore', label: 'Tiêu chuẩn Singapore' },
+                            { id: 'international', label: 'Tiêu chuẩn Quốc tế' },
+                            { id: 'japan', label: 'Tiêu chuẩn Nhật Bản' }
                         ].map((category) => (
                             <button
                                 key={category.id}

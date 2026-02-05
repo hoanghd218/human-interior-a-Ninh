@@ -4,6 +4,7 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import DesignFlow from "@/components/interior-design/DesignFlow";
 import SuccessStoriesSlider from "@/components/interior-design/SuccessStoriesSlider";
+import Footer from "@/components/interior-design/Footer";
 import { Lead } from "@/data/interior-design";
 
 export default function HomePage() {
@@ -70,14 +71,7 @@ export default function HomePage() {
                 {!lastSubmittedLead && <SuccessStoriesSlider />}
             </main>
 
-            {/* Footer */}
-            <footer className="w-full bg-white/80 backdrop-blur-sm border-t border-slate-100 py-10">
-                <div className="max-w-7xl mx-auto px-4 text-center">
-                    <p className="text-slate-500 text-sm font-light tracking-wide">
-                        © 2024 <span className="font-display font-medium text-slate-700">HiSpace</span> — Serving Star-Rating Living Spaces
-                    </p>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 }

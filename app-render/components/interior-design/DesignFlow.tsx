@@ -3,7 +3,7 @@
 import React, { useState, useRef } from 'react';
 import { DesignStyle, BudgetRange, Lead, STYLES, BUDGETS } from '@/data/interior-design';
 import { generateInteriorDesigns } from '@/services/gemini-interior';
-import LeadForm from './LeadForm';
+import LeadForm, { LeadFormData } from './LeadForm';
 
 interface DesignFlowProps {
     onComplete: (lead: Lead) => void;
@@ -13,6 +13,8 @@ interface UserInfo {
     name: string;
     phone: string;
     email: string;
+    budget: string;
+    location: string;
 }
 
 const UploadIcon = () => (
@@ -142,8 +144,35 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
         }
     };
 
-    const handleUserRegister = (name: string, phone: string, email: string) => {
-        const newUser = { name, phone, email };
+    const handleUserRegister = async (data: LeadFormData) => {
+        const newUser: UserInfo = {
+            name: data.name,
+            phone: data.phone,
+            email: data.email,
+            budget: data.budget,
+            location: data.location
+        };
+
+        // Save lead data to webhook
+        try {
+            await fetch('https://n8n.bimspeed.net/webhook/23ec8e32-909d-49c6-99d7-9c9bf5960a1b', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    fullName: data.name,
+                    phone: data.phone,
+                    email: data.email,
+                    address: data.location,
+                    budget: data.budget,
+                    submitedAt: new Date().toISOString()
+                })
+            });
+        } catch (error) {
+            console.error('Failed to save lead data:', error);
+        }
+
         setUserInfo(newUser);
         setShowRegisterModal(false);
         executeGeneration(newUser);
@@ -314,23 +343,90 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
     return (
         <section className="min-h-screen pt-24 pb-20 relative bg-gradient-to-br from-slate-50 via-slate-100 to-slate-50">
 
-            <div className="text-center py-12 md:py-16 max-w-4xl mx-auto px-4 animate-fadeInUp">
-                <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-gradient-to-r from-primary/5 to-primary/10 px-4 py-2 text-sm text-primary font-semibold mb-6 shadow-sm">
-                    <span className="relative flex h-2 w-2">
+            <div className="text-center py-16 md:py-20 max-w-5xl mx-auto px-4 animate-fadeInUp">
+                {/* Premium Badge */}
+                <div className="inline-flex items-center gap-2.5 rounded-full border border-primary/30 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 px-5 py-2.5 text-sm text-primary font-semibold mb-8 shadow-lg shadow-primary/10 backdrop-blur-sm">
+                    <span className="relative flex h-2.5 w-2.5">
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
                     </span>
-                    Ứng dụng công nghệ AI vào thiết kế kiến trúc nội thất
+                    Ứng dụng công nghệ AI Định hướng Thiết kế cho Kiến trúc sư
                 </div>
-                <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-6 font-display">
-                    Thiết kế nội thất bằng AI <br className="hidden md:block" />
-                    <span className="gradient-text-hero">
-                        Chuẩn phong cách Việt
-                    </span>
+
+                {/* Main Headline */}
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.15] mb-6 font-display">
+                    Thấu hiểu nhanh nhất Ý tưởng, mong muốn Không gian sống của Khách hàng là yêu cầu cao nhất cho đội ngũ <span className="gradient-text-hero">Kiến trúc sư của chúng tôi</span>
                 </h1>
-                <p className="text-lg text-slate-500 max-w-2xl mx-auto mb-8 font-light">
-                    Tải ảnh phòng hiện tại, chọn phong cách (1-3) và để AI kiến tạo thiết kế thông minh cho ngôi nhà của bạn.
-                </p>
+
+                {/* Sub Headline with emphasis */}
+                <div className="relative mb-10">
+                    <div className="absolute inset-0 flex items-center" aria-hidden="true">
+                        <div className="w-full border-t border-slate-200"></div>
+                    </div>
+                    <div className="relative flex justify-center">
+                        <span className="bg-gradient-to-r from-slate-50 via-white to-slate-50 px-6 py-2 text-lg md:text-xl font-semibold text-slate-700">
+                            Đảm bảo không bỏ rơi nhịp <span className="gradient-text-hero">Ý tưởng nào của Khách hàng</span>
+                        </span>
+                    </div>
+                </div>
+
+                <h2 className="text-xl md:text-2xl font-bold text-slate-800 mb-8 font-display">
+                    Tự tay Đóng gói Ý tưởng ảnh 3D trong 30s qua 3 lần nhấp chuột:
+                </h2>
+
+                {/* Animated Steps Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto mb-8">
+                    {/* Step 1 */}
+                    <div className="group relative glass-liquid rounded-2xl p-5 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1 text-left animate-fadeIn" style={{ animationDelay: '0.1s' }}>
+                        <div className="flex items-start gap-4">
+                            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="17 8 12 3 7 8" /><line x1="12" y1="3" x2="12" y2="15" />
+                                </svg>
+                            </div>
+                            <div className="flex-1 min-w-0">
+                                <div className="flex items-center gap-2 mb-1.5">
+                                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary text-white text-xs font-bold shadow-md shadow-primary/30">1</span>
+                                </div>
+                                <p className="text-sm text-slate-600 leading-relaxed">Tải ảnh hiện trạng phòng muốn Thiết kế</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Step 2 */}
+                    <div className="group relative glass-liquid rounded-2xl p-5 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1 text-left animate-fadeIn" style={{ animationDelay: '0.2s' }}>
+                        <div className="flex items-start gap-4">
+                            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+                                    <rect width="18" height="18" x="3" y="3" rx="2" ry="2" /><circle cx="9" cy="9" r="2" /><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
+                                </svg>
+                            </div>
+                            <div className="flex-1 min-w-0">
+                                <div className="flex items-center gap-2 mb-1.5">
+                                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary text-white text-xs font-bold shadow-md shadow-primary/30">2</span>
+                                </div>
+                                <p className="text-sm text-slate-600 leading-relaxed">Tải Ảnh mẫu mà Quý Khách hàng ấn tượng (ảnh chụp hoặc trên mạng đều được)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Step 3 */}
+                    <div className="group relative glass-liquid rounded-2xl p-5 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1 text-left animate-fadeIn" style={{ animationDelay: '0.3s' }}>
+                        <div className="flex items-start gap-4">
+                            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+                                    <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+                                </svg>
+                            </div>
+                            <div className="flex-1 min-w-0">
+                                <div className="flex items-center gap-2 mb-1.5">
+                                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary text-white text-xs font-bold shadow-md shadow-primary/30">3</span>
+                                </div>
+                                <p className="text-sm text-slate-600 leading-relaxed">Chọn 1-3 Phong cách Thiết kế. Mỗi phong cách trả về một 3D tương ứng</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div className="container mx-auto px-4 mb-12">
@@ -511,27 +607,15 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
                         <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
                             <div className="bg-white/20 backdrop-blur-sm p-2.5 rounded-xl">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" />
+                                    <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
                                 </svg>
                             </div>
-                            <h3 className="text-2xl md:text-3xl font-bold font-display">Đăng ký tư vấn cùng kiến trúc sư ngay</h3>
+                            <h3 className="text-2xl md:text-3xl font-bold font-display">Tuỳ chỉnh thiết kế với AI</h3>
                         </div>
                         <p className="text-white/90 text-lg max-w-xl font-light leading-relaxed">
-                            Tham gia nhóm Zalo để được Kiến trúc sư tư vấn.
+                            Sau khi thiết kế xong, bạn có thể sử dụng AI để tuỳ chỉnh thiết kế của mình theo ý muốn.
                         </p>
                     </div>
-
-                    <a
-                        href="https://zalo.me/g/yooqhx505"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="relative z-10 bg-white text-primary hover:bg-white/90 px-8 py-4 rounded-xl font-bold text-lg shadow-lg transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-3 whitespace-nowrap group"
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:rotate-12 transition-transform">
-                            <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
-                        </svg>
-                        Tham gia Zalo ngay
-                    </a>
                 </div>
             </div>
 

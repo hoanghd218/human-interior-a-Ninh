@@ -12,6 +12,7 @@ import JapfaCaseStudy from "@/components/landing/JapfaCaseStudy";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import ConsultantSection from "@/components/landing/ConsultantSection";
 import RegisterSection from "@/components/landing/RegisterSection";
+import ShowroomSection from "@/components/landing/ShowroomSection";
 import PainPointsSection from "@/components/landing/PainPointsSection";
 import Footer from "@/components/landing/Footer";
 import FloatingActions from "@/components/landing/FloatingActions";
@@ -55,6 +56,7 @@ export default function LandingPage() {
       <JapfaCaseStudy />
       <TestimonialsSection />
       <ConsultantSection />
+      <ShowroomSection />
       <RegisterSection />
       <Footer />
       <FloatingActions showFloatingBar={showFloatingBar} />

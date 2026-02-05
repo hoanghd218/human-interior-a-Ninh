@@ -30,7 +30,7 @@ const ProblemSection = () => {
         <div className="absolute bottom-0 right-0 w-48 md:w-96 h-48 md:h-96 bg-primary rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
       </div>
 
-      <div className="container px-4 md:px-6 relative z-10">
+      <div className="container px-6 md:px-8 relative z-10">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -38,7 +38,7 @@ const ProblemSection = () => {
           viewport={{ once: true }}
           className="text-center mb-8 md:mb-16"
         >
-          <h2 className="text-xl md:text-3xl lg:text-4xl xl:text-5xl font-black mb-4 md:mb-6 leading-tight">
+          <h2 className="text-lg md:text-3xl lg:text-4xl xl:text-5xl font-black mb-4 md:mb-6 leading-tight px-2">
             <span className="block mb-2">Nếu bạn đang làm sale mà thấy mình trong những điều này…</span>
             <span className="gradient-gold-text">thì đây là lý do bạn cần đọc tiếp</span>
           </h2>
@@ -57,15 +57,15 @@ const ProblemSection = () => {
                 scale: 1.02,
                 transition: { duration: 0.2 }
               }}
-              className="card-gradient border border-border/50 rounded-xl md:rounded-2xl p-5 md:p-8 hover:border-destructive/50 transition-all duration-300 cursor-pointer"
+              className="card-gradient border border-border/50 rounded-xl md:rounded-2xl p-4 md:p-8 hover:border-destructive/50 transition-all duration-300 cursor-pointer"
             >
               <div className="flex items-start gap-3 md:gap-4">
-                <span className="text-2xl md:text-3xl flex-shrink-0"><XCircle className="w-6 h-6 md:w-8 md:h-8 text-destructive" /></span>
+                <span className="text-2xl md:text-3xl flex-shrink-0"><XCircle className="w-5 h-5 md:w-8 md:h-8 text-destructive" /></span>
                 <div>
-                  <h3 className="text-base md:text-xl font-bold text-foreground mb-2 md:mb-3">
+                  <h3 className="text-sm md:text-xl font-bold text-foreground mb-2 md:mb-3 leading-snug">
                     {point.title}
                   </h3>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                  <p className="text-xs md:text-base text-muted-foreground leading-relaxed">
                     {point.description}
                   </p>
                 </div>

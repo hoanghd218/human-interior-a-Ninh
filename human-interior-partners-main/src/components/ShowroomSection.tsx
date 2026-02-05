@@ -52,28 +52,28 @@ const ShowroomSection = () => {
     return (
         <section className="py-12 md:py-24 bg-background relative overflow-hidden ">
             {/* Header - Centered */}
-            <div className="container px-4 md:px-6 relative z-10">
+            <div className="container px-6 md:px-8 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     className="text-center mb-8 md:mb-10"
                 >
-                    <span className="inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-semibold mb-3 md:mb-4 tracking-wider leading-relaxed">
+                    <span className="inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary/10 text-primary text-[10px] md:text-sm font-semibold mb-3 md:mb-4 tracking-wide md:tracking-wider leading-relaxed">
                         <span className="font-bold">Không gian tổ chức sự kiện</span>
                         {" • "}
                         <span className="font-bold">Văn phòng làm việc mở</span>
                         {" "}
                         dành cho Đại lý
                     </span>
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-black mb-3 md:mb-4 px-2 leading-tight">
+                    <h2 className="text-xl md:text-3xl lg:text-4xl font-black mb-3 md:mb-4 px-4 leading-tight">
                         <span className="text-primary font-black">All In One</span>
                         {" "}
-                        <span className="text-foreground/90 font-bold text-xl md:text-2xl lg:text-3xl">ngay tại</span>
+                        <span className="text-foreground/90 font-bold text-lg md:text-2xl lg:text-3xl">ngay tại</span>
                         <br />
                         <span className="text-foreground">Showroom</span> <span className="gradient-gold-text">Human Interior</span>
                     </h2>
-                    <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto px-4 leading-relaxed">
+                    <p className="text-xs md:text-base text-muted-foreground max-w-2xl mx-auto px-6 leading-relaxed">
                         Trải nghiệm <span className="font-semibold text-foreground">không gian nội thất đẳng cấp</span>,
                         <br className="hidden md:block" />
                         nơi khách hàng của bạn sẽ được <span className="font-semibold text-foreground">tư vấn và chăm sóc tận tình</span>.
@@ -176,13 +176,14 @@ const ShowroomSection = () => {
                             href="https://maps.app.goo.gl/3rGo9dqpZMBLvGaz9"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-bold hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl"
+                            className="inline-flex items-center gap-2 px-5 py-3 md:px-6 md:py-3 rounded-lg bg-primary text-primary-foreground font-bold hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl text-sm md:text-base"
                         >
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
-                            Chỉ đường trên Google Maps
+                            <span className="hidden md:inline">Chỉ đường trên Google Maps</span>
+                            <span className="md:hidden">Chỉ đường</span>
                         </a>
                     </div>
                 </motion.div>

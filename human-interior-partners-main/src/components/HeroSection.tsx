@@ -33,21 +33,21 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="container relative z-10 pt-24 md:pt-32 pb-12 md:pb-20 px-4 md:px-6">
+      <div className="container relative z-10 pt-24 md:pt-32 pb-12 md:pb-20 px-6 md:px-8">
         {/* TOP BRANDING HEADLINE - ELEGANT & REFINED */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col items-center justify-center text-center mb-12 md:mb-16 space-y-2 px-4"
+          className="flex flex-col items-center justify-center text-center mb-12 md:mb-16 space-y-2 px-2 md:px-4"
         >
           <div className="relative inline-block">
             <div className="absolute -inset-2 bg-gradient-to-r from-primary/20 via-primary/30 to-primary/20 blur-xl opacity-50"></div>
-            <h3 className="relative text-sm md:text-xl font-bold tracking-[0.15em] uppercase text-primary/90">
+            <h3 className="relative text-xs md:text-xl font-bold tracking-[0.1em] md:tracking-[0.15em] uppercase text-primary/90 leading-relaxed">
               Mô hình Đại lý Nội thất Đầu tiên tại Việt Nam
             </h3>
           </div>
-          <p className="text-xs md:text-base text-muted-foreground font-medium max-w-3xl leading-relaxed">
+          <p className="text-xs md:text-base text-muted-foreground font-medium max-w-3xl leading-relaxed px-2">
             Ứng dụng A.I hỗ trợ kiếm khách & theo dõi thu nhập minh bạch
           </p>
         </motion.div>
@@ -67,8 +67,8 @@ const HeroSection = () => {
               transition={{ delay: 0.2 }}
               className="inline-block"
             >
-              <span className="px-4 py-2 md:px-6 md:py-3 rounded-full border border-primary/40 bg-primary/5 text-primary text-xs md:text-base font-bold inline-flex items-center gap-2 shadow-lg shadow-primary/10">
-                <Flame className="w-4 h-4 md:w-5 md:h-5 text-orange-500 animate-pulse" /> Chỉ còn 10 suất Đại lý tháng này
+              <span className="px-3 py-2 md:px-6 md:py-3 rounded-full border border-primary/40 bg-primary/5 text-primary text-xs md:text-base font-bold inline-flex items-center gap-1.5 md:gap-2 shadow-lg shadow-primary/10 whitespace-nowrap">
+                <Flame className="w-3.5 h-3.5 md:w-5 md:h-5 text-orange-500 animate-pulse" /> Chỉ còn 10 suất Đại lý tháng này
               </span>
             </motion.div>
 
@@ -125,8 +125,8 @@ const HeroSection = () => {
 
             <div className="flex flex-col space-y-5 pt-4">
               <div className="flex items-center gap-3">
-                <div className="h-[2px] w-12 bg-gradient-to-r from-primary to-primary/50"></div>
-                <p className="text-xs md:text-sm text-primary/80 font-semibold uppercase tracking-wider">
+                <div className="h-[2px] w-8 md:w-12 bg-gradient-to-r from-primary to-primary/50 flex-shrink-0"></div>
+                <p className="text-[10px] md:text-sm text-primary/80 font-semibold uppercase tracking-wide md:tracking-wider leading-tight">
                   Gửi ứng dụng thiết kế A.I cho khách hàng trải nghiệm miễn phí
                 </p>
               </div>
@@ -186,10 +186,11 @@ const HeroSection = () => {
           transition={{ delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 pt-6 justify-center"
         >
-          <Button variant="hero" size="xxl" className="relative overflow-hidden group/btn px-8 py-6 md:px-12 md:py-8 rounded-2xl shadow-2xl hover:shadow-primary/20 transition-all duration-500 text-base md:text-2xl font-black uppercase">
+          <Button variant="hero" size="xxl" className="relative overflow-hidden group/btn px-6 py-5 md:px-12 md:py-8 rounded-2xl shadow-2xl hover:shadow-primary/20 transition-all duration-500 text-sm md:text-2xl font-black uppercase leading-tight">
             <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary-foreground/20 to-primary translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-1000"></div>
-            <span className="relative z-10">
-              Bấm & Trải nghiệm ứng dụng thiết kế A.I miễn phí
+            <span className="relative z-10 text-center">
+              <span className="hidden md:inline">Bấm & Trải nghiệm ứng dụng thiết kế A.I miễn phí</span>
+              <span className="md:hidden">Trải nghiệm A.I thiết kế miễn phí</span>
             </span>
             <div className="absolute -bottom-1 -right-1 w-24 h-24 bg-primary/20 blur-3xl rounded-full"></div>
           </Button>

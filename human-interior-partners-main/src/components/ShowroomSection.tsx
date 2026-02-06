@@ -159,7 +159,7 @@ const ShowroomSection = () => {
 
                     <div className="relative rounded-xl md:rounded-2xl overflow-hidden border border-border/50 shadow-2xl aspect-video md:aspect-[21/9]">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1234567890123!2d106.7234567890123!3d10.8123456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQ4JzQ0LjQiTiAxMDbCsDQzJzI0LjQiRQ!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.2447!2d106.7388182!3d10.8066347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175263fe57e7939%3A0xf666666666666666!2s27%20Nguy%E1%BB%85n%20%C6%AF%20D%C4%A9%2C%20Th%E1%BA%BAo%20%C4%90i%E1%BB%81n%2C%20Qu%E1%BA%ADn%202%2C%20Th%C3%A0nh%20ph%E1%BB%91%20H%E1%BB%93%20Ch%C3%AD%20Minh!5e0!3m2!1sen!2s!4v1738740000000!5m2!1sen!2s"
                             width="100%"
                             height="100%"
                             style={{ border: 0 }}
@@ -173,7 +173,7 @@ const ShowroomSection = () => {
 
                     <div className="text-center mt-6">
                         <a
-                            href="https://maps.app.goo.gl/3rGo9dqpZMBLvGaz9"
+                            href="https://www.google.com/maps/place/27+Nguy%E1%BB%85n+%C6%AF+D%C4%A9,+Th%E1%BA%BAo+%C4%90i%E1%BB%81n,+Qu%E1%BA%ADn+2,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh/@10.8066347,106.7410069,17z"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-5 py-3 md:px-6 md:py-3 rounded-lg bg-primary text-primary-foreground font-bold hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl text-sm md:text-base"

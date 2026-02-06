@@ -153,13 +153,13 @@ const ShowroomSection = () => {
                             <span className="text-primary">Địa chỉ</span> Showroom
                         </h3>
                         <p className="text-sm md:text-base text-muted-foreground">
-                            27 Nguyễn Ư Dĩ, Thảo Điền, Quận 2, TP. Hồ Chí Minh
+                            MIDORI PARK, Bình Dương
                         </p>
                     </div>
 
                     <div className="relative rounded-xl md:rounded-2xl overflow-hidden border border-border/50 shadow-2xl aspect-video md:aspect-[21/9]">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.2447!2d106.7388182!3d10.8066347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175263fe57e7939%3A0xf666666666666666!2s27%20Nguy%E1%BB%85n%20%C6%AF%20D%C4%A9%2C%20Th%E1%BA%BAo%20%C4%90i%E1%BB%81n%2C%20Qu%E1%BA%ADn%202%2C%20Th%C3%A0nh%20ph%E1%BB%91%20H%E1%BB%93%20Ch%C3%AD%20Minh!5e0!3m2!1sen!2s!4v1738740000000!5m2!1sen!2s"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.0123!2d106.6775949!3d11.0695783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d1a3e1e1e1e1%3A0x1234567890abcdef!2sMIDORI%20PARK!5e0!3m2!1sen!2s!4v1738741000000!5m2!1sen!2s"
                             width="100%"
                             height="100%"
                             style={{ border: 0 }}

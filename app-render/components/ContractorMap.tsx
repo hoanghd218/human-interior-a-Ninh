@@ -40,7 +40,7 @@ export default function ContractorMap({ contractors, selectedContractorId }: Con
         []
     );
 
-    const onUnmount = useCallback(function callback(map: google.maps.Map) {
+    const onUnmount = useCallback(function callback() {
         setMap(null);
     }, []);
 

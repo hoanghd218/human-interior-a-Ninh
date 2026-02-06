@@ -173,7 +173,7 @@ const ShowroomSection = () => {
 
                     <div className="text-center mt-6">
                         <a
-                            href="https://www.google.com/maps/place/27+Nguy%E1%BB%85n+%C6%AF+D%C4%A9,+Th%E1%BA%BAo+%C4%90i%E1%BB%81n,+Qu%E1%BA%ADn+2,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh/@10.8066347,106.7410069,17z"
+                            href="https://maps.app.goo.gl/3rGo9dqpZMBLvGaz9"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-5 py-3 md:px-6 md:py-3 rounded-lg bg-primary text-primary-foreground font-bold hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl text-sm md:text-base"

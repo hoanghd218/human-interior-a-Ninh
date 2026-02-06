@@ -65,39 +65,39 @@ const HeroSection = () => {
                 </h1>
 
                 {/* Countdown Timer */}
-                <div className="flex gap-4 md:gap-8 mb-12 items-start justify-center liquid-glass-dark px-8 py-6 rounded-2xl">
-                    <div className="text-center w-[70px] md:w-[100px]">
-                        <div className="text-4xl md:text-6xl font-thin text-white font-sans tabular-nums">
+                <div className="flex gap-2 md:gap-8 mb-12 items-start justify-center liquid-glass-dark px-3 md:px-8 py-4 md:py-6 rounded-2xl">
+                    <div className="text-center w-[60px] md:w-[100px]">
+                        <div className="text-3xl md:text-6xl font-thin text-white font-sans tabular-nums">
                             {String(timeLeft.days).padStart(2, '0')}
                         </div>
-                        <div className="text-[10px] md:text-sm text-[#D4AF37] uppercase tracking-widest mt-2 font-medium">
+                        <div className="text-[9px] md:text-sm text-[#D4AF37] uppercase tracking-widest mt-1 md:mt-2 font-medium">
                             Ngày
                         </div>
                     </div>
-                    <div className="text-4xl md:text-6xl font-thin text-white/50 font-sans mt-[-5px]">:</div>
-                    <div className="text-center w-[70px] md:w-[100px]">
-                        <div className="text-4xl md:text-6xl font-thin text-white font-sans tabular-nums">
+                    <div className="text-3xl md:text-6xl font-thin text-white/50 font-sans mt-[-5px]">:</div>
+                    <div className="text-center w-[60px] md:w-[100px]">
+                        <div className="text-3xl md:text-6xl font-thin text-white font-sans tabular-nums">
                             {String(timeLeft.hours).padStart(2, '0')}
                         </div>
-                        <div className="text-[10px] md:text-sm text-[#D4AF37] uppercase tracking-widest mt-2 font-medium">
+                        <div className="text-[9px] md:text-sm text-[#D4AF37] uppercase tracking-widest mt-1 md:mt-2 font-medium">
                             Giờ
                         </div>
                     </div>
-                    <div className="text-4xl md:text-6xl font-thin text-white/50 font-sans mt-[-5px]">:</div>
-                    <div className="text-center w-[70px] md:w-[100px]">
-                        <div className="text-4xl md:text-6xl font-thin text-white font-sans tabular-nums">
+                    <div className="text-3xl md:text-6xl font-thin text-white/50 font-sans mt-[-5px]">:</div>
+                    <div className="text-center w-[60px] md:w-[100px]">
+                        <div className="text-3xl md:text-6xl font-thin text-white font-sans tabular-nums">
                             {String(timeLeft.minutes).padStart(2, '0')}
                         </div>
-                        <div className="text-[10px] md:text-sm text-[#D4AF37] uppercase tracking-widest mt-2 font-medium">
+                        <div className="text-[9px] md:text-sm text-[#D4AF37] uppercase tracking-widest mt-1 md:mt-2 font-medium">
                             Phút
                         </div>
                     </div>
-                    <div className="text-4xl md:text-6xl font-thin text-white/50 font-sans mt-[-5px]">:</div>
-                    <div className="text-center w-[70px] md:w-[100px]">
-                        <div className="text-4xl md:text-6xl font-thin text-white font-sans tabular-nums">
+                    <div className="text-3xl md:text-6xl font-thin text-white/50 font-sans mt-[-5px]">:</div>
+                    <div className="text-center w-[60px] md:w-[100px]">
+                        <div className="text-3xl md:text-6xl font-thin text-white font-sans tabular-nums">
                             {String(timeLeft.seconds).padStart(2, '0')}
                         </div>
-                        <div className="text-[10px] md:text-sm text-[#D4AF37] uppercase tracking-widest mt-2 font-medium">
+                        <div className="text-[9px] md:text-sm text-[#D4AF37] uppercase tracking-widest mt-1 md:mt-2 font-medium">
                             Giây
                         </div>
                     </div>

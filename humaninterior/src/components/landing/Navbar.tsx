@@ -48,25 +48,28 @@ const Navbar = () => {
                             </svg>
                         </div>
                         <div className="flex flex-col">
-                            <span className="text-2xl font-bold font-display tracking-wide text-[#333]">
+                            <span className="text-2xl font-bold font-display tracking-wide text-[#333] leading-none">
                                 Human Interior
+                            </span>
+                            <span className="text-[8px] text-[#333]/50 uppercase tracking-[0.15em]">
+                                Member of HISPACE.AI
                             </span>
                         </div>
                     </Link>
 
                     {/* Desktop Navigation */}
                     <div className="hidden lg:flex space-x-6 items-center text-sm font-medium text-[#555]">
-                        <Link href="#value-props" className="hover:text-[#E05C3E] transition-colors scroll-smooth whitespace-nowrap">
+                        <Link href="https://humaninterior.vn/about" target="_blank" className="hover:text-[#E05C3E] transition-colors whitespace-nowrap">
                             VỀ CHÚNG TÔI
                         </Link>
-                        <Link href="#featured-projects" className="hover:text-[#E05C3E] transition-colors scroll-smooth whitespace-nowrap">
-                            DỰ ÁN THI CÔNG
+                        <Link href="https://humaninterior.vn/projects" target="_blank" className="hover:text-[#E05C3E] transition-colors whitespace-nowrap">
+                            DỰ ÁN TIÊU BIỂU
                         </Link>
-                        <Link href="#testimonials" className="hover:text-[#E05C3E] transition-colors scroll-smooth whitespace-nowrap">
-                            CÔNG TRÌNH THỰC TẾ
+                        <Link href="https://humaninterior.vn/services" target="_blank" className="hover:text-[#E05C3E] transition-colors whitespace-nowrap">
+                            DỊCH VỤ
                         </Link>
-                        <Link href="#vip-benefits" className="hover:text-[#E05C3E] transition-colors scroll-smooth whitespace-nowrap">
-                            ƯU ĐÃI
+                        <Link href="https://humaninterior.vn/contact" target="_blank" className="hover:text-[#E05C3E] transition-colors whitespace-nowrap">
+                            LIÊN HỆ
                         </Link>
                     </div>
 
@@ -104,32 +107,36 @@ const Navbar = () => {
             >
                 <div className="flex flex-col p-8 space-y-6 text-center">
                     <Link
-                        href="#value-props"
+                        href="https://humaninterior.vn/about"
+                        target="_blank"
                         className="text-lg font-bold text-[#333] hover:text-[#E05C3E]"
                         onClick={() => setIsMobileMenuOpen(false)}
                     >
                         VỀ CHÚNG TÔI
                     </Link>
                     <Link
-                        href="#featured-projects"
+                        href="https://humaninterior.vn/projects"
+                        target="_blank"
                         className="text-lg font-bold text-[#333] hover:text-[#E05C3E]"
                         onClick={() => setIsMobileMenuOpen(false)}
                     >
-                        DỰ ÁN THI CÔNG
+                        DỰ ÁN TIÊU BIỂU
                     </Link>
                     <Link
-                        href="#testimonials"
+                        href="https://humaninterior.vn/services"
+                        target="_blank"
                         className="text-lg font-bold text-[#333] hover:text-[#E05C3E]"
                         onClick={() => setIsMobileMenuOpen(false)}
                     >
-                        CÔNG TRÌNH THỰC TẾ
+                        DỊCH VỤ
                     </Link>
                     <Link
-                        href="#vip-benefits"
+                        href="https://humaninterior.vn/contact"
+                        target="_blank"
                         className="text-lg font-bold text-[#333] hover:text-[#E05C3E]"
                         onClick={() => setIsMobileMenuOpen(false)}
                     >
-                        ƯU ĐÃI
+                        LIÊN HỆ
                     </Link>
                     <div className="pt-8 border-t border-gray-100">
                         <Link

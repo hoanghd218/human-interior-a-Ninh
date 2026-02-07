@@ -25,12 +25,20 @@ const Footer = () => {
             </p>
           </motion.div>
 
-          {/* Tagline */}
-          <p className="text-muted-foreground max-w-md">
-            Nội thất cao cấp – Thiết kế & Thi công chuyên nghiệp
-            <br />
-            Đại lý tin cậy của hàng ngàn gia đình Việt
-          </p>
+          {/* Tagline & Main Links */}
+          <div className="space-y-4">
+            <p className="text-muted-foreground max-w-md mx-auto">
+              Nội thất cao cấp – Thiết kế & Thi công chuyên nghiệp
+              <br />
+              Đại lý tin cậy của hàng ngàn gia đình Việt
+            </p>
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm font-medium">
+              <a href="https://humaninterior.vn/about" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">Giới thiệu</a>
+              <a href="https://humaninterior.vn/projects" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">Dự án</a>
+              <a href="https://humaninterior.vn/contact" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">Liên hệ</a>
+              <a href="https://humaninterior.vn" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">Website chính thức</a>
+            </div>
+          </div>
 
           {/* Divider */}
           <div className="w-24 h-0.5 gradient-gold-bg rounded-full" />

@@ -12,7 +12,7 @@ const PROJECTS = [
         area: "85m²",
         image: "/images/projects/model-house-2br-v1/V1.webp",
         images: Array.from({ length: 12 }, (_, i) => `/images/projects/model-house-2br-v1/V${i + 1}.webp`),
-        standard: "Tiêu chuẩn Nhân Bản"
+        standard: "Tiêu chuẩn Nhật Bản"
     },
     {
         id: 2,
@@ -36,13 +36,13 @@ const PROJECTS = [
     },
     {
         id: 4,
-        title: "Căn hộ 1 Phòng Ngủ - A1",
+        title: "Văn phòng Tập đoàn Japfa",
         category: "international",
         location: "Concept 02",
         area: "58m²",
-        image: "/images/projects/model-house-1br-a1/A1.webp",
-        images: Array.from({ length: 9 }, (_, i) => `/images/projects/model-house-1br-a1/A${i + 1}.webp`),
-        standard: "Tiêu chuẩn Quốc Tế"
+        image: "/images/projects/japfa/A1.webp",
+        images: Array.from({ length: 9 }, (_, i) => `/images/projects/japfa/A${i + 1}.webp`),
+        standard: "Tiêu chuẩn Đa Quốc Gia"
     }
 ];
 
@@ -66,7 +66,6 @@ const FeaturedProjectsSection = () => {
                     {/* Filters */}
                     <div className="flex flex-wrap gap-4 border-b border-gray-200 pb-1">
                         {[
-                            { id: 'all', label: 'Tất cả dự án' },
                             { id: 'japan', label: 'Dự án đáp ứng tiêu chuẩn Chủ đầu tư Nhật Bản' },
                             { id: 'singapore', label: 'Dự án đáp ứng tiêu chuẩn Chủ đầu tư Singapore' },
                             { id: 'international', label: 'Dự án đáp ứng tiêu chuẩn Tập đoàn đa Quốc gia' }

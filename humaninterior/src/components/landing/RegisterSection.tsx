@@ -163,7 +163,7 @@ const RegisterSection = () => {
                 </div>
 
                 {/* Form Card */}
-                <div className="bg-white p-8 md:p-12 rounded-lg shadow-soft border border-gray-100 relative overflow-hidden">
+                <div className="bg-white p-4 md:p-12 rounded-lg shadow-soft border border-gray-100 relative overflow-hidden">
                     {/* Decorative blur */}
                     <div className="absolute -top-20 -right-20 w-64 h-64 bg-[#E05C3E]/5 rounded-full blur-3xl z-0"></div>
 

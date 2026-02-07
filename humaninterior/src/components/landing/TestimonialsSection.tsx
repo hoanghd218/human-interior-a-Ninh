@@ -224,7 +224,7 @@ const TestimonialsSection = () => {
             </div>
 
             {/* Scroll Indicator Dots */}
-            <div className="flex justify-center gap-3 mt-8">
+            <div className="flex justify-center gap-3 mt-8 mb-12">
                 {[...Array(Math.ceil(testimonials.length / 3))].map((_, i) => (
                     <button
                         key={i}
@@ -241,6 +241,22 @@ const TestimonialsSection = () => {
                         aria-label={`Go to slide group ${i + 1}`}
                     />
                 ))}
+            </div>
+
+            {/* CTA Buttons - Matching Image 2 */}
+            <div className="flex flex-col sm:flex-row justify-center gap-4 px-4 mt-8">
+                <button
+                    className="bg-[#E05C3E] hover:bg-[#C8482D] text-white px-8 py-4 rounded-lg font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2 uppercase text-base tracking-wide min-w-[240px] cursor-pointer"
+                    onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                    TỰ TAY THIẾT KẾ
+                </button>
+                <button
+                    className="bg-white hover:bg-orange-50 text-[#E05C3E] border-2 border-[#E05C3E] px-8 py-4 rounded-lg font-bold transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 flex items-center justify-center gap-2 uppercase text-base tracking-wide min-w-[240px] cursor-pointer"
+                    onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                    TÙY CHỈNH 3D CÓ SẴN
+                </button>
             </div>
         </section>
     );

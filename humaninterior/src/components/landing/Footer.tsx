@@ -51,10 +51,11 @@ const Footer = () => {
                     <div>
                         <h4 className="text-lg font-bold mb-6 font-display">Liên Kết Nhanh</h4>
                         <ul className="space-y-3 text-gray-400 text-sm">
-                            <li><Link href="#" className="hover:text-[#E05C3E] transition-colors">Về Human Interior</Link></li>
-                            <li><Link href="#" className="hover:text-[#E05C3E] transition-colors">Dự án Showroom</Link></li>
-                            <li><Link href="#" className="hover:text-[#E05C3E] transition-colors">Chính sách ưu đãi</Link></li>
-                            <li><Link href="https://humaninterior.vn" target="_blank" className="hover:text-[#E05C3E] transition-colors">Website chính thức</Link></li>
+                            <li><Link href="https://humaninterior.vn/about" target="_blank" className="hover:text-[#E05C3E] transition-colors">Về Human Interior</Link></li>
+                            <li><Link href="https://humaninterior.vn/projects" target="_blank" className="hover:text-[#E05C3E] transition-colors">Dự án tiêu biểu</Link></li>
+                            <li><Link href="https://humaninterior.vn/services" target="_blank" className="hover:text-[#E05C3E] transition-colors">Dịch vụ thiết kế</Link></li>
+                            <li><Link href="https://hispaces.ai" target="_blank" className="hover:text-[#E05C3E] transition-colors">Website chính thức</Link></li>
+                            <li><Link href="https://humaninterior.vn" target="_blank" className="hover:text-[#E05C3E] transition-colors">Website thành viên</Link></li>
                         </ul>
                     </div>
 
@@ -64,15 +65,15 @@ const Footer = () => {
                         <ul className="space-y-4 text-gray-400 text-sm">
                             <li className="flex items-start gap-3">
                                 <span className="material-symbols-outlined text-[#E05C3E] mt-0.5">location_on</span>
-                                <span>Số 27 (Đang cập nhật tên đường), TP. Hồ Chí Minh</span>
+                                <span>Số 17, DE1, Mỹ Phước 3, Thới Hòa, Bến Cát, Bình Dương</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <span className="material-symbols-outlined text-[#E05C3E]">phone</span>
-                                <span>0912.xxx.xxx (Hotline)</span>
+                                <span>0329.688.826 (Hotline)</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <span className="material-symbols-outlined text-[#E05C3E]">mail</span>
-                                <span>contact@humaninterior.vn</span>
+                                <span>baogia@humaninterior.vn</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <span className="material-symbols-outlined text-[#E05C3E]">language</span>
@@ -105,8 +106,8 @@ const Footer = () => {
                         © 2026 Human Interior. Member of HISPACE.AI. All rights reserved.
                     </p>
                     <div className="flex gap-6 mt-4 md:mt-0 text-sm text-gray-500">
-                        <Link href="#" className="hover:text-white">Điều khoản sử dụng</Link>
-                        <Link href="#" className="hover:text-white">Chính sách bảo mật</Link>
+                        <Link href="https://humaninterior.vn/terms-of-use" target="_blank" className="hover:text-white">Điều khoản sử dụng</Link>
+                        <Link href="https://humaninterior.vn/privacy-policy" target="_blank" className="hover:text-white">Chính sách bảo mật</Link>
                     </div>
                 </div>
             </div>

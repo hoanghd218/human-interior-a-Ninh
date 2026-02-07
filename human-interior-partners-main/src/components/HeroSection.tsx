@@ -13,10 +13,15 @@ const HeroSection = () => {
         <div className="container flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Logo className="w-6 h-auto text-primary" />
-            <span className="text-xl font-black tracking-tighter">
-              <span className="gradient-gold-text">HUMAN</span>{" "}
-              <span className="text-foreground">INTERIOR</span>
-            </span>
+            <div className="flex flex-col">
+              <span className="text-xl font-black tracking-tighter leading-none">
+                <span className="gradient-gold-text">HUMAN</span>{" "}
+                <span className="text-foreground">INTERIOR</span>
+              </span>
+              <span className="text-[8px] text-muted-foreground font-semibold tracking-wide">
+                Member of <span className="text-primary">Hispace.ai</span>
+              </span>
+            </div>
           </div>
         </div>
       </header>
@@ -44,7 +49,7 @@ const HeroSection = () => {
           <div className="relative inline-block">
             <div className="absolute -inset-2 bg-gradient-to-r from-primary/20 via-primary/30 to-primary/20 blur-xl opacity-50"></div>
             <h3 className="relative text-xs md:text-xl font-bold tracking-[0.1em] md:tracking-[0.15em] uppercase text-primary/90 leading-relaxed">
-              Mô hình Đại lý Nội thất Đầu tiên tại Việt Nam
+              Mô hình Đại lý bán hàng Nội thất Đầu tiên tại Việt Nam
             </h3>
           </div>
           <p className="text-xs md:text-base text-muted-foreground font-medium max-w-3xl leading-relaxed px-2">
@@ -123,16 +128,10 @@ const HeroSection = () => {
               ))}
             </div>
 
-            <div className="flex flex-col space-y-5 pt-4">
-              <div className="flex items-center gap-3">
-                <div className="h-[2px] w-8 md:w-12 bg-gradient-to-r from-primary to-primary/50 flex-shrink-0"></div>
-                <p className="text-[10px] md:text-sm text-primary/80 font-semibold uppercase tracking-wide md:tracking-wider leading-tight">
-                  Gửi ứng dụng thiết kế A.I cho khách hàng trải nghiệm miễn phí
-                </p>
-              </div>
+            <div className="flex flex-col space-y-1 pt-2">
               <p className="text-foreground/90 text-base md:text-xl font-medium flex items-start gap-3 leading-relaxed">
                 <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0 mt-1" />
-                <span>Bạn chỉ cần kết nối khách hàng – <span className="text-primary font-bold">Human Interior</span> lo tất cả phần còn lại.</span>
+                Bạn chỉ cần gửi ứng dụng thiết kế A.I cho khách hàng trải nghiệm miễn phí
               </p>
             </div>
 
@@ -186,13 +185,24 @@ const HeroSection = () => {
           transition={{ delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 pt-6 justify-center"
         >
-          <Button variant="hero" size="xxl" className="relative overflow-hidden group/btn px-6 py-5 md:px-12 md:py-8 rounded-2xl shadow-2xl hover:shadow-primary/20 transition-all duration-500 text-sm md:text-2xl font-black uppercase leading-tight">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary-foreground/20 to-primary translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-1000"></div>
-            <span className="relative z-10 text-center">
-              <span className="hidden md:inline">Bấm & Trải nghiệm ứng dụng thiết kế A.I miễn phí</span>
-              <span className="md:hidden">Trải nghiệm A.I thiết kế miễn phí</span>
-            </span>
-            <div className="absolute -bottom-1 -right-1 w-24 h-24 bg-primary/20 blur-3xl rounded-full"></div>
+          <Button
+            variant="hero"
+            size="xxl"
+            className="relative overflow-hidden group/btn px-6 py-5 md:px-12 md:py-8 rounded-2xl shadow-2xl hover:shadow-primary/20 transition-all duration-500 text-sm md:text-2xl font-black uppercase leading-tight"
+            asChild
+          >
+            <a
+              href="https://human-interior-a-ninh-app-render.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary-foreground/20 to-primary translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-1000"></div>
+              <span className="relative z-10 text-center">
+                <span className="hidden md:inline">Bấm & Trải nghiệm ứng dụng thiết kế A.I miễn phí</span>
+                <span className="md:hidden">Trải nghiệm A.I thiết kế miễn phí</span>
+              </span>
+              <div className="absolute -bottom-1 -right-1 w-24 h-24 bg-primary/20 blur-3xl rounded-full"></div>
+            </a>
           </Button>
         </motion.div>
       </div>

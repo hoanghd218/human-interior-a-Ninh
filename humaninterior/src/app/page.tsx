@@ -45,7 +45,6 @@ export default function LandingPage() {
 
   return (
     <main className="bg-[#F9F9F9] font-sans antialiased">
-      <Navbar />
       <HeroSection />
       {/* <PainPointsSection /> */}
       <VipBenefitsSection />
@@ -53,13 +52,12 @@ export default function LandingPage() {
       <ValuePropsSection />
       <TrustStatsSection />
       <FeaturedProjectsSection />
-      <JapfaCaseStudy />
       <TestimonialsSection />
-      <ConsultantSection />
       <ShowroomSection />
       <RegisterSection />
+      <ConsultantSection />
       <Footer />
-      <FloatingActions showFloatingBar={showFloatingBar} />
+      {/* <FloatingActions showFloatingBar={showFloatingBar} /> */}
     </main>
   );
 }

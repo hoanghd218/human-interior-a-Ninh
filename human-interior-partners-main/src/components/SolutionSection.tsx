@@ -11,13 +11,13 @@ const benefits = [
   {
     icon: Shield,
     title: "Thương hiệu làm thật, không vẽ",
-    description: "Thiết kế – thi công – bảo hành minh bạch → bạn bán bằng uy tín công ty, không phải bằng lời hứa.",
+    description: "Thiết kế – thi công – bảo hành minh bạch → bạn bán bằng uy tín công ty, uy tín cá nhân của bạn cao hơn cả lời hứa.",
     highlight: false
   },
   {
     icon: Users,
     title: "Bạn KHÔNG cần làm phần khó",
-    description: "Không đo đạc • Không thiết kế • Không báo giá • Không thi công",
+    description: "Chúng tôi có quy trình & hệ thống quản lý chất lượng triển khai các phần việc đó.",
     highlight: true
   }
 ];
@@ -132,12 +132,33 @@ const SolutionSection = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="inline-block bg-secondary rounded-xl md:rounded-2xl p-5 md:p-8 border border-primary/30">
-            <p className="text-lg md:text-2xl lg:text-3xl font-bold text-foreground flex flex-col items-center gap-1 md:gap-2">
-              <span className="flex items-center gap-2"><ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-primary" /> Bạn chỉ cần mang khách đến –</span>
-              <span className="gradient-gold-text">phần còn lại đội Human Interior xử lý.</span>
-            </p>
-          </div>
+          <a
+            href="https://human-interior-a-ninh-app-render.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block group cursor-pointer"
+          >
+            <motion.div
+              className="inline-block bg-secondary rounded-xl md:rounded-2xl p-5 md:p-8 border border-primary/30 hover:border-primary/60 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 relative overflow-hidden"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              {/* Shimmer effect on hover */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+
+              <p className="text-lg md:text-2xl lg:text-3xl font-bold text-foreground flex flex-col items-center gap-1 md:gap-2 relative z-10">
+                <span className="flex items-center gap-2 group-hover:text-primary transition-colors duration-300">
+                  <motion.span
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  >
+                    <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+                  </motion.span>
+                  Bản app đầy đủ tính năng dành cho đại lý
+                </span>
+              </p>
+            </motion.div>
+          </a>
         </motion.div>
       </div>
     </section>

@@ -86,10 +86,10 @@ const ProblemSection = () => {
               Sự thật đau lòng:
             </p>
             <p className="text-base md:text-xl text-muted-foreground mb-1 md:mb-2">
-              Bạn chọn sai mô hình để hợp tác.
+              Không phải bạn kém
             </p>
             <p className="text-lg md:text-2xl font-bold gradient-gold-text flex items-center justify-center gap-2">
-              <ArrowRight className="w-5 h-5 md:w-6 md:h-6" /> Bạn đang đứng sai nền tảng.
+              <ArrowRight className="w-5 h-5 md:w-6 md:h-6" /> Bạn chọn sai mô hình để hợp tác.
             </p>
           </div>
         </motion.div>

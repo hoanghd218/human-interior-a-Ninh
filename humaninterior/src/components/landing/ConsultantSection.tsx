@@ -17,22 +17,20 @@ const ConsultantSection = () => {
                 <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
                     {/* Design Consultant Button */}
                     <button
-                        className="bg-[#E05C3E] hover:bg-[#C8482D] text-white px-6 py-3 rounded-lg font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2 uppercase text-sm tracking-wide min-w-[200px] cursor-pointer animate-ripple"
+                        className="bg-[#E05C3E] hover:bg-[#C8482D] text-white px-8 py-4 rounded-lg font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2 uppercase text-base tracking-wide min-w-[240px] cursor-pointer animate-ripple"
                         onClick={scrollToRegister}
                     >
-                        <span className="material-symbols-outlined">edit</span>
-                        Tư vấn thiết kế
-                        <span className="material-symbols-outlined">arrow_forward</span>
+                        TỰ TAY THIẾT KẾ
+                        <span className="material-symbols-outlined font-bold">arrow_forward</span>
                     </button>
 
                     {/* Construction Consultant Button */}
                     <button
-                        className="bg-white hover:bg-gray-50 text-[#333] border border-[#ddd] px-6 py-3 rounded-lg font-bold transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 flex items-center justify-center gap-2 uppercase text-sm tracking-wide min-w-[200px] cursor-pointer"
+                        className="bg-white hover:bg-orange-50 text-[#E05C3E] border-2 border-[#E05C3E] px-8 py-4 rounded-lg font-bold transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 flex items-center justify-center gap-2 uppercase text-base tracking-wide min-w-[240px] cursor-pointer"
                         onClick={scrollToRegister}
                     >
-                        <span className="material-symbols-outlined">construction</span>
-                        Tư vấn thi công
-                        <span className="material-symbols-outlined">arrow_forward</span>
+                        TÙY CHỈNH 3D CÓ SẴN
+                        <span className="material-symbols-outlined font-bold">arrow_forward</span>
                     </button>
                 </div>
             </div>

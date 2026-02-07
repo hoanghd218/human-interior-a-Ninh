@@ -49,7 +49,7 @@ const ShowroomSection = () => {
     }, []);
 
     return (
-        <section id="showroom" className="py-12 relative overflow-hidden">
+        <section id="showroom" className="py-16 relative overflow-hidden">
             <div className="container mx-auto px-4 relative z-10">
                 {/* Section Header - Matching Partners Style */}
                 <div className="text-center mb-16 px-4">

@@ -150,7 +150,7 @@ const RegisterSection = () => {
     };
 
     return (
-        <section id="register" className="py-12 bg-white relative border-t border-gray-100">
+        <section id="register" className="py-16 bg-white relative border-t border-gray-100">
             <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Section Header */}
                 <div className="text-center mb-10">

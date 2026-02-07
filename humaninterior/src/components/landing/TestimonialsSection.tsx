@@ -129,7 +129,7 @@ const TestimonialsSection = () => {
     };
 
     return (
-        <section id="testimonials" className="py-[100px] bg-white overflow-hidden">
+        <section id="testimonials" className="py-20 bg-white overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
                 <h2 className="text-[32px] md:text-[40px] font-bold text-[#1C1917] font-display mb-4 tracking-wide">
                     Khách Hàng Nói Về Chúng Tôi
@@ -224,7 +224,7 @@ const TestimonialsSection = () => {
             </div>
 
             {/* Scroll Indicator Dots */}
-            <div className="flex justify-center gap-3 mt-8 mb-12">
+            <div className="flex justify-center gap-3 mt-4 mb-4">
                 {[...Array(Math.ceil(testimonials.length / 3))].map((_, i) => (
                     <button
                         key={i}

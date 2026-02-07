@@ -49,7 +49,7 @@ const ShowroomSection = () => {
     }, []);
 
     return (
-        <section id="showroom" className="py-24 bg-white relative overflow-hidden">
+        <section id="showroom" className="py-12 relative overflow-hidden">
             <div className="container mx-auto px-4 relative z-10">
                 {/* Section Header - Matching Partners Style */}
                 <div className="text-center mb-16 px-4">
@@ -65,7 +65,7 @@ const ShowroomSection = () => {
                 </div>
 
                 {/* Slider Container */}
-                <div className="relative mb-20 group">
+                <div className="relative mb-12 group">
                     <div
                         ref={sliderRef}
                         className="flex gap-4 md:gap-6 overflow-x-auto scrollbar-hide pb-8 px-4 md:px-0 -mx-4 md:mx-0"
@@ -104,7 +104,7 @@ const ShowroomSection = () => {
                 </div>
 
                 {/* Google Maps Section - Integrated */}
-                <div className="max-w-6xl mx-auto mt-20">
+                <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-10">
                         <h3 className="text-2xl md:text-3xl font-bold mb-2 text-[#171717]">
                             <span className="text-[#E05C3E]">Bản đồ</span> vị trí

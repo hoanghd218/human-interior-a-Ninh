@@ -54,7 +54,7 @@ const HeroSection = () => {
             {/* Background Image - Single Static per orientation */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src={isMobile ? "/images/showroom-3d/A1.webp" : "/images/showroom-3d/A2.webp"}
+                    src={"/assets/showroom-bg.png"}
                     alt="Human Interior Showroom"
                     fill
                     className="object-cover object-center"

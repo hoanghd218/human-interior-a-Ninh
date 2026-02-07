@@ -54,10 +54,10 @@ export default function LandingPage() {
       <FeaturedProjectsSection />
       <TestimonialsSection />
       <ShowroomSection />
-      <RegisterSection />
       <ConsultantSection />
+      <RegisterSection />
       <Footer />
-      {/* <FloatingActions showFloatingBar={showFloatingBar} /> */}
+      <FloatingActions showFloatingBar={showFloatingBar} />
     </main>
   );
 }

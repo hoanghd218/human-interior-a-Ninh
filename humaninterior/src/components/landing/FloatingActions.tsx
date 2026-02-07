@@ -25,26 +25,26 @@ const FloatingActions = ({ showFloatingBar }: FloatingActionsProps) => {
 
                     <div className="flex gap-3 w-full md:w-auto">
                         <button
-                            className="flex-1 md:flex-none bg-[#E05C3E] hover:bg-[#C8482D] text-white px-4 py-2.5 rounded-lg font-bold text-xs uppercase tracking-wide transition-all shadow-md flex items-center justify-center gap-2 animate-ripple cursor-pointer"
+                            className="flex-1 md:flex-none bg-[#E05C3E] hover:bg-[#C8482D] text-white px-2 py-2.5 rounded-lg font-bold text-xs uppercase transition-all shadow-md flex items-center justify-center gap-2 animate-ripple cursor-pointer"
                             onClick={scrollToRegister}
                         >
-                            <span className="material-symbols-outlined text-[18px]">edit</span>
+                            <span className="!hidden md:!block material-symbols-outlined text-[18px]">edit</span>
                             Tư vấn thiết kế
                         </button>
-                        <button
-                            className="flex-1 md:flex-none bg-white hover:bg-gray-50 text-[#333] border border-[#ddd] px-4 py-2.5 rounded-lg font-bold text-xs uppercase tracking-wide transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer"
-                            onClick={scrollToRegister}
+                        <a
+                            className="flex-1 md:flex-none bg-white hover:bg-gray-50 text-[#333] border border-[#ddd] px-2 py-2.5 whitespace-nowrap rounded-lg font-bold text-xs uppercase transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer"
+                            href="https://human-interior-a-ninh-app-render.vercel.app/"
                         >
-                            <span className="material-symbols-outlined text-[18px]">construction</span>
-                            Tư vấn thi công
-                        </button>
+                            <span className="!hidden md:!block material-symbols-outlined text-[18px]">construction</span>
+                            Tuỳ chỉnh 3D có sẵn
+                        </a>
                     </div>
                 </div>
             </div>
 
             {/* Floating Zalo Button */}
             <a
-                href="https://zalo.me/0912xxxxxx"
+                href="https://zalo.me/0329688826 "
                 target="_blank"
                 className={`fixed bottom-24 md:bottom-24 right-5 z-[999] w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-xl cursor-pointer ${showFloatingBar ? 'bottom-32 md:bottom-24' : 'bottom-6 md:bottom-6'}`}
                 style={{

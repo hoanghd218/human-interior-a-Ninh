@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <footer className="bg-[#1A1A1A] text-white pt-16 pb-8 border-t-[8px] border-[#E05C3E]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
                     {/* Brand Info */}
                     <div className="space-y-6">
                         <Link href="/" className="flex items-center gap-2">
@@ -82,23 +82,6 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Newsletter */}
-                    <div>
-                        <h4 className="text-lg font-bold mb-6 font-display">Đăng Ký Nhận Tin</h4>
-                        <p className="text-gray-400 text-sm mb-4">
-                            Nhận thông tin ưu đãi khai trương và xu hướng thiết kế mới nhất.
-                        </p>
-                        <form className="space-y-3">
-                            <input
-                                type="email"
-                                placeholder="Email của bạn"
-                                className="w-full bg-white/5 border border-white/10 rounded px-4 py-2.5 text-white placeholder-gray-500 focus:outline-none focus:border-[#E05C3E]"
-                            />
-                            <button className="w-full bg-[#E05C3E] hover:bg-[#C8482D] text-white font-bold py-2.5 rounded transition-colors uppercase text-sm cursor-pointer animate-ripple">
-                                Đăng Ký
-                            </button>
-                        </form>
-                    </div>
                 </div>
 
                 <div className="border-t border-white/10 pt-4 flex flex-col md:flex-row justify-between items-center bg-black/50 p-4 rounded-lg">

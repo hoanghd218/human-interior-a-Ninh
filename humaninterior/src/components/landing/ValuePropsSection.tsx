@@ -66,6 +66,29 @@ const ValuePropsSection = () => {
                     </div>
                 </div>
             </div>
+            {/* Aligned Premium Gold CTA */}
+            <div className="mt-16 flex flex-col items-center relative z-10">
+                <div className="relative group">
+                    {/* Golden Glow Effect */}
+                    <div className="absolute -inset-4 bg-[#D4AF37]/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+                    <a
+                        href="https://human-interior-a-ninh-app-render.vercel.app/"
+                        className="btn-gradient-gold relative inline-flex items-center gap-4 px-10 py-5 text-white rounded-2xl font-display font-bold transition-all duration-500 shadow-[0_10px_30px_rgba(212,175,55,0.3)] hover:shadow-[0_20px_50px_-10px_rgba(212,175,55,0.5)] hover:-translate-y-1.5 active:scale-95 overflow-hidden group"
+                    >
+                        {/* Skew Shimmer Layer (aligned with Giữ Chỗ VIP style) */}
+                        <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+
+                        <span className="relative z-10 uppercase tracking-[0.2em] text-sm md:text-base whitespace-nowrap">
+                            TÙY CHỈNH 3D CÓ SẴN
+                        </span>
+
+                        <span className="material-symbols-outlined text-xl relative z-10 transition-transform duration-300 group-hover:translate-x-1">
+                            arrow_forward
+                        </span>
+                    </a>
+                </div>
+            </div>
         </section>
     );
 };

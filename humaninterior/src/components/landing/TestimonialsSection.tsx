@@ -245,18 +245,18 @@ const TestimonialsSection = () => {
 
             {/* CTA Buttons - Matching Image 2 */}
             <div className="flex flex-col sm:flex-row justify-center gap-4 px-4 mt-8">
-                <button
+                <a
                     className="bg-[#E05C3E] hover:bg-[#C8482D] text-white px-8 py-4 rounded-lg font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2 uppercase text-base tracking-wide min-w-[240px] cursor-pointer"
-                    onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
+                    href="https://human-interior-a-ninh-app-render.vercel.app/"
                 >
                     TỰ TAY THIẾT KẾ
-                </button>
-                <button
+                </a>
+                <a
                     className="bg-white hover:bg-orange-50 text-[#E05C3E] border-2 border-[#E05C3E] px-8 py-4 rounded-lg font-bold transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 flex items-center justify-center gap-2 uppercase text-base tracking-wide min-w-[240px] cursor-pointer"
-                    onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
+                    href="https://human-interior-a-ninh-app-render.vercel.app/"
                 >
                     TÙY CHỈNH 3D CÓ SẴN
-                </button>
+                </a>
             </div>
         </section>
     );

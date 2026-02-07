@@ -185,14 +185,14 @@ const TestimonialsSection = () => {
                     </svg>
                 </button>
 
-                {/* Slider Track */}
+                {/* Slider Track - Optimized for 1.2 slides on mobile */}
                 <div
                     ref={sliderRef}
                     onMouseDown={handleMouseDown}
                     onMouseMove={handleMouseMove}
                     onMouseUp={handleMouseUp}
                     onMouseLeave={handleMouseLeave}
-                    className={`flex justify-center gap-4 sm:gap-6 overflow-x-auto scrollbar-hide px-4 sm:px-8 lg:px-16 py-4 scroll-smooth ${isDragging ? "cursor-grabbing select-none" : "cursor-grab"
+                    className={`flex gap-3 sm:gap-6 overflow-x-auto scrollbar-hide px-4 sm:px-8 lg:px-16 py-4 scroll-smooth ${isDragging ? "cursor-grabbing select-none" : "cursor-grab"
                         }`}
                     style={{
                         scrollbarWidth: "none",
@@ -203,7 +203,7 @@ const TestimonialsSection = () => {
                     {testimonials.map((testimonial, index) => (
                         <div
                             key={index}
-                            className="shrink-0 w-[280px] sm:w-[300px] lg:w-[320px] transition-all duration-400 hover:scale-[1.02] hover:shadow-golden liquid-glass rounded-2xl overflow-hidden"
+                            className="shrink-0 w-[calc(83.33vw-2rem)] sm:w-[300px] lg:w-[320px] transition-all duration-400 hover:scale-[1.02] hover:shadow-golden liquid-glass rounded-2xl overflow-hidden"
                             style={{
                                 animationDelay: `${index * 100}ms`,
                             }}

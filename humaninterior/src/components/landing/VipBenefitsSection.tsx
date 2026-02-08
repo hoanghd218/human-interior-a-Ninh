@@ -15,7 +15,7 @@ const VipBenefitsSection = () => {
 
                     <div className="flex justify-center">
                         <Link
-                            href="https://human-interior-a-ninh-app-render.vercel.app/"
+                            href="https://mienphi.hispace.ai/"
                             target="_blank"
                             className="group relative inline-flex items-center gap-4 px-8 py-4 overflow-hidden rounded-sm transition-all duration-400 border border-[#D4AF37] hover:bg-[#D4AF37]/10 w-full md:w-auto max-w-3xl liquid-glass iridescent-border"
                         >

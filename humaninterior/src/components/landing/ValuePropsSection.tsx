@@ -73,7 +73,7 @@ const ValuePropsSection = () => {
                     <div className="absolute -inset-4 bg-[#D4AF37]/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
                     <a
-                        href="https://human-interior-a-ninh-app-render.vercel.app/"
+                        href="https://mienphi.hispace.ai/"
                         className="btn-gradient-gold relative inline-flex items-center gap-4 px-10 py-5 text-white rounded-2xl font-display font-bold transition-all duration-500 shadow-[0_10px_30px_rgba(212,175,55,0.3)] hover:shadow-[0_20px_50px_-10px_rgba(212,175,55,0.5)] hover:-translate-y-1.5 active:scale-95 overflow-hidden group"
                     >
                         {/* Skew Shimmer Layer (aligned with Giữ Chỗ VIP style) */}

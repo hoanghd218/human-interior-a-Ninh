@@ -184,7 +184,7 @@ const OfferSection = () => {
           className="flex justify-center mt-8"
         >
           <a
-            href="https://aninhhumaninteriorlandingpage1.vercel.app/"
+            href="https://event.hispace.ai"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl bg-gradient-to-r from-purple-500 to-pink-400 text-background font-bold text-base md:text-lg lg:text-xl shadow-lg hover:shadow-xl transition-all duration-300"

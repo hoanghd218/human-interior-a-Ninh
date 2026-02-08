@@ -192,7 +192,7 @@ const HeroSection = () => {
             asChild
           >
             <a
-              href="https://human-interior-a-ninh-app-render.vercel.app/"
+              href="https://mienphi.hispace.ai/"
               target="_blank"
               rel="noopener noreferrer"
             >

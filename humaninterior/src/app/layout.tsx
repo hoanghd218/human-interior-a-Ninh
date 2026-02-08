@@ -15,6 +15,7 @@ const exo2 = Exo_2({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://event.hispace.ai"),
   title: "Human Interior - Đại Tiệc Khai Trương Showroom",
   description:
     "Sự kiện khai trương showroom Human Interior - Thiết kế & Thi công nội thất cao cấp. Powered by hispace.ai",
@@ -29,8 +30,25 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Human Interior - Đại Tiệc Khai Trương Showroom",
     description: "Cơ hội nhận quà tặng nội thất lên đến 50.000.000 VNĐ",
-    type: "website",
+    url: "https://event.hispace.ai",
+    siteName: "Human Interior",
+    images: [
+      {
+        url: "/og-image.png",
+        alt: "Human Interior Showroom Opening Event",
+      },
+    ],
     locale: "vi_VN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Human Interior - Đại Tiệc Khai Trương Showroom",
+    description: "Cơ hội nhận quà tặng nội thất lên đến 50.000.000 VNĐ",
+    images: ["/og-image.png"],
+  },
+  alternates: {
+    canonical: "/",
   },
 };
 

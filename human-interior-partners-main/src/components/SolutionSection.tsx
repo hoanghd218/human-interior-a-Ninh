@@ -54,7 +54,7 @@ const SolutionSection = () => {
             </span>
           </h2>
           <motion.a
-            href="https://human-interior-a-ninh-app-render.vercel.app/"
+            href="https://mienphi.hispace.ai/"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, scale: 0.95 }}
@@ -133,7 +133,7 @@ const SolutionSection = () => {
           className="text-center"
         >
           <a
-            href="https://human-interior-a-ninh-app-render.vercel.app/"
+            href="https://mienphi.hispace.ai/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block group cursor-pointer"

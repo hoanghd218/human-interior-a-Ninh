@@ -102,7 +102,7 @@ const Footer = () => {
                 {[
                   { label: "Website nhượng quyền / Mở chi nhánh", href: "https://hispaces.ai" },
                   { label: "Website thành viên / Chi nhánh", href: "https://humaninterior.vn" },
-                  { label: "Website mời Khách Sự kiện", href: "https://humaninterior.vn/contact" }
+                  { label: "Website mời Khách Sự kiện", href: "https://event.hispace.ai" }
                 ].map((link, idx) => (
                   <motion.a
                     key={idx}

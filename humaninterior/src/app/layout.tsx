@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://event.hispace.ai"),
   title: "SỰ KIỆN HISPACE.AI",
   description:
-    "Định hướng Kiến trúc sư theo Y tưởng của Bạn. THAM DỰ SỰ KIỆN & NHẬN QUÀ TẶNG GIÁ TRỊ",
+    "Định hướng Kiến trúc sư theo ý tưởng của Bạn. THAM DỰ SỰ KIỆN & NHẬN QUÀ TẶNG GIÁ TRỊ",
   keywords: [
     "nội thất",
     "thiết kế nội thất",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "TỰ TAY THIẾT KẾ & TÙY CHỈNH 3D",
-    description: "Định hướng Kiến trúc sư theo Y tưởng của Bạn. THAM DỰ SỰ KIỆN & NHẬN QUÀ TẶNG GIÁ TRỊ",
+    description: "Định hướng Kiến trúc sư theo ý tưởng của Bạn. THAM DỰ SỰ KIỆN & NHẬN QUÀ TẶNG GIÁ TRỊ",
     url: "https://event.hispace.ai",
     siteName: "Human Interior",
     images: [

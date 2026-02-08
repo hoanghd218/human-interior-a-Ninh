@@ -17,8 +17,50 @@ const josefinSans = Josefin_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mienphi.hispace.ai"),
   title: "HiSpace - Serving Star-Rating Living Spaces",
-  description: "Premium interior design platform combining AI technology with human craftsmanship to create star-rating living spaces.",
+  description:
+    "Premium interior design platform combining AI technology with human craftsmanship to create star-rating living spaces.",
+  keywords: [
+    "interior design",
+    "AI design",
+    "living space",
+    "architecture",
+    "hispace",
+    "star-rating",
+  ],
+  openGraph: {
+    title: "HiSpace - Serving Star-Rating Living Spaces",
+    description:
+      "Premium interior design platform combining AI technology with human craftsmanship to create star-rating living spaces.",
+    url: "https://mienphi.hispace.ai",
+    siteName: "HiSpace",
+    images: [
+      {
+        url: "/og-image.png",
+        alt: "HiSpace - AI Powered Interior Design",
+      },
+    ],
+    locale: "vi_VN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "HiSpace - Serving Star-Rating Living Spaces",
+    description:
+      "Premium interior design platform combining AI technology with human craftsmanship to create star-rating living spaces.",
+    images: ["/og-image.png"],
+  },
+  alternates: {
+    canonical: "/",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

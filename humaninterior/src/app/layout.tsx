@@ -16,7 +16,7 @@ const exo2 = Exo_2({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://event.hispace.ai"),
-  title: "TỰ TAY THIẾT KẾ & TÙY CHỈNH 3D",
+  title: "SỰ KIỆN HISPACE.AI",
   description:
     "Định hướng Kiến trúc sư theo Y tưởng của Bạn. THAM DỰ SỰ KIỆN & NHẬN QUÀ TẶNG GIÁ TRỊ",
   keywords: [

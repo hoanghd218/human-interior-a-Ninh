@@ -16,7 +16,7 @@ const exo2 = Exo_2({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://event.hispace.ai"),
-  title: "Human Interior - TỰ TAY THIẾT KẾ & TÙY CHỈNH 3D",
+  title: "TỰ TAY THIẾT KẾ & TÙY CHỈNH 3D",
   description:
     "Định hướng Kiến trúc sư theo Y tưởng của Bạn. THAM DỰ SỰ KIỆN & NHẬN QUÀ TẶNG GIÁ TRỊ",
   keywords: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "khai trương",
   ],
   openGraph: {
-    title: "Human Interior - TỰ TAY THIẾT KẾ & TÙY CHỈNH 3D",
+    title: "TỰ TAY THIẾT KẾ & TÙY CHỈNH 3D",
     description: "Định hướng Kiến trúc sư theo Y tưởng của Bạn. THAM DỰ SỰ KIỆN & NHẬN QUÀ TẶNG GIÁ TRỊ",
     url: "https://event.hispace.ai",
     siteName: "Human Interior",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Human Interior - TỰ TAY THIẾT KẾ & TÙY CHỈNH 3D",
+    title: "TỰ TAY THIẾT KẾ & TÙY CHỈNH 3D",
     description: "Định hướng Kiến trúc sư theo Y tưởng của Bạn. THAM DỰ SỰ KIỆN & NHẬN QUÀ TẶNG GIÁ TRỊ",
     images: ["/og-image.jpg"],
   },

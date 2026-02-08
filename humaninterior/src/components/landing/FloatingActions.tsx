@@ -29,7 +29,7 @@ const FloatingActions = ({ showFloatingBar }: FloatingActionsProps) => {
                             onClick={scrollToRegister}
                         >
                             <span className="!hidden md:!block material-symbols-outlined text-[18px]">edit</span>
-                            Tư vấn thiết kế
+                            Tự tay thiết kế
                         </button>
                         <a
                             className="flex-1 md:flex-none bg-white hover:bg-gray-50 text-[#333] border border-[#ddd] px-2 py-2.5 whitespace-nowrap rounded-lg font-bold text-xs uppercase transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer"

@@ -35,27 +35,24 @@ const Footer = () => {
                             <span className="font-medium text-white/90">Phụng Sự Không Gian Sống Chuẩn Sao</span>
                         </p>
                         <div className="flex gap-4">
-                            <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#E05C3E] transition-colors">
+                            <a href="https://www.facebook.com/p/Human-Interior-61580810607571" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#E05C3E] transition-colors">
                                 <span className="text-sm font-bold">Fb</span>
                             </a>
                             <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#E05C3E] transition-colors">
                                 <span className="text-sm font-bold">Yt</span>
                             </a>
                             <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#E05C3E] transition-colors">
-                                <span className="text-sm font-bold">In</span>
+                                <span className="text-sm font-bold">Tk</span>
                             </a>
                         </div>
                     </div>
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="text-lg font-bold mb-6 font-display">Liên Kết Nhanh</h4>
+                        <h4 className="text-lg font-bold mb-6 font-display">Liên hệ nhượng quyền / mở chi nhánh</h4>
                         <ul className="space-y-3 text-gray-400 text-sm">
-                            <li><Link href="https://humaninterior.vn/about" target="_blank" className="hover:text-[#E05C3E] transition-colors">Về Human Interior</Link></li>
-                            <li><Link href="https://humaninterior.vn/projects" target="_blank" className="hover:text-[#E05C3E] transition-colors">Dự án tiêu biểu</Link></li>
-                            <li><Link href="https://humaninterior.vn/services" target="_blank" className="hover:text-[#E05C3E] transition-colors">Dịch vụ thiết kế</Link></li>
-                            <li><Link href="https://hispaces.ai" target="_blank" className="hover:text-[#E05C3E] transition-colors">Website chính thức</Link></li>
-                            <li><Link href="https://humaninterior.vn" target="_blank" className="hover:text-[#E05C3E] transition-colors">Website thành viên</Link></li>
+                            <li><Link href="https://hispaces.ai" target="_blank" className="hover:text-[#E05C3E] transition-colors">Website nhượng quyền / mở chi nhánh</Link></li>
+                            <li><Link href="https://humaninterior.vn" target="_blank" className="hover:text-[#E05C3E] transition-colors">Website thành viên / chi nhánh</Link></li>
                         </ul>
                     </div>
 
@@ -65,19 +62,13 @@ const Footer = () => {
                         <ul className="space-y-4 text-gray-400 text-sm">
                             <li className="flex items-start gap-3">
                                 <span className="material-symbols-outlined text-[#E05C3E] mt-0.5">location_on</span>
-                                <span>Số 17, DE1, Mỹ Phước 3, Thới Hòa, Bến Cát, Bình Dương</span>
+                                <span>Shophouse HR01-1E [Số Nhà 27], Khu Đô Thị MIDORI PARK HARUKA, Khu Phố Hòa Phú 2, Đường Bùi Thị Xuân, Phường Bình Dương, Thành Phố Hồ Chí Minh.</span>
                             </li>
                             <li className="flex items-center gap-3">
-                                <span className="material-symbols-outlined text-[#E05C3E]">phone</span>
-                                <span>0329.688.826 (Hotline)</span>
-                            </li>
-                            <li className="flex items-center gap-3">
-                                <span className="material-symbols-outlined text-[#E05C3E]">mail</span>
-                                <span>baogia@humaninterior.vn</span>
-                            </li>
-                            <li className="flex items-center gap-3">
-                                <span className="material-symbols-outlined text-[#E05C3E]">language</span>
-                                <a href="https://humaninterior.vn" target="_blank" className="hover:text-white">humaninterior.vn</a>
+                                <a href="tel:0981463839" className="flex items-center gap-3">
+                                    <span className="material-symbols-outlined text-[#E05C3E]">phone</span>
+                                    <span>0981.46.38.39 (Hotline)</span>
+                                </a>
                             </li>
                         </ul>
                     </div>

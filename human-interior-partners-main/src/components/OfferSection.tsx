@@ -168,9 +168,29 @@ const OfferSection = () => {
               </div>
             </div>
           </div>
-
           {/* Border */}
           <div className="absolute inset-0 rounded-xl md:rounded-2xl border border-purple-500/30 pointer-events-none" />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          whileHover={{
+            y: -5,
+            transition: { duration: 0.3, ease: "easeOut" }
+          }}
+          className="flex justify-center mt-8"
+        >
+          <a
+            href="https://aninhhumaninteriorlandingpage1.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl bg-gradient-to-r from-purple-500 to-pink-400 text-background font-bold text-base md:text-lg lg:text-xl shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            Mẫu website mời khách đến sự kiện
+          </a>
         </motion.div>
       </div>
     </section>

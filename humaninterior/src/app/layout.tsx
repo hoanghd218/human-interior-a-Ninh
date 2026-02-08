@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "TỰ TAY THIẾT KẾ & TÙY CHỈNH 3D",
-    description: "Định hướng Kiến trúc sư theo Y tưởng của Bạn. THAM DỰ SỰ KIỆN & NHẬN QUÀ TẶNG GIÁ TRỊ",
+    description: "Định hướng Kiến trúc sư theo ý tưởng của Bạn. THAM DỰ SỰ KIỆN & NHẬN QUÀ TẶNG GIÁ TRỊ",
     images: ["/og-image.jpg"],
   },
   alternates: {

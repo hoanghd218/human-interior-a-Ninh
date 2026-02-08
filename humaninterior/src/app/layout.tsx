@@ -34,7 +34,10 @@ export const metadata: Metadata = {
     siteName: "Human Interior",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        type: "image/jpeg",
         alt: "Human Interior Showroom Opening Event",
       },
     ],
@@ -45,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Human Interior - Đại Tiệc Khai Trương Showroom",
     description: "Cơ hội nhận quà tặng nội thất lên đến 50.000.000 VNĐ",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
   alternates: {
     canonical: "/",

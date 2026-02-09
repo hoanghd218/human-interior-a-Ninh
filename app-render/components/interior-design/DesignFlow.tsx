@@ -303,7 +303,7 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
                             <h3 className="font-bold text-xl text-slate-900 font-display mb-2">Phong cách {selectedStyles[idx]}</h3>
                             <p className="text-sm text-slate-500 mb-4">Phương án {idx + 1}</p>
                             <a
-                                href="https://zalo.me/g/yooqhx505"
+                                href="https://zalo.me/g/uubolo563"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-primary-hover border border-primary/20 hover:border-primary/50 px-4 py-2 rounded-full transition-all hover:shadow-md"
@@ -321,7 +321,7 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
             <div className="text-center border-t border-slate-100 pt-8">
                 <p className="text-slate-500 mb-4">Bạn có muốn được Kiến trúc sư tư vấn 1-1 cho ngôi nhà của bạn không?</p>
                 <a
-                    href="https://zalo.me/g/yooqhx505"
+                    href="https://zalo.me/g/uubolo563"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary-hover text-white px-6 py-3 rounded-xl font-bold shadow-lg shadow-primary/30 hover:shadow-xl hover:-translate-y-0.5 transition-all"
@@ -690,7 +690,7 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
                             </p>
 
                             <a
-                                href="https://zalo.me/g/yooqhx505"
+                                href="https://zalo.me/g/uubolo563"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center gap-2 w-full py-4 bg-gradient-to-r from-primary to-primary-hover text-white rounded-xl font-bold text-lg shadow-xl shadow-primary/30 hover:shadow-2xl hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-200 active:scale-95 mb-4"

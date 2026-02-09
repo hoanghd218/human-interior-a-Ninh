@@ -107,6 +107,7 @@ const getStyleIcon = (iconName: string) => {
 const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
     const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
     const [showRegisterModal, setShowRegisterModal] = useState(false);
+    const [showLimitModal, setShowLimitModal] = useState(false);
     const [hasResults, setHasResults] = useState(false);
     const [isGenerating, setIsGenerating] = useState(false);
     const [lightboxImage, setLightboxImage] = useState<string | null>(null);
@@ -133,6 +134,12 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
             setGeneratedImages(results);
             if (results.length > 0) {
                 setHasResults(true);
+                // Save render flag to localStorage
+                try {
+                    localStorage.setItem('interior_has_rendered', 'true');
+                } catch (e) {
+                    console.error('Failed to save render flag:', e);
+                }
             } else {
                 alert("Không thể tạo hình ảnh. Vui lòng thử lại.");
             }
@@ -227,6 +234,17 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
 
     const handleGenerateClick = () => {
         if (!image || selectedStyles.length === 0) return;
+
+        // Check if user has already rendered once
+        try {
+            const hasRendered = localStorage.getItem('interior_has_rendered');
+            if (hasRendered === 'true') {
+                setShowLimitModal(true);
+                return;
+            }
+        } catch (e) {
+            console.error('Failed to check render flag:', e);
+        }
 
         if (!userInfo) {
             setShowRegisterModal(true);
@@ -638,6 +656,57 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
                                 description="Vui lòng nhập thông tin để hệ thống gửi file thiết kế 3D chất lượng cao cho bạn."
                                 buttonText="Hoàn tất & Dùng AI"
                             />
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Render Limit Modal */}
+            {showLimitModal && (
+                <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/60 backdrop-blur-md p-4 animate-fadeIn">
+                    <div className="relative w-full max-w-md glass-liquid rounded-3xl shadow-2xl overflow-hidden">
+                        <button
+                            onClick={() => setShowLimitModal(false)}
+                            className="absolute top-5 right-5 z-10 text-slate-400 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 rounded-full p-2 transition-colors"
+                        >
+                            <XIcon size={20} />
+                        </button>
+
+                        <div className="bg-gradient-to-r from-amber-500 to-orange-500 h-1 w-full"></div>
+                        <div className="p-8 text-center">
+                            <div className="w-20 h-20 bg-gradient-to-br from-amber-100 to-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-amber-200/50">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-amber-600">
+                                    <path d="M12 9v4" />
+                                    <path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636-2.87L13.637 3.59a1.914 1.914 0 0 0-3.274 0z" />
+                                    <path d="M12 17h.01" />
+                                </svg>
+                            </div>
+
+                            <h3 className="text-2xl font-bold text-slate-900 font-display mb-3">
+                                Bạn đã sử dụng lượt thiết kế miễn phí
+                            </h3>
+                            <p className="text-slate-600 mb-8 leading-relaxed">
+                                Mỗi khách hàng được trải nghiệm <strong>1 lần thiết kế miễn phí</strong> với AI. Để được hỗ trợ tư vấn chi tiết và nhận thêm phương án thiết kế chuyên sâu, hãy liên hệ trực tiếp với Kiến trúc sư của chúng tôi.
+                            </p>
+
+                            <a
+                                href="https://zalo.me/g/yooqhx505"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center gap-2 w-full py-4 bg-gradient-to-r from-primary to-primary-hover text-white rounded-xl font-bold text-lg shadow-xl shadow-primary/30 hover:shadow-2xl hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-200 active:scale-95 mb-4"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+                                </svg>
+                                Liên hệ Kiến trúc sư tư vấn
+                            </a>
+
+                            <button
+                                onClick={() => setShowLimitModal(false)}
+                                className="text-sm text-slate-400 hover:text-slate-600 transition-colors"
+                            >
+                                Đóng
+                            </button>
                         </div>
                     </div>
                 </div>

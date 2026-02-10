@@ -7,7 +7,7 @@ const MoodboardSection = () => {
                 <span className="block text-[#D4AF37] text-xs font-bold tracking-[0.2em] mb-3 uppercase">
                     Human Interior Design
                 </span>
-                <h2 className="text-3xl md:text-4xl font-display font-medium text-[#171717] uppercase tracking-[0.15em] leading-tight">
+                <h2 className="text-[6vw] md:text-4xl font-display font-medium text-[#171717] uppercase tracking-[0.15em] leading-tight">
                     Không Gian Sáng Tạo<br className="hidden md:block" /> Tùy Chỉnh Human Interior
                 </h2>
             </div>
@@ -50,16 +50,16 @@ const MoodboardSection = () => {
 
                 <div className="absolute inset-x-0 bottom-0 z-20 flex flex-col items-center justify-end pb-16 pointer-events-none text-center px-4">
 
-                    <h3 className="text-white font-display text-4xl md:text-6xl tracking-[0.15em] uppercase mb-6 drop-shadow-2xl">
+                    <h3 className="text-white font-display text-[7vw] md:text-6xl tracking-[0.15em] uppercase mb-6 drop-shadow-2xl">
                         Moodboard <span className="font-light text-[#D4AF37]">&</span> Materials
                     </h3>
 
                     <div className="space-y-3 max-w-2xl mx-auto">
-                        <p className="text-white text-lg md:text-xl font-medium tracking-wide drop-shadow-md">
+                        <p className="text-white text-[4.5vw] md:text-xl font-medium tracking-wide drop-shadow-md">
                             Kết nối Bản vẽ Ý tưởng với Vật liệu thực tế
                         </p>
-                        <p className="text-white/80 text-sm md:text-base italic font-serif tracking-wide drop-shadow-md">
-                            &quot;Gia chủ là người Quyết định tính thực tế bản 3D ngôi nhà của mình,<br className="hidden md:block" /> đừng quá phụ thuộc Kiến trúc sư&quot;
+                        <p className="text-white/80 text-[3.2vw] md:text-base italic font-serif tracking-wide drop-shadow-md">
+                            &quot;Gia chủ là người Quyết định tính thực tế bản 3D ngôi nhà của mình,<br className="min-w-[490px]:block hidden" /> đừng quá phụ thuộc Kiến trúc sư&quot;
                         </p>
                     </div>
                 </div>

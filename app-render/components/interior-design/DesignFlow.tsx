@@ -372,7 +372,7 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
                 </div>
 
                 {/* Main Headline */}
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.15] mb-6 font-display">
+                <h1 className="text-3xl sm:text-4xl md:text-4xl font-bold tracking-tight text-slate-900 leading-[1.15] mb-6 font-display">
                     Thấu hiểu nhanh nhất Ý tưởng, mong muốn Không gian sống của Khách hàng là yêu cầu cao nhất cho đội ngũ <span className="gradient-text-hero">Kiến trúc sư của chúng tôi</span>
                 </h1>
 

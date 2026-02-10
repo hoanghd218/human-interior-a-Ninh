@@ -121,7 +121,7 @@ const SocialProofSection = () => {
             <span className="relative z-10">ĐẠI LÝ ĐÃ THÀNH CÔNG</span>
             <span className="absolute inset-0 animate-shimmer" />
           </motion.span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black">
+          <h2 className="text-[6vw] md:text-4xl lg:text-5xl font-black">
             Người Thật, <span className="gradient-gold-text">Tiền Thật</span>
           </h2>
         </motion.div>
@@ -191,7 +191,7 @@ const SocialProofSection = () => {
               </div>
 
               {/* Content */}
-              <p className="text-base text-foreground mb-4 leading-relaxed italic line-clamp-3">
+              <p className="text-[3.5vw] md:text-base text-foreground mb-4 leading-relaxed italic line-clamp-3">
                 "{testimonial.content}"
               </p>
 

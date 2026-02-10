@@ -25,12 +25,12 @@ const PainPointsSection = () => {
 
                 {/* Punchy Header */}
                 <div className="mb-24">
-                    <h2 className="text-5xl md:text-7xl font-display font-black text-[#171717] leading-[1.2] uppercase mb-8">
+                    <h2 className="text-[8vw] md:text-7xl font-display font-black text-[#171717] leading-[1.2] uppercase mb-8">
                         ĐỪNG ĐỂ <br />
                         <span className="text-[#E05C3E]">KẺ NGOẠI ĐẠO</span> <br />
                         PHÁ NÁT TỔ ẤM
                     </h2>
-                    <p className="text-xl md:text-2xl text-gray-500 font-medium max-w-2xl leading-relaxed italic">
+                    <p className="text-[3.8vw] md:text-2xl text-gray-500 font-medium max-w-2xl leading-relaxed italic">
                         Tại sao 90% gia chủ cảm thấy "kiệt sức" sau khi làm nhà?
                         Vì họ đang dấn thân vào một cuộc chơi đầy cạm bẫy mà không có người dẫn lối minh bạch.
                     </p>
@@ -41,22 +41,22 @@ const PainPointsSection = () => {
                     {list.map((item, index) => (
                         <div key={index} className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start group">
                             <div className="md:col-span-1">
-                                <span className="text-5xl font-display font-black text-gray-100 group-hover:text-[#E05C3E]/20 transition-colors">
+                                <span className="text-[8vw] md:text-5xl font-display font-black text-gray-100 group-hover:text-[#E05C3E]/20 transition-colors">
                                     0{index + 1}
                                 </span>
                             </div>
 
                             <div className="md:col-span-7">
-                                <h3 className="text-2xl md:text-4xl font-display font-black text-[#171717] mb-6 leading-none tracking-tight">
+                                <h3 className="text-[5.5vw] md:text-4xl font-display font-black text-[#171717] mb-6 leading-none tracking-tight">
                                     {item.hook}
                                 </h3>
-                                <p className="text-lg text-gray-500 leading-relaxed font-medium">
+                                <p className="text-[3.5vw] md:text-lg text-gray-500 leading-relaxed font-medium">
                                     {item.problem}
                                 </p>
                             </div>
 
                             <div className="md:col-span-4 bg-gray-50 p-8 rounded-2xl border-l-4 border-[#D4AF37]">
-                                <p className="text-[#171717] text-lg font-bold leading-snug flex items-start gap-3">
+                                <p className="text-[#171717] text-[3.5vw] md:text-lg font-bold leading-snug flex items-start gap-3">
                                     <span className="material-symbols-outlined text-[#D4AF37] mt-1 shrink-0">verified</span>
                                     <span>
                                         <span className="text-[#D4AF37] block text-xs uppercase tracking-widest mb-1">GIẢI PHÁP HUMAN</span>
@@ -70,13 +70,13 @@ const PainPointsSection = () => {
 
                 {/* Final Slap CTA */}
                 <div className="mt-32 text-center">
-                    <h3 className="text-3xl md:text-4xl font-display font-black text-[#171717] mb-12 uppercase tracking-tighter italic">
+                    <h3 className="text-[5vw] md:text-4xl font-display font-black text-[#171717] mb-12 uppercase tracking-tighter italic">
                         BẠN CHỌN <span className="underline decoration-[#E05C3E] decoration-8 underline-offset-8">AN TÂM</span> HAY CHỌN <span className="line-through text-gray-300">RỦI RO</span>?
                     </h3>
 
                     <button
                         onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
-                        className="bg-[#171717] hover:bg-[#E05C3E] text-white px-12 py-6 rounded-full font-black uppercase tracking-[0.2em] text-lg transition-all duration-300 shadow-2xl hover:scale-105 cursor-pointer active:scale-95"
+                        className="bg-[#171717] hover:bg-[#E05C3E] text-white px-12 py-6 rounded-full font-black uppercase tracking-[0.2em] text-[3.5vw] md:text-lg transition-all duration-300 shadow-2xl hover:scale-105 cursor-pointer active:scale-95"
                     >
                         TÔI MUỐN SỰ MINH BẠCH
                     </button>

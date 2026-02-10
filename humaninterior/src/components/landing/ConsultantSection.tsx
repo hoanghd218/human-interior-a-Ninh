@@ -18,7 +18,7 @@ const ConsultantSection = () => {
             <div className="max-w-5xl mx-auto px-4 relative z-10">
                 <div className="text-center flex flex-col items-center gap-6">
                     {/* Main Heading with Visual Hierarchy */}
-                    <h3 className="text-2xl md:text-4xl font-bold text-[#171717] font-display leading-tight max-w-3xl">
+                    <h3 className="text-[5vw] md:text-4xl font-bold text-[#171717] font-display leading-tight max-w-3xl">
                         Bạn muốn{' '}
                         <span className="relative inline-block">
                             <span className="text-[#E05C3E] relative z-10 bg-gradient-to-r from-[#E05C3E] to-[#C8482D] bg-clip-text text-transparent">

@@ -76,7 +76,7 @@ const Navbar = () => {
                     {/* CTA Button */}
                     <div className="hidden lg:flex">
                         <Link
-                            href="https://mienphi.hispace.ai/"
+                            href="https://app.hispace.ai/"
                             target="_blank"
                             className="bg-[#E05C3E] text-white hover:bg-[#C8482D] px-5 py-2.5 rounded-lg font-bold transition-all duration-300 uppercase text-xs tracking-wide flex items-center gap-2 shadow-lg animate-ripple whitespace-nowrap"
                         >
@@ -140,7 +140,7 @@ const Navbar = () => {
                     </Link>
                     <div className="pt-8 border-t border-gray-100">
                         <Link
-                            href="https://mienphi.hispace.ai/"
+                            href="https://app.hispace.ai/"
                             target="_blank"
                             className="bg-[#E05C3E] text-white hover:bg-[#C8482D] w-full py-3 rounded-lg font-bold transition-all duration-300 uppercase text-xs tracking-wide flex items-center justify-center gap-2 shadow-lg animate-ripple"
                         >

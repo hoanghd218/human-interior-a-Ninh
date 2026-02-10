@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-josefin);
-  --font-display: var(--font-cinzel);
+  --font-sans: var(--font-josefin), 'Josefin Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-cinzel), 'Cinzel', ui-serif, Georgia, serif;
 
   --color-primary: #C9A962;
   --color-primary-hover: #B8984F;

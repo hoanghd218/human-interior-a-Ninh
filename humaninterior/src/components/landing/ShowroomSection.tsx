@@ -56,10 +56,10 @@ const ShowroomSection = () => {
                     <span className="inline-block px-4 py-2 rounded-full bg-[#E05C3E]/10 text-[#E05C3E] text-xs md:text-sm font-bold mb-4 tracking-widest uppercase">
                         KHÔNG GIAN SANG TRỌNG
                     </span>
-                    <h2 className="text-3xl md:text-5xl font-black mb-6 text-[#171717] font-display leading-tight uppercase tracking-tight">
+                    <h2 className="text-[6.5vw] md:text-5xl font-black mb-6 text-[#171717] font-display leading-tight uppercase tracking-tight">
                         Địa chỉ Showroom <span className="text-[#E05C3E]">Human Interior</span>
                     </h2>
-                    <p className="text-gray-500 mx-auto text-lg font-light leading-relaxed">
+                    <p className="text-gray-500 mx-auto text-[3.5vw] md:text-lg font-light leading-relaxed">
                         Trải nghiệm <span className="text-[#171717] font-medium">không gian nội thất đẳng cấp</span>, nơi bạn sẽ được <span className="text-[#E05C3E] font-medium">tư vấn và chăm sóc tận tình</span>.
                     </p>
                 </div>
@@ -106,7 +106,7 @@ const ShowroomSection = () => {
                 {/* Google Maps Section - Integrated */}
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-10">
-                        <h3 className="text-2xl md:text-3xl font-bold mb-2 text-[#171717]">
+                        <h3 className="text-[5vw] md:text-3xl font-bold mb-2 text-[#171717]">
                             <span className="text-[#E05C3E]">Bản đồ</span> vị trí
                         </h3>
                         <p className="text-gray-500 font-medium">MIDORI PARK, Bình Dương</p>

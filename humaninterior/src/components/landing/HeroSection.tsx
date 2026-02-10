@@ -99,7 +99,7 @@ const HeroSection = () => {
 
                             {/* Outstanding Event Title */}
                             <div className="flex flex-col">
-                                <h1 className="text-xl md:text-4xl font-bold text-white tracking-tight leading-normal italic group">
+                                <h1 className="text-[5vw] md:text-4xl font-bold text-white tracking-tight leading-normal italic group">
                                     ĐẠI TIỆC <span className="text-gradient-gold not-italic">KHAI TRƯƠNG</span> SHOWROOM
                                     <div className="h-0.5 w-0 group-hover:w-full bg-[#D4AF37] transition-all duration-500 rounded-full mt-1"></div>
                                 </h1>
@@ -117,14 +117,14 @@ const HeroSection = () => {
                                     ].map((item, idx) => (
                                         <div key={idx} className="flex items-center gap-2 md:gap-4">
                                             <div className="flex flex-col items-center">
-                                                <span className="text-xl md:text-4xl font-light text-white tabular-nums leading-none">
+                                                <span className="text-[5vw] md:text-4xl font-light text-white tabular-nums leading-none">
                                                     {String(item.value).padStart(2, '0')}
                                                 </span>
                                                 <span className="text-[8px] md:text-[10px] text-white/40 uppercase tracking-widest mt-1">
                                                     {item.label}
                                                 </span>
                                             </div>
-                                            {idx < 3 && <span className="text-[#D4AF37] text-lg md:text-2xl font-extralight opacity-30">:</span>}
+                                            {idx < 3 && <span className="text-[#D4AF37] text-[4vw] md:text-2xl font-extralight opacity-30">:</span>}
                                         </div>
                                     ))}
                                 </div>

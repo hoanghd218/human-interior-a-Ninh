@@ -38,21 +38,21 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="container relative z-10 pt-24 md:pt-32 pb-12 md:pb-20 px-6 md:px-8">
+      <div className="container relative z-10 pt-4 md:pt-32 pb-12 md:pb-20 px-4 md:px-8">
         {/* TOP BRANDING HEADLINE - ELEGANT & REFINED */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col items-center justify-center text-center mb-12 md:mb-16 space-y-2 px-2 md:px-4"
+          className="flex flex-col items-center justify-center text-center mb-4 md:mb-16 space-y-2 px-0 md:px-4"
         >
           <div className="relative inline-block">
-            <div className="absolute -inset-2 bg-gradient-to-r from-primary/20 via-primary/30 to-primary/20 blur-xl opacity-50"></div>
-            <h3 className="relative text-xs md:text-xl font-bold tracking-[0.1em] md:tracking-[0.15em] uppercase text-primary/90 leading-relaxed">
+            <div className="absolute bg-gradient-to-r from-primary/20 via-primary/30 to-primary/20 blur-xl opacity-50"></div>
+            <h3 className="relative text-[3.5vw] md:text-xl font-bold tracking-[0.1em] md:tracking-[0.15em] uppercase text-primary/90 leading-relaxed">
               Mô hình Đại lý bán hàng Nội thất Đầu tiên tại Việt Nam
             </h3>
           </div>
-          <p className="text-xs md:text-base text-muted-foreground font-medium max-w-3xl leading-relaxed px-2">
+          <p className="text-[3.5vw] md:text-base text-muted-foreground font-medium max-w-3xl leading-relaxed px-2">
             Ứng dụng A.I hỗ trợ kiếm khách & theo dõi thu nhập minh bạch
           </p>
         </motion.div>
@@ -72,7 +72,7 @@ const HeroSection = () => {
               transition={{ delay: 0.2 }}
               className="inline-block"
             >
-              <span className="px-3 py-2 md:px-6 md:py-3 rounded-full border border-primary/40 bg-primary/5 text-primary text-xs md:text-base font-bold inline-flex items-center gap-1.5 md:gap-2 shadow-lg shadow-primary/10 whitespace-nowrap">
+              <span className="px-3 py-2 md:px-6 md:py-3 rounded-full border border-primary/40 bg-primary/5 text-primary text-sm md:text-base font-bold inline-flex items-center gap-1.5 md:gap-2 shadow-lg shadow-primary/10 whitespace-nowrap">
                 <Flame className="w-3.5 h-3.5 md:w-5 md:h-5 text-orange-500 animate-pulse" /> Chỉ còn 10 suất Đại lý tháng này
               </span>
             </motion.div>
@@ -93,27 +93,40 @@ const HeroSection = () => {
                   className="group relative flex items-center w-full"
                 >
                   <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary group-hover:w-1.5 transition-all duration-300"></div>
-                  <div className="bg-background/60 backdrop-blur-sm border border-primary/10 border-l-0 px-4 py-3 md:px-5 md:py-3.5 text-sm md:text-base text-foreground/90 font-medium leading-relaxed group-hover:bg-primary/5 group-hover:border-primary/20 transition-all duration-300 cursor-default w-full">
+                  <div className="bg-background/60 backdrop-blur-sm border border-primary/10 border-l-0 px-4 py-2 md:px-5 md:py-3.5 text-[3.2vw] md:text-base text-foreground/90 font-medium leading-relaxed group-hover:bg-primary/5 group-hover:border-primary/20 transition-all duration-300 cursor-default w-full">
                     {text}
                   </div>
                 </motion.div>
               ))}
             </div>
 
-            {/* Sub-headline */}
-            <div className="space-y-1">
-              <p className="text-base md:text-xl lg:text-2xl font-bold text-primary leading-snug">
-                Hoa Hồng Nội Thất
-                <br className="md:hidden" />
-                <span className="md:ml-1">HÀNG CHỤC TRIỆU / THÁNG</span>
-              </p>
-              <p className="text-muted-foreground font-normal text-sm md:text-lg">
-                Không Cần Vốn – Không Giam Thời Gian
-              </p>
+            {/* Sub-headline & Mobile Partner Image */}
+            <div className="flex items-center justify-between gap-3 md:block">
+              <div className="space-y-1 flex-1">
+                <p className="text-[4vw] md:text-xl lg:text-2xl font-bold text-primary leading-snug">
+                  Hoa Hồng Nội Thất
+                  <br className="md:hidden" />
+                  <span className="md:ml-1">HÀNG CHỤC TRIỆU / THÁNG</span>
+                </p>
+                <p className="text-muted-foreground font-normal text-[3vw] md:text-lg">
+                  Không Cần Vốn – Không Giam Thời Gian
+                </p>
+              </div>
+
+              {/* Mobile Only Partner Image - Compact & Next to Text */}
+              <div className="block lg:hidden w-[120px] flex-shrink-0 relative">
+                <div className="relative rounded-xl overflow-hidden shadow-lg border border-primary/20 glow-gold">
+                  <img src={partnerImage} alt="Đại lý" className="w-full h-auto object-cover" />
+                  <div className="absolute bottom-1 right-1 bg-white/95 backdrop-blur-sm px-1.5 py-0.5 rounded-md border border-primary/20 shadow-sm text-center">
+                    <p className="text-[8px] font-bold text-muted-foreground leading-none mb-0.5">Thu nhập</p>
+                    <p className="text-xs font-black text-primary leading-none">50tr+</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Checklist */}
-            <div className="grid gap-3 text-base md:text-lg text-foreground/80 font-medium">
+            <div className="grid gap-3 text-[3.5vw] md:text-lg text-foreground/80 font-medium">
               {[
                 "Bạn không cần ngồi văn phòng",
                 "Không cần chạy quảng cáo",
@@ -129,7 +142,7 @@ const HeroSection = () => {
             </div>
 
             <div className="flex flex-col space-y-1 pt-2">
-              <p className="text-foreground/90 text-base md:text-xl font-medium flex items-start gap-3 leading-relaxed">
+              <p className="text-foreground/90 text-[3.5vw] md:text-xl font-medium flex items-start gap-3 leading-relaxed">
                 <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0 mt-1" />
                 Bạn chỉ cần gửi ứng dụng thiết kế A.I cho khách hàng trải nghiệm miễn phí
               </p>
@@ -188,7 +201,7 @@ const HeroSection = () => {
           <Button
             variant="hero"
             size="xxl"
-            className="relative overflow-hidden group/btn px-6 py-5 md:px-12 md:py-8 rounded-2xl shadow-2xl hover:shadow-primary/20 transition-all duration-500 text-sm md:text-2xl font-black uppercase leading-tight"
+            className="relative overflow-hidden group/btn px-6 py-5 md:px-12 md:py-8 rounded-2xl shadow-2xl hover:shadow-primary/20 transition-all duration-500 text-[3.5vw] md:text-2xl font-black uppercase leading-tight"
             asChild
           >
             <a

@@ -27,10 +27,10 @@ const JapfaCaseStudy = () => {
                         <span className="inline-block px-4 py-1.5 bg-[#D4AF37]/10 text-[#D4AF37] text-xs font-bold tracking-[0.2em] uppercase rounded-full mb-6">
                             Featured Case Study
                         </span>
-                        <h2 className="text-4xl md:text-5xl font-display font-medium text-[#171717] uppercase tracking-wider mb-6 leading-tight">
+                        <h2 className="text-[6vw] md:text-5xl font-display font-medium text-[#171717] uppercase tracking-wider mb-6 leading-tight">
                             Dự án Japfa Bình Dương
                         </h2>
-                        <p className="text-gray-600 text-lg leading-relaxed">
+                        <p className="text-gray-600 text-[3.5vw] md:text-lg leading-relaxed">
                             Một không gian văn phòng kết hợp khu vực tiếp khách đẳng cấp, mang dấu ấn đặc trưng của Human Interior.
                             Chúng tôi đã thực hiện bản thiết kế 3D tối ưu hóa công năng và mang lại trải nghiệm thị giác ấn tượng nhất cho đối tác.
                         </p>
@@ -38,7 +38,7 @@ const JapfaCaseStudy = () => {
                     <div className="flex flex-col items-end">
                         <div className="flex gap-12 mb-4">
                             <div className="text-center">
-                                <div className="text-3xl font-bold text-[#171717]">100%</div>
+                                <div className="text-[5vw] md:text-3xl font-bold text-[#171717]">100%</div>
                                 <div className="text-[10px] text-gray-400 uppercase tracking-widest mt-1">Sự hài lòng</div>
                             </div>
                             <div className="text-center">

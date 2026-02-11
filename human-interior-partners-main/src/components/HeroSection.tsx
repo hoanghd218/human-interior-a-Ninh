@@ -49,7 +49,7 @@ const HeroSection = () => {
           <div className="relative inline-block">
             <div className="absolute bg-gradient-to-r from-primary/20 via-primary/30 to-primary/20 blur-xl opacity-50"></div>
             <h3 className="relative text-[3.5vw] md:text-xl font-bold tracking-[0.1em] md:tracking-[0.15em] uppercase text-primary/90 leading-relaxed">
-              Mô hình Đại lý bán hàng Nội thất Đầu tiên tại Việt Nam
+              Mô hình Đại lý bán hàng Nội thất <br className="block md:hidden" />Đầu tiên tại Việt Nam
             </h3>
           </div>
           <p className="text-[3.5vw] md:text-base text-muted-foreground font-medium max-w-3xl leading-relaxed px-2">
@@ -103,7 +103,7 @@ const HeroSection = () => {
             {/* Sub-headline & Mobile Partner Image */}
             <div className="flex items-center justify-between gap-3 md:block">
               <div className="space-y-1 flex-1">
-                <p className="text-[4vw] md:text-xl lg:text-2xl font-bold text-primary leading-snug">
+                <p className="text-[4vw] md:text-xl font-bold text-primary leading-snug">
                   Hoa Hồng Nội Thất
                   <br className="md:hidden" />
                   <span className="md:ml-1">HÀNG CHỤC TRIỆU / THÁNG</span>

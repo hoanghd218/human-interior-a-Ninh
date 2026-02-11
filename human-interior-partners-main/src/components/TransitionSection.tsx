@@ -14,7 +14,7 @@ const TransitionSection = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center space-y-4 md:space-y-8"
         >
-          <h2 className="text-[4.5vw] md:text-3xl lg:text-4xl xl:text-5xl font-black leading-tight">
+          <h2 className="text-[4.5vw] md:text-3xl lg:text-4xl font-black leading-tight">
             <span className="block mb-1 md:mb-0 md:inline">Sale giỏi không cần làm nhiều hơn –</span>
             <span className="gradient-gold-text block md:inline">chỉ cần chọn đúng mô hình hỗ trợ tối đa.</span>
           </h2>

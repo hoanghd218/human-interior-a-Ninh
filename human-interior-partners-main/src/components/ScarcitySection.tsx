@@ -45,10 +45,10 @@ const ScarcitySection = () => {
               </div>
 
               {/* Headline */}
-              <h2 className="text-[5.5vw] md:text-4xl font-black text-[#171717] font-display uppercase mb-4 leading-tight tracking-tight text-balance">
+              <h2 className="text-[5.5vw] md:text-3xl lg:text-4xl xl:text-5xl font-black text-center mb-3 md:mb-4">
                 Chỉ Nhận <span className="gradient-gold-text">10 ĐẠI LÝ</span>
               </h2>
-              <p className="text-[3.5vw] md:text-xl lg:text-2xl text-center text-muted-foreground mb-6 md:mb-10 text-pretty">
+              <p className="text-[3.5vw] md:text-xl lg:text-2xl text-center text-muted-foreground mb-6 md:mb-10">
                 Vì Chúng Tôi Làm <span className="text-primary font-bold">KỸ</span>, Không Làm <span className="text-muted-foreground">ĐẠI</span>
               </p>
 
@@ -66,13 +66,13 @@ const ScarcitySection = () => {
                     <div className="w-8 h-8 md:w-10 md:h-10 rounded-md md:rounded-lg gradient-gold-bg flex items-center justify-center flex-shrink-0">
                       <point.icon className="w-4 h-4 md:w-5 md:h-5 text-primary-foreground" />
                     </div>
-                    <span className="text-[3vw] md:text-base text-foreground font-medium text-pretty">{point.text}</span>
+                    <span className="text-[3vw] md:text-base text-foreground font-medium">{point.text}</span>
                   </motion.div>
                 ))}
               </div>
 
               {/* Urgency message */}
-              <p className="text-center text-[3vw] md:text-lg text-muted-foreground flex flex-wrap items-center justify-center gap-1 md:gap-2 text-pretty">
+              <p className="text-center text-[3vw] md:text-lg text-muted-foreground flex flex-wrap items-center justify-center gap-1 md:gap-2">
                 <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-primary" /> Hết suất = chờ đợt sau{" "}
                 <span className="text-foreground font-semibold">(có thể là… năm sau)</span>
               </p>

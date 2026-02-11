@@ -154,10 +154,10 @@ const RegisterSection = () => {
             <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Section Header */}
                 <div className="text-center mb-10">
-                    <h2 className="text-[5vw] md:text-[32px] font-bold text-[#E05C3E] font-display mb-4 uppercase text-balance">
+                    <h2 className="text-[5vw] md:text-[32px] font-bold text-[#E05C3E] font-display mb-4 uppercase">
                         ĐĂNG KÝ KIẾN TRÚC SƯ HỖ TRỢ TRỰC TIẾP
                     </h2>
-                    <p className="text-[#555] leading-relaxed italic text-[3.2vw] md:text-base text-pretty">
+                    <p className="text-[#555] leading-relaxed italic text-[3.2vw] md:text-base">
                         Tư vấn chuyên sâu 1:1 cùng KTS Trưởng hoàn toàn miễn phí & không ràng buộc.
                     </p>
                 </div>

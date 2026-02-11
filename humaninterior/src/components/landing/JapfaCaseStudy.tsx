@@ -27,10 +27,10 @@ const JapfaCaseStudy = () => {
                         <span className="inline-block px-4 py-1.5 bg-[#D4AF37]/10 text-[#D4AF37] text-xs font-bold tracking-[0.2em] uppercase rounded-full mb-6">
                             Featured Case Study
                         </span>
-                        <h2 className="text-[5vw] md:text-4xl font-black text-[#171717] font-display uppercase tracking-wider mb-2 text-balance">
+                        <h2 className="text-[6vw] md:text-5xl font-display font-medium text-[#171717] uppercase tracking-wider mb-6 leading-tight">
                             Dự án Japfa Bình Dương
                         </h2>
-                        <p className="text-[#555] font-medium text-[3.2vw] md:text-base mb-10 text-pretty">
+                        <p className="text-gray-600 text-[3.5vw] md:text-lg leading-relaxed">
                             Một không gian văn phòng kết hợp khu vực tiếp khách đẳng cấp, mang dấu ấn đặc trưng của Human Interior.
                             Chúng tôi đã thực hiện bản thiết kế 3D tối ưu hóa công năng và mang lại trải nghiệm thị giác ấn tượng nhất cho đối tác.
                         </p>

@@ -19,7 +19,7 @@ const ValuePropsSection = () => {
                             <span className="material-symbols-outlined text-[56px] text-[#D4AF37] font-thin group-hover:scale-110 transition-transform duration-500">visibility</span>
                         </div>
                         <div className="space-y-3">
-                            <h3 className="text-[4vw] md:text-2xl font-bold font-display uppercase text-white tracking-wider text-balance">
+                            <h3 className="text-[4vw] md:text-xl font-display font-semibold uppercase text-white tracking-widest">
                                 Thay Đổi Vật Liệu
                             </h3>
                             <div className="space-y-1">
@@ -41,7 +41,7 @@ const ValuePropsSection = () => {
                             </h3>
                             <div className="space-y-1">
                                 <p className="text-gray-300 text-[3.2vw] md:text-base font-light leading-relaxed font-sans">
-                                    Nhìn thấy đồ đẹp ghép vào thiết kế ngay <span className="text-white font-medium">trong 1 phút</span>.
+                                    Nhìn thấy đồ đẹp ghép vào thiết ngay <span className="text-white font-medium">trong 1 phút</span>.
                                 </p>
                                 <p className="text-gray-300 text-[3.2vw] md:text-base font-light leading-relaxed font-sans">
                                     Tránh lãng phí khi chọn sai sofa, bàn ăn, ...

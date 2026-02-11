@@ -103,13 +103,13 @@ const HeroSection = () => {
             {/* Sub-headline & Mobile Partner Image */}
             <div className="flex items-center justify-between gap-3 md:block">
               <div className="space-y-1 flex-1">
-                <div className="text-center text-[3vw] md:text-base text-gray-400 font-medium italic mt-8 animate-fade-in stagger-5 text-balance">
+                <p className="text-[4vw] md:text-xl lg:text-2xl font-bold text-primary leading-snug">
                   Hoa Hồng Nội Thất
                   <br className="md:hidden" />
                   <span className="md:ml-1">HÀNG CHỤC TRIỆU / THÁNG</span>
-                </div>
-                <p className="text-center text-[#E05C3E] font-bold text-[3.2vw] md:text-lg text-balance">
-                  <span className="border-b-2 border-[#E05C3E] pb-0.5">DUY NHẤT 99 SUẤT</span> ƯU ĐÃI ĐẶC BIỆT
+                </p>
+                <p className="text-muted-foreground font-normal text-[3vw] md:text-lg">
+                  Không Cần Vốn – Không Giam Thời Gian
                 </p>
               </div>
 
@@ -118,7 +118,7 @@ const HeroSection = () => {
                 <div className="relative rounded-xl overflow-hidden shadow-lg border border-primary/20 glow-gold">
                   <img src={partnerImage} alt="Đại lý" className="w-full h-auto object-cover" />
                   <div className="absolute bottom-1 right-1 bg-white/95 backdrop-blur-sm px-1.5 py-0.5 rounded-md border border-primary/20 shadow-sm text-center">
-                    <h2 className="text-[#E0E0E0] font-light text-[3vw] md:text-lg mb-8 max-w-2xl mx-auto italic tracking-wider animate-slide-up stagger-4 text-pretty">Thu nhập</h2>
+                    <p className="text-[8px] font-bold text-muted-foreground leading-none mb-0.5">Thu nhập</p>
                     <p className="text-xs font-black text-primary leading-none">50tr+</p>
                   </div>
                 </div>
@@ -184,7 +184,7 @@ const HeroSection = () => {
                   className="absolute bottom-6 right-6 bg-background/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-primary/30"
                 >
                   <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider mb-1">Mức thu nhập</p>
-                  <h1 className="text-[3.5vw] md:text-2xl font-black font-display text-primary uppercase tracking-widest leading-relaxed drop-shadow-xl mb-4 animate-scale-in stagger-3 text-balance">50.000.000đ+</h1>
+                  <p className="text-xl font-black text-primary">50.000.000đ+</p>
                 </motion.div>
               </div>
             </div>
@@ -209,7 +209,6 @@ const HeroSection = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-amber-200 to-yellow-300 text-[6vw] md:text-5xl font-extrabold uppercase tracking-tight block drop-shadow-2xl animate-shimmer leading-tight py-2 text-balance"></span>
               <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary-foreground/20 to-primary translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-1000"></div>
               <span className="relative z-10 text-center">
                 <span className="hidden md:inline">Bấm & Trải nghiệm ứng dụng thiết kế A.I miễn phí</span>

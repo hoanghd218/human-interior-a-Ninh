@@ -61,7 +61,7 @@ const SolutionSection = () => {
           <span className="inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary/10 text-primary text-[10px] md:text-sm font-semibold mb-4 md:mb-6 tracking-wide md:tracking-wider">
             GIẢI PHÁP
           </span>
-          <h2 className="text-[5.5vw] md:text-4xl font-black text-[#171717] font-display uppercase mb-4 leading-tight tracking-tight text-balance">
+          <h2 className="text-[5.5vw] md:text-3xl lg:text-4xl xl:text-5xl font-black mb-4 md:mb-6 leading-tight px-2">
             <span className="text-primary font-black">Human Interior</span>
             <br />
             <span className="block mt-2 text-foreground/90 font-bold text-[4.5vw] md:text-2xl lg:text-3xl">
@@ -139,12 +139,12 @@ const SolutionSection = () => {
                 </div>
               </div>
 
-              <div className="pt-6">
-                <h3 className="text-[3.5vw] md:text-xl font-bold font-display text-[#171717] mb-2 uppercase group-hover:text-[#E05C3E] transition-colors text-balance">
+              <div className="pt-6 md:pt-8">
+                <h3 className="text-[3.5vw] md:text-xl font-bold text-foreground mb-3 md:mb-4 flex items-start gap-2">
                   <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0 mt-0.5" />
                   <span>{benefit.title}</span>
                 </h3>
-                <p className="text-[#555] text-lg font-light leading-relaxed mb-6 italic text-pretty">
+                <p className="text-[3vw] md:text-base text-muted-foreground leading-relaxed">
                   {benefit.description}
                 </p>
               </div>

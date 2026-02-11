@@ -1,3 +1,6 @@
+/* Google Fonts - Cinzel (Display) & Josefin Sans (Body) */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Josefin+Sans:wght@300;400;500;600;700&display=swap');
+
 @import "tailwindcss";
 
 /* ========================================
@@ -26,15 +29,12 @@
 }
 
 @theme {
-  --color-primary: #E05C3E;
-  --color-primary-hover: #C8482D;
-  --color-gold: #D4AF37;
-  --color-charcoal: #171717;
-}
-
-@theme inline {
-  --font-sans: var(--font-inter), sans-serif;
-  --font-display: var(--font-expo), sans-serif;
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-gold: var(--color-gold);
+  --color-charcoal: var(--color-charcoal);
+  --font-sans: 'Josefin Sans', var(--font-inter), sans-serif;
+  --font-display: 'Cinzel', var(--font-expo), serif;
 }
 
 /* ========================================

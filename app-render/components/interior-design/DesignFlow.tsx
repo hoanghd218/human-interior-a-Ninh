@@ -146,6 +146,7 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
         } catch (error) {
             console.error(error);
             alert("Đã xảy ra lỗi khi kết nối với AI.");
+            alert(error);
         } finally {
             setIsGenerating(false);
         }

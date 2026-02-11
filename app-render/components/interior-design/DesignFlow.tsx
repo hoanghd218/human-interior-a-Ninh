@@ -202,7 +202,7 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
 
         // Save lead data to webhook
         try {
-            await fetch('https://n8n.bimspeed.net/webhook/23ec8e32-909d-49c6-99d7-9c9bf5960a1b', {
+            await fetch('https://n8n.bimspeed.net/webhook/1f64f619-1125-489e-a383-b169f23ada3b', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -211,9 +211,9 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
                     fullName: data.name,
                     phone: data.phone,
                     email: data.email,
-                    address: data.location,
                     budget: data.budget,
-                    submitedAt: new Date().toISOString()
+                    location: data.location,
+                    date: new Date().toLocaleString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false })
                 })
             });
         } catch (error) {

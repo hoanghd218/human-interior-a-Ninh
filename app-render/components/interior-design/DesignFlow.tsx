@@ -144,9 +144,10 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
                 alert("Không thể tạo hình ảnh. Vui lòng thử lại.");
             }
         } catch (error) {
+
             console.error(error);
             alert("Đã xảy ra lỗi khi kết nối với AI.");
-            alert(error);
+            alert(error instanceof Error ? error.message : JSON.stringify(error));
         } finally {
             setIsGenerating(false);
         }

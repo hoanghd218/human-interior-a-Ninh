@@ -11,6 +11,28 @@ const FloatingActions = ({ showFloatingBar }: FloatingActionsProps) => {
         document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' });
     };
 
+    const handleShare = async (title: string, text: string, url: string) => {
+        const shareData = { title, text, url };
+
+        try {
+            if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+                await navigator.share(shareData);
+            } else {
+                await navigator.clipboard.writeText(url);
+                const { toast } = await import("sonner");
+                toast.success("Đã sao chép liên kết vào bộ nhớ tạm!");
+            }
+        } catch (err) {
+            console.error("Error sharing:", err);
+            // Fallback for user cancellation or other errors
+            if ((err as Error).name !== 'AbortError') {
+                await navigator.clipboard.writeText(url);
+                const { toast } = await import("sonner");
+                toast.success("Đã sao chép liên kết!");
+            }
+        }
+    };
+
     useEffect(() => {
         const script = document.createElement('script');
         script.src = 'https://chat.workai.vn/widget/v2/chat-widget.umd.js?v=' + new Date().getTime();
@@ -36,7 +58,7 @@ const FloatingActions = ({ showFloatingBar }: FloatingActionsProps) => {
                     "icon": "message",
                     "iconSize": "60px",
                     "right": "20px",
-                    "bottom": "60px",
+                    "bottom": "120px",
                     "darkMode": "auto",
                     "themeColor": "#ff00f1",
                     "fontSize": "14px",
@@ -102,7 +124,7 @@ const FloatingActions = ({ showFloatingBar }: FloatingActionsProps) => {
                         <p className="text-xs text-[#666]">Kết nối ngay với KTS Trưởng</p>
                     </div>
 
-                    <div className="flex gap-3 w-full md:w-auto">
+                    <div className="flex flex-wrap gap-3 w-full md:w-auto">
                         <a
                             className="flex-1 md:flex-none bg-[#E05C3E] hover:bg-[#C8482D] text-white px-2 py-2.5 rounded-lg font-bold text-xs uppercase transition-all shadow-md flex items-center justify-center gap-2 animate-ripple cursor-pointer"
                             href="https://mienphi.hispace.ai/"
@@ -119,6 +141,16 @@ const FloatingActions = ({ showFloatingBar }: FloatingActionsProps) => {
                             <span className="!hidden md:!block material-symbols-outlined text-[18px]">construction</span>
                             Tuỳ chỉnh 3D có sẵn
                         </a>
+                        <button
+                            className="flex-1 md:flex-none bg-white hover:bg-gray-50 text-[#333] border border-[#ddd] px-2 py-2.5 whitespace-nowrap rounded-lg font-bold text-xs uppercase transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer"
+                            onClick={() => handleShare(
+                                'HiSpace - Serving Star-Rating Living Spaces',
+                                'Thấy hay gửi ngay bạn bè',
+                                'https://mienphi.hispace.ai/ '
+                            )}
+                        >
+                            Thấy hay gửi ngay bạn bè
+                        </button>
                     </div>
                 </div>
             </div>

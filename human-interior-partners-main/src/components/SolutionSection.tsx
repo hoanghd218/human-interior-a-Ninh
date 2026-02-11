@@ -79,7 +79,7 @@ const SolutionSection = () => {
             onClick={() => handleShare(
               'HiSpace - Serving Star-Rating Living Spaces',
               'Gửi link ỨNG DỤNG THIẾT KẾ AI cho khách trải nghiệm miễn phí',
-              'https://app.hispace.ai/'
+              'https://mienphi.hispace.ai/'
             )}
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}

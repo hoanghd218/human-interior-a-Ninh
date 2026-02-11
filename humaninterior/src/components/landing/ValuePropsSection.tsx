@@ -19,7 +19,7 @@ const ValuePropsSection = () => {
                             <span className="material-symbols-outlined text-[56px] text-[#D4AF37] font-thin group-hover:scale-110 transition-transform duration-500">visibility</span>
                         </div>
                         <div className="space-y-3">
-                            <h3 className="text-[4vw] md:text-2xl font-bold font-display uppercase tracking-wider mb-8 pb-4 border-b border-white/20 text-balance">
+                            <h3 className="text-[4vw] md:text-2xl font-bold font-display uppercase text-white tracking-wider text-balance">
                                 Thay Đổi Vật Liệu
                             </h3>
                             <div className="space-y-1">

@@ -30,8 +30,11 @@
   --color-primary-hover: #C8482D;
   --color-gold: #D4AF37;
   --color-charcoal: #171717;
-  --font-sans: 'Inter', sans-serif;
-  --font-display: 'Exo 2', serif;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), sans-serif;
+  --font-display: var(--font-expo), sans-serif;
 }
 
 /* ========================================

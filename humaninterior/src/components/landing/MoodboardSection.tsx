@@ -58,7 +58,7 @@ const MoodboardSection = () => {
                         <p className="text-white text-[4.5vw] md:text-xl font-medium tracking-wide drop-shadow-md">
                             Kết nối Bản vẽ Ý tưởng với Vật liệu thực tế
                         </p>
-                        <p className="text-white/80 text-[3.2vw] md:text-base italic font-serif tracking-wide drop-shadow-md">
+                        <p className="text-white/80 text-[3.2vw] md:text-base italic tracking-wide drop-shadow-md">
                             &quot;Gia chủ là người Quyết định tính thực tế bản 3D ngôi nhà của mình,<br className="min-w-[490px]:block hidden" /> đừng quá phụ thuộc Kiến trúc sư&quot;
                         </p>
                     </div>

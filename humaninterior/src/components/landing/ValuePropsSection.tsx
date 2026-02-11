@@ -41,7 +41,7 @@ const ValuePropsSection = () => {
                             </h3>
                             <div className="space-y-1">
                                 <p className="text-gray-300 text-[3.2vw] md:text-base font-light leading-relaxed font-sans">
-                                    Nhìn thấy đồ đẹp ghép vào thiết ngay <span className="text-white font-medium">trong 1 phút</span>.
+                                    Nhìn thấy đồ đẹp ghép vào thiết kế ngay <span className="text-white font-medium">trong 1 phút</span>.
                                 </p>
                                 <p className="text-gray-300 text-[3.2vw] md:text-base font-light leading-relaxed font-sans">
                                     Tránh lãng phí khi chọn sai sofa, bàn ăn, ...

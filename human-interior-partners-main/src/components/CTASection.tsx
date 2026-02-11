@@ -95,16 +95,43 @@ const CTASection = () => {
 
     setIsSubmitting(true);
 
-    // Simulate submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch(
+        "https://n8n.bimspeed.net/webhook/8a35cadb-ddbe-42ba-b81d-5180a40046e5",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            fullName: formData.name,
+            phone: formData.phone,
+            email: formData.email,
+            date: new Date().toISOString(),
+          }),
+        }
+      );
 
-    toast({
-      title: "🎉 Đăng ký thành công!",
-      description: "Chúng tôi sẽ liên hệ bạn trong 24h tới."
-    });
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
 
-    setFormData({ name: "", email: "", phone: "", clientType: "" });
-    setIsSubmitting(false);
+      toast({
+        title: "🎉 Đăng ký thành công!",
+        description: "Chúng tôi sẽ liên hệ bạn trong 24h tới.",
+      });
+
+      setFormData({ name: "", email: "", phone: "", clientType: "" });
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast({
+        title: "❌ Gửi thất bại",
+        description: "Vui lòng thử lại sau hoặc liên hệ trực tiếp.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

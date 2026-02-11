@@ -104,6 +104,41 @@ const getStyleIcon = (iconName: string) => {
     }
 };
 
+// Compress image on client side to reduce payload for server actions
+const compressImage = (base64: string, maxWidth = 1536, quality = 0.8): Promise<string> => {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => {
+            const canvas = document.createElement('canvas');
+            let { width, height } = img;
+
+            // Scale down if larger than maxWidth
+            if (width > maxWidth) {
+                height = Math.round((height * maxWidth) / width);
+                width = maxWidth;
+            }
+            // Also check height
+            if (height > maxWidth) {
+                width = Math.round((width * maxWidth) / height);
+                height = maxWidth;
+            }
+
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext('2d');
+            if (!ctx) {
+                reject(new Error('Failed to get canvas context'));
+                return;
+            }
+            ctx.drawImage(img, 0, 0, width, height);
+            const compressed = canvas.toDataURL('image/jpeg', quality);
+            resolve(compressed);
+        };
+        img.onerror = () => reject(new Error('Failed to load image for compression'));
+        img.src = base64;
+    });
+};
+
 const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
     const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
     const [showRegisterModal, setShowRegisterModal] = useState(false);
@@ -130,7 +165,10 @@ const DesignFlow: React.FC<DesignFlowProps> = ({ onComplete }) => {
         }, 100);
 
         try {
-            const results = await generateInteriorDesigns(image, selectedStyles, selectedBudget, referenceImage || undefined);
+            // Compress images on client side before sending to server action
+            const compressedImage = await compressImage(image);
+            const compressedRef = referenceImage ? await compressImage(referenceImage) : undefined;
+            const results = await generateInteriorDesigns(compressedImage, selectedStyles, selectedBudget, compressedRef);
             setGeneratedImages(results);
             if (results.length > 0) {
                 setHasResults(true);

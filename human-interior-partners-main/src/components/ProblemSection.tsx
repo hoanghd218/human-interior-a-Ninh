@@ -38,7 +38,7 @@ const ProblemSection = () => {
           viewport={{ once: true }}
           className="text-center mb-8 md:mb-16"
         >
-          <h2 className="text-[5vw] md:text-3xl lg:text-4xl xl:text-5xl font-black mb-4 md:mb-6 leading-tight px-2">
+          <h2 className="text-[5vw] md:text-4xl font-black text-[#171717] font-display uppercase mb-6 leading-tight tracking-tight text-balance">
             <span className="block mb-2">Nếu bạn đang làm sale mà thấy mình trong những điều này…</span>
             <span className="gradient-gold-text">thì đây là lý do bạn cần đọc tiếp</span>
           </h2>
@@ -62,10 +62,10 @@ const ProblemSection = () => {
               <div className="flex items-start gap-3 md:gap-4">
                 <span className="text-2xl md:text-3xl flex-shrink-0"><XCircle className="w-5 h-5 md:w-8 md:h-8 text-destructive" /></span>
                 <div>
-                  <h3 className="text-[3.5vw] md:text-xl font-bold text-foreground mb-2 md:mb-3 leading-snug">
+                  <h3 className="text-[3.5vw] md:text-xl font-bold font-display text-[#171717] mb-3 uppercase tracking-wider group-hover:text-[#E05C3E] transition-colors text-balance">
                     {point.title}
                   </h3>
-                  <p className="text-[3vw] md:text-base text-muted-foreground leading-relaxed">
+                  <p className="text-[#555] text-[3.2vw] md:text-lg max-w-3xl mx-auto leading-relaxed font-light italic text-pretty">
                     {point.description}
                   </p>
                 </div>

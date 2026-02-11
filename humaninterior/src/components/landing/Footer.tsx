@@ -22,18 +22,18 @@ const Footer = () => {
                                 </svg>
                             </div>
                             <div className="flex flex-col">
-                                <span className="text-2xl font-bold font-display tracking-wide uppercase text-white leading-none mb-1">
+                                <h3 className="text-[4vw] md:text-xl font-bold font-display uppercase tracking-widest text-[#E05C3E] mb-2 text-balance">
                                     HUMAN INTERIOR
-                                </span>
+                                </h3>
                                 <span className="text-[10px] text-white/50 uppercase tracking-[0.15em]">
                                     Member of HISPACE.AI
                                 </span>
                             </div>
                         </Link>
-                        <p className="text-gray-400 text-sm leading-relaxed italic">
+                        <span className="text-gray-400 text-sm md:text-base leading-relaxed group-hover:text-white transition-colors text-pretty">
                             &quot;Serving Star-Rating Living Spaces&quot; <br />
                             <span className="font-medium text-white/90">Phụng Sự Không Gian Sống Chuẩn Sao</span>
-                        </p>
+                        </span>
                         <div className="flex gap-4">
                             <a href="https://www.facebook.com/p/Human-Interior-61580810607571" target="_blank" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#E05C3E] transition-colors">
                                 <span className="text-sm font-bold">Fb</span>

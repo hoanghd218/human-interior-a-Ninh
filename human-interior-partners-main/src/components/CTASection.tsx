@@ -153,10 +153,10 @@ const CTASection = () => {
             <span className="inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-semibold mb-4 md:mb-6">
               GIỮ SUẤT NGAY
             </span>
-            <h2 className="text-[5.5vw] md:text-3xl lg:text-4xl xl:text-5xl font-black mb-3 md:mb-4">
+            <h2 className="text-[5.5vw] md:text-4xl font-black text-white font-display uppercase mb-4 leading-tight tracking-tight text-balance">
               Đăng Ký <span className="gradient-gold-text">Phỏng Vấn</span>
             </h2>
-            <p className="text-[3.5vw] md:text-xl text-muted-foreground">
+            <p className="text-white/90 text-[3.5vw] md:text-lg max-w-xl font-light italic text-pretty">
               Điền form dưới đây – chúng tôi sẽ liên hệ trong 24h
             </p>
           </motion.div>

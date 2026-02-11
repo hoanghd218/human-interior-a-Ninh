@@ -56,7 +56,7 @@ const ShowroomSection = () => {
                     <span className="inline-block px-4 py-2 rounded-full bg-[#E05C3E]/10 text-[#E05C3E] text-xs md:text-sm font-bold mb-4 tracking-widest uppercase">
                         KHÔNG GIAN SANG TRỌNG
                     </span>
-                    <h2 className="text-[6.5vw] md:text-5xl font-black mb-6 text-[#171717] font-display leading-tight uppercase tracking-tight">
+                    <h2 className="text-[6vw] md:text-5xl font-display font-black text-[#171717] mb-6 uppercase text-balance">
                         Địa chỉ Showroom <span className="text-[#E05C3E]">Human Interior</span>
                     </h2>
                     <p className="text-gray-500 mx-auto text-[3.5vw] md:text-lg font-light leading-relaxed">
@@ -106,10 +106,10 @@ const ShowroomSection = () => {
                 {/* Google Maps Section - Integrated */}
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-10">
-                        <h3 className="text-[5vw] md:text-3xl font-bold mb-2 text-[#171717]">
+                        <h3 className="text-[5vw] md:text-3xl font-display font-black text-[#171717] mb-3 uppercase text-balance">
                             <span className="text-[#E05C3E]">Bản đồ</span> vị trí
                         </h3>
-                        <p className="text-gray-500 font-medium">MIDORI PARK, Bình Dương</p>
+                        <p className="text-[#555] font-medium text-pretty">MIDORI PARK, Bình Dương</p>
                     </div>
 
                     <div className="relative rounded-2xl md:rounded-3xl overflow-hidden border border-gray-200 shadow-2xl aspect-video md:aspect-[21/9]">

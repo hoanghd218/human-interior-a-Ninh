@@ -82,9 +82,9 @@ const HeroSection = () => {
                     </svg>
                 </div>
                 <div className="flex flex-col items-start">
-                    <span className="text-xl md:text-2xl font-bold font-display tracking-wide text-white leading-none drop-shadow-lg">
+                    <h1 className="text-[5vw] md:text-5xl lg:text-7xl font-display font-black text-white leading-[1.1] tracking-tight uppercase drop-shadow-2xl text-balance">
                         Human Interior
-                    </span>
+                    </h1>
                     <span className="text-[8px] md:text-[10px] text-white/70 uppercase tracking-[0.15em]">
                         Member of HISPACE.AI
                     </span>

@@ -23,12 +23,15 @@ const Footer = () => {
           >
             <div className="flex items-center gap-4 mb-4">
               <Logo className="w-10 h-auto text-primary" />
-              <h3 className="text-3xl font-black tracking-tight leading-none">
-                <span className="text-primary uppercase">Human</span>{" "}
-                <span className="text-foreground uppercase">Interior</span>
-              </h3>
+              <span className="text-gray-400 text-[3vw] md:text-sm leading-relaxed tracking-wide text-pretty">
+                &quot;Serving Star-Rating Living Spaces&quot; <br />
+                <span className="font-medium text-white/90">Phụng Sự Không Gian Sống Chuẩn Sao</span>
+              </span>
             </div>
             <div className="px-4 py-1.5 rounded-full bg-primary/5 border border-primary/10">
+              <h3 className="text-[3vw] md:text-lg font-bold font-display uppercase tracking-widest text-[#E05C3E] mb-2 text-balance">
+                HUMAN INTERIOR
+              </h3>
               <p className="text-[10px] md:text-xs font-black text-primary/60 tracking-[0.2em] uppercase">
                 Member of <span className="text-primary">Hispace.ai</span>
               </p>
@@ -89,9 +92,9 @@ const Footer = () => {
                 </div>
                 <div className="flex flex-col items-center md:items-start">
                   <span className="text-[14px] font-black text-primary tracking-[0.2em] uppercase mb-1.5 md:mb-2 text-center">Địa chỉ</span>
-                  <p className="text-foreground/80 font-bold text-[3vw] md:text-base leading-relaxed max-w-sm md:max-w-none">
+                  <span className="text-gray-400 text-[3vw] md:text-sm leading-relaxed text-pretty max-w-sm md:max-w-none">
                     Shophouse HR01-1E [Số Nhà 27], Khu Đô Thị MIDORI PARK HARUKA, Khu Phố Hòa Phú 2, Đường Bùi Thị Xuân, Phường Bình Dương, Thành Phố Hồ Chí Minh.
-                  </p>
+                  </span>
                 </div>
               </motion.div>
             </div>
@@ -114,6 +117,9 @@ const Footer = () => {
                     transition={{ delay: 0.2 + idx * 0.1 }}
                     className="group flex items-center gap-2.5 px-2 py-1 transition-all duration-300"
                   >
+                    <h4 className="font-bold text-white uppercase tracking-wider mb-4 md:mb-6 text-sm border-b border-gray-800 pb-2 text-balance">
+                      Liên Hệ
+                    </h4>
                     <div className="h-1.5 w-1.5 rounded-full bg-primary/30 group-hover:bg-primary group-hover:scale-150 transition-all duration-300 hidden md:block" />
                     <span className="text-[3vw] md:text-[14px] font-black text-muted-foreground/70 group-hover:text-primary tracking-widest md:tracking-wide uppercase transition-colors text-center">
                       {link.label}

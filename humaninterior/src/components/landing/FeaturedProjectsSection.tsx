@@ -89,7 +89,7 @@ const FeaturedProjectsSection = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="mb-12">
-                    <h2 className="text-[6vw] md:text-5xl font-display font-medium text-[#171717] uppercase tracking-wider mb-8">
+                    <h2 className="text-[6vw] md:text-6xl font-display font-black text-[#171717] uppercase mb-6 leading-none tracking-tight text-balance">
                         Dự Án Tiêu Biểu
                     </h2>
 
@@ -150,7 +150,7 @@ const FeaturedProjectsSection = () => {
 
                             {/* Content */}
                             <div className="p-6">
-                                <h3 className="text-[4.5vw] md:text-xl font-bold text-[#171717] font-display mb-4 group-hover:text-[#E05C3E] transition-colors">
+                                <h3 className="text-[4.5vw] md:text-3xl font-display font-bold text-white mb-2 leading-tight uppercase group-hover:text-[#E05C3E] transition-colors text-balance">
                                     {project.title}
                                 </h3>
 

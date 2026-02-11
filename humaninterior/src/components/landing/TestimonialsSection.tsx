@@ -131,10 +131,10 @@ const TestimonialsSection = () => {
     return (
         <section id="testimonials" className="py-20 bg-white overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
-                <h2 className="text-[5.5vw] md:text-[40px] font-bold text-[#1C1917] font-display mb-4 tracking-wide">
+                <h2 className="text-[5.5vw] md:text-5xl font-display font-black text-[#171717] mb-6 uppercase text-balance">
                     Khách Hàng Nói Về Chúng Tôi
                 </h2>
-                <p className="text-[#44403C] max-w-2xl mx-auto font-sans font-light text-[3.6vw] md:text-lg">
+                <p className="text-[3.5vw] md:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed font-medium text-pretty">
                     Sự hài lòng của khách hàng là minh chứng rõ nét nhất cho chất lượng.
                 </p>
                 <div className="w-24 h-1 bg-gradient-to-r from-[#D4AF37] via-[#F2D06B] to-[#D4AF37] mx-auto mt-6 rounded-full"></div>

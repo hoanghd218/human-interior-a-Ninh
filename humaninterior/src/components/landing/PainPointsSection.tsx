@@ -25,12 +25,12 @@ const PainPointsSection = () => {
 
                 {/* Punchy Header */}
                 <div className="mb-24">
-                    <h2 className="text-[8vw] md:text-7xl font-display font-black text-[#171717] leading-[1.2] uppercase mb-8">
+                    <h2 className="text-[8vw] md:text-7xl font-display font-black text-[#171717] leading-[1.2] uppercase mb-8 text-balance">
                         ĐỪNG ĐỂ <br />
                         <span className="text-[#E05C3E]">KẺ NGOẠI ĐẠO</span> <br />
                         PHÁ NÁT TỔ ẤM
                     </h2>
-                    <p className="text-[3.8vw] md:text-2xl text-gray-500 font-medium max-w-2xl leading-relaxed italic">
+                    <p className="text-[3.8vw] md:text-2xl text-gray-500 font-medium max-w-2xl leading-relaxed italic text-pretty">
                         Tại sao 90% gia chủ cảm thấy "kiệt sức" sau khi làm nhà?
                         Vì họ đang dấn thân vào một cuộc chơi đầy cạm bẫy mà không có người dẫn lối minh bạch.
                     </p>
@@ -47,16 +47,16 @@ const PainPointsSection = () => {
                             </div>
 
                             <div className="md:col-span-7">
-                                <h3 className="text-[5.5vw] md:text-4xl font-display font-black text-[#171717] mb-6 leading-none tracking-tight">
+                                <h3 className="text-[5.5vw] md:text-4xl font-display font-black text-[#171717] mb-6 leading-none tracking-tight text-balance">
                                     {item.hook}
                                 </h3>
-                                <p className="text-[3.5vw] md:text-lg text-gray-500 leading-relaxed font-medium">
+                                <p className="text-[3.5vw] md:text-lg text-gray-500 leading-relaxed font-medium text-pretty">
                                     {item.problem}
                                 </p>
                             </div>
 
                             <div className="md:col-span-4 bg-gray-50 p-8 rounded-2xl border-l-4 border-[#D4AF37]">
-                                <p className="text-[#171717] text-[3.5vw] md:text-lg font-bold leading-snug flex items-start gap-3">
+                                <p className="text-[#171717] text-[3.5vw] md:text-lg font-bold leading-snug flex items-start gap-3 text-pretty">
                                     <span className="material-symbols-outlined text-[#D4AF37] mt-1 shrink-0">verified</span>
                                     <span>
                                         <span className="text-[#D4AF37] block text-xs uppercase tracking-widest mb-1">GIẢI PHÁP HUMAN</span>
@@ -70,7 +70,7 @@ const PainPointsSection = () => {
 
                 {/* Final Slap CTA */}
                 <div className="mt-32 text-center">
-                    <h3 className="text-[5vw] md:text-4xl font-display font-black text-[#171717] mb-12 uppercase tracking-tighter italic">
+                    <h3 className="text-[5vw] md:text-4xl font-display font-black text-[#171717] mb-12 uppercase tracking-tighter italic text-balance">
                         BẠN CHỌN <span className="underline decoration-[#E05C3E] decoration-8 underline-offset-8">AN TÂM</span> HAY CHỌN <span className="line-through text-gray-300">RỦI RO</span>?
                     </h3>
 

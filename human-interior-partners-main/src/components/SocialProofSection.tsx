@@ -191,7 +191,7 @@ const SocialProofSection = () => {
               </div>
 
               {/* Content */}
-              <p className="text-[3.5vw] md:text-base text-foreground mb-4 leading-relaxed italic line-clamp-3">
+              <p className="text-[3.5vw] md:text-base text-foreground mb-4 leading-relaxed italic line-clamp-3 text-pretty">
                 "{testimonial.content}"
               </p>
 

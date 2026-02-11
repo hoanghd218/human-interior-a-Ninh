@@ -150,7 +150,7 @@ const FeaturedProjectsSection = () => {
 
                             {/* Content */}
                             <div className="p-6">
-                                <h3 className="text-[4.5vw] md:text-3xl font-display font-bold text-white mb-2 leading-tight uppercase group-hover:text-[#E05C3E] transition-colors text-balance">
+                                <h3 className="text-[4.5vw] md:text-3xl font-display font-bold text-[#171717] mb-2 leading-tight uppercase group-hover:text-[#E05C3E] transition-colors text-balance">
                                     {project.title}
                                 </h3>
 

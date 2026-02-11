@@ -6,43 +6,73 @@ import ProjectDetailsModal from "./ProjectDetailsModal";
 const PROJECTS = [
     {
         id: 1,
+        title: "Căn hộ ORCHARD HILL Sycamore",
+        category: "singapore",
+        location: "Tiêu chuẩn Singapore",
+        area: "120m²",
+        image: "/images/orchard-hill-sycamore/A1.webp",
+        images: Array.from({ length: 24 }, (_, i) => `/images/orchard-hill-sycamore/A${i + 1}.webp`),
+        standard: "Tiêu chuẩn Singapore",
+        description: "Căn hộ 3 ngủ Duplex ORCHARD HILL - Sycamore"
+    },
+    {
+        id: 2,
+        title: "Dự án JAPFA Bình Dương",
+        category: "international",
+        location: "Văn phòng & Showroom",
+        area: "350m²",
+        image: "/images/projects/japfa/A1.webp",
+        images: [
+            ...Array.from({ length: 21 }, (_, i) => `/images/projects/japfa/A${i + 1}.webp`),
+            ...Array.from({ length: 25 }, (_, i) => `/images/projects/japfa/B${i + 1}.webp`),
+            ...Array.from({ length: 4 }, (_, i) => `/images/projects/japfa/C${i + 1}.webp`),
+        ],
+        standard: "Tiêu chuẩn Tập đoàn Đa quốc gia",
+        description: "Văn phòng nhà máy Tập đoàn JAPFA"
+    },
+    {
+        id: 3,
         title: "Căn hộ 2 Phòng Ngủ - V1",
         category: "japan",
         location: "Concept 01",
         area: "85m²",
         image: "/images/projects/model-house-2br-v1/V1.webp",
         images: Array.from({ length: 12 }, (_, i) => `/images/projects/model-house-2br-v1/V${i + 1}.webp`),
-        standard: "Tiêu chuẩn Nhật Bản"
+        standard: "Tiêu chuẩn Nhật Bản",
+        description: "Căn hộ 2 ngủ B0 802 A THE TEN - Becamex Tokyu"
     },
     {
-        id: 2,
+        id: 4,
+        title: "Căn hộ 1 Phòng Ngủ - D1",
+        category: "japan",
+        location: "Concept 01",
+        area: "55m²",
+        image: "/images/projects/model-house-1br-v1/D1.webp",
+        images: Array.from({ length: 6 }, (_, i) => `/images/projects/model-house-1br-v1/D${i + 1}.webp`),
+        standard: "Tiêu chuẩn Nhật Bản",
+        description: "Căn hộ 1 ngủ D0 1002 A THE TEN - Becamex Tokyu"
+    },
+    {
+        id: 5,
+        title: "Căn hộ 1 Phòng Ngủ - A1",
+        category: "japan",
+        location: "Concept 02",
+        area: "58m²",
+        image: "/images/projects/model-house-1br-v2/A1.webp",
+        images: Array.from({ length: 9 }, (_, i) => `/images/projects/model-house-1br-v2/A${i + 1}.webp`),
+        standard: "Tiêu chuẩn Nhật Bản",
+        description: "Căn hộ 1 ngủ A0 1002 A THE TEN - Becamex Tokyu"
+    },
+    {
+        id: 6,
         title: "Căn hộ 2 Phòng Ngủ - B1",
         category: "japan",
         location: "Concept 02",
         area: "92m²",
-        image: "/images/projects/model-house-2br-b1/B1.webp",
-        images: Array.from({ length: 12 }, (_, i) => `/images/projects/model-house-2br-b1/B${i + 1}.webp`),
-        standard: "Tiêu chuẩn Nhật Bản"
-    },
-    {
-        id: 3,
-        title: "Căn hộ 1 Phòng Ngủ - D1",
-        category: "singapore",
-        location: "Concept 01",
-        area: "55m²",
-        image: "/images/projects/model-house-1br-d1/D1.webp",
-        images: Array.from({ length: 6 }, (_, i) => `/images/projects/model-house-1br-d1/D${i + 1}.webp`),
-        standard: "Tiêu chuẩn Singapore"
-    },
-    {
-        id: 4,
-        title: "Văn phòng Tập đoàn Japfa",
-        category: "international",
-        location: "Concept 02",
-        area: "58m²",
-        image: "/images/projects/japfa/A1.webp",
-        images: Array.from({ length: 9 }, (_, i) => `/images/projects/japfa/A${i + 1}.webp`),
-        standard: "Tiêu chuẩn Đa Quốc Gia"
+        image: "/images/projects/model-house-2br-v2/B1.webp",
+        images: Array.from({ length: 12 }, (_, i) => `/images/projects/model-house-2br-v2/B${i + 1}.webp`),
+        standard: "Tiêu chuẩn Nhật Bản",
+        description: "Căn hộ 2 ngủ B0 802 A THE TEN - Becamex Tokyu"
     }
 ];
 
@@ -59,24 +89,25 @@ const FeaturedProjectsSection = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="mb-12">
-                    <h2 className="text-4xl md:text-5xl font-display font-medium text-[#171717] uppercase tracking-wider mb-8">
+                    <h2 className="text-[6vw] md:text-5xl font-display font-medium text-[#171717] uppercase tracking-wider mb-8">
                         Dự Án Tiêu Biểu
                     </h2>
 
                     {/* Filters */}
-                    <div className="flex flex-wrap gap-4 border-b border-gray-200 pb-1">
+                    <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-12">
                         {[
-                            { id: 'japan', label: 'Dự án đáp ứng tiêu chuẩn Chủ đầu tư Nhật Bản' },
-                            { id: 'singapore', label: 'Dự án đáp ứng tiêu chuẩn Chủ đầu tư Singapore' },
-                            { id: 'international', label: 'Dự án đáp ứng tiêu chuẩn Tập đoàn đa Quốc gia' }
+                            { id: 'all', label: 'Tất cả' },
+                            { id: 'singapore', label: 'Tiêu chuẩn Singapore' },
+                            { id: 'international', label: 'Tiêu chuẩn Quốc tế' },
+                            { id: 'japan', label: 'Tiêu chuẩn Nhật Bản' }
                         ].map((category) => (
                             <button
                                 key={category.id}
-                                onClick={() => setActiveCategory(category.id === activeCategory ? 'all' : category.id)}
-                                className={`px-6 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-300 relative shadow-sm
-                  ${activeCategory === category.id
-                                        ? 'bg-[#E05C3E] text-white shadow-lg transform -translate-y-1'
-                                        : 'bg-white text-gray-500 hover:text-[#E05C3E] hover:bg-gray-50'
+                                onClick={() => setActiveCategory(category.id)}
+                                className={`px-4 py-2 md:px-6 md:py-2.5 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wide md:tracking-widest transition-all duration-300 border
+                                    ${activeCategory === category.id
+                                        ? 'bg-[#E05C3E] text-white border-[#E05C3E] shadow-lg shadow-[#E05C3E]/20'
+                                        : 'bg-white text-gray-500 border-gray-200 hover:border-[#E05C3E]/50'
                                     }`}
                             >
                                 {category.label}
@@ -119,9 +150,13 @@ const FeaturedProjectsSection = () => {
 
                             {/* Content */}
                             <div className="p-6">
-                                <h3 className="text-xl font-bold text-[#171717] font-display mb-4 group-hover:text-[#E05C3E] transition-colors">
+                                <h3 className="text-[4.5vw] md:text-xl font-bold text-[#171717] font-display mb-4 group-hover:text-[#E05C3E] transition-colors">
                                     {project.title}
                                 </h3>
+
+                                <p className="text-sm font-medium text-gray-500 mb-4 line-clamp-2">
+                                    {project.description}
+                                </p>
 
                                 <div className="flex items-center gap-6 text-gray-500 text-sm">
                                     <div className="flex items-center gap-2">

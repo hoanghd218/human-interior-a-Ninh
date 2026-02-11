@@ -66,14 +66,14 @@ const ShowroomSection = () => {
                         {" "}
                         dành cho Đại lý
                     </span>
-                    <h2 className="text-xl md:text-3xl lg:text-4xl font-black mb-3 md:mb-4 px-4 leading-tight">
+                    <h2 className="text-[5vw] md:text-3xl lg:text-4xl font-black mb-3 md:mb-4 px-4 leading-tight">
                         <span className="text-primary font-black">All In One</span>
                         {" "}
-                        <span className="text-foreground/90 font-bold text-lg md:text-2xl lg:text-3xl">ngay tại</span>
+                        <span className="text-foreground/90 font-bold text-[4vw] md:text-2xl lg:text-3xl">ngay tại</span>
                         <br />
                         <span className="text-foreground">Showroom</span> <span className="gradient-gold-text">Human Interior</span>
                     </h2>
-                    <p className="text-xs md:text-base text-muted-foreground max-w-2xl mx-auto px-6 leading-relaxed">
+                    <p className="text-[3vw] md:text-base text-muted-foreground max-w-2xl mx-auto px-6 leading-relaxed">
                         Trải nghiệm <span className="font-semibold text-foreground">không gian nội thất đẳng cấp</span>,
                         <br className="hidden md:block" />
                         nơi khách hàng của bạn sẽ được <span className="font-semibold text-foreground">tư vấn và chăm sóc tận tình</span>.
@@ -149,10 +149,10 @@ const ShowroomSection = () => {
                     className="mt-12 md:mt-16"
                 >
                     <div className="text-center mb-6 md:mb-8">
-                        <h3 className="text-xl md:text-2xl lg:text-3xl font-black mb-2 md:mb-3">
+                        <h3 className="text-[5vw] md:text-2xl lg:text-3xl font-black mb-2 md:mb-3">
                             <span className="text-primary">Địa chỉ</span> Showroom
                         </h3>
-                        <p className="text-sm md:text-base text-muted-foreground">
+                        <p className="text-[3vw] md:text-base text-muted-foreground">
                             MIDORI PARK, Bình Dương
                         </p>
                     </div>

@@ -44,7 +44,7 @@ const OutcomeSection = () => {
           <span className="inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-semibold mb-4 md:mb-6">
             TƯƠNG LAI CỦA BẠN
           </span>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black">
+          <h2 className="text-[5.5vw] md:text-3xl lg:text-4xl xl:text-5xl font-black">
             Viễn cảnh <span className="gradient-gold-text">"ĐÃ ĐỜI"</span>
           </h2>
         </motion.div>
@@ -68,16 +68,16 @@ const OutcomeSection = () => {
               {/* Text */}
               <div className="flex items-center gap-2 md:gap-4 flex-1">
                 <Check className="w-4 h-4 md:w-6 md:h-6 text-primary flex-shrink-0" />
-                <p className="text-sm md:text-lg lg:text-xl text-foreground font-medium leading-relaxed">
+                <p className="text-[3.2vw] md:text-lg lg:text-xl text-foreground font-medium leading-relaxed">
                   {index === 0 ? (
                     <>
-                      Có thêm <span className="font-black text-primary text-base md:text-xl lg:text-2xl">30–50–100 triệu/tháng</span>{" "}
+                      Có thêm <span className="font-black text-primary text-[3.5vw] md:text-xl lg:text-2xl">30–50–100 triệu/tháng</span>{" "}
                       chỉ bằng việc{" "}
                       <span className="font-bold text-foreground">trải nghiệm, thấy mê & giới thiệu</span>{" "}
                       <span className="gradient-gold-text font-black">app Thiết Kế AI</span>{" "}
                       cho Khách Hàng.
                       <br />
-                      <span className="text-primary font-black text-base md:text-xl lg:text-2xl">QUÁ ĐƠN GIẢN & THỜI THƯỢNG</span>{" "}
+                      <span className="text-primary font-black text-[3.5vw] md:text-xl lg:text-2xl">QUÁ ĐƠN GIẢN & THỜI THƯỢNG</span>{" "}
                       <span className="text-foreground/80">đúng không nào?</span>
                     </>
                   ) : index === 1 ? (

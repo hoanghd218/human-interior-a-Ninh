@@ -13,7 +13,7 @@ const PROJECTS = [
         image: "/images/orchard-hill-sycamore/A1.webp",
         images: Array.from({ length: 24 }, (_, i) => `/images/orchard-hill-sycamore/A${i + 1}.webp`),
         standard: "Tiêu chuẩn Singapore",
-        description: "Dự án căn hộ cao cấp theo tiêu chuẩn Singapore với thiết kế hiện đại, vật liệu nhập khẩu và thi công đẳng cấp quốc tế."
+        description: "Căn hộ 3 ngủ Duplex ORCHARD HILL - Sycamore"
     },
     {
         id: 2,
@@ -28,7 +28,7 @@ const PROJECTS = [
             ...Array.from({ length: 4 }, (_, i) => `/images/projects/japfa/C${i + 1}.webp`),
         ],
         standard: "Tiêu chuẩn Tập đoàn Đa quốc gia",
-        description: "Tổ hợp văn phòng làm việc và khu trưng bày sản phẩm đẳng cấp, mang đậm dấu ấn thương hiệu và sự chuyên nghiệp."
+        description: "Văn phòng nhà máy Tập đoàn JAPFA"
     },
     {
         id: 3,
@@ -39,7 +39,7 @@ const PROJECTS = [
         image: "/images/projects/model-house-2br-v1/V1.webp",
         images: Array.from({ length: 12 }, (_, i) => `/images/projects/model-house-2br-v1/V${i + 1}.webp`),
         standard: "Tiêu chuẩn Nhật Bản",
-        description: "Bản phối cảnh 3D chi tiết cho căn hộ 2 phòng ngủ theo phong cách hiện đại Nhật Bản, tối ưu hóa không gian và ánh sáng tự nhiên."
+        description: "Căn hộ 2 ngủ B0 802 A THE TEN - Becamex Tokyu"
     },
     {
         id: 4,
@@ -50,18 +50,18 @@ const PROJECTS = [
         image: "/images/projects/model-house-1br-v1/D1.webp",
         images: Array.from({ length: 6 }, (_, i) => `/images/projects/model-house-1br-v1/D${i + 1}.webp`),
         standard: "Tiêu chuẩn Nhật Bản",
-        description: "Thiết kế tối giản nhưng tinh tế cho căn hộ 1 phòng ngủ, phù hợp với lối sống hiện đại và năng động."
+        description: "Căn hộ 1 ngủ D0 1002 A THE TEN - Becamex Tokyu"
     },
     {
         id: 5,
         title: "Căn hộ 1 Phòng Ngủ - A1",
-        category: "international",
+        category: "japan",
         location: "Concept 02",
         area: "58m²",
         image: "/images/projects/model-house-1br-v2/A1.webp",
         images: Array.from({ length: 9 }, (_, i) => `/images/projects/model-house-1br-v2/A${i + 1}.webp`),
-        standard: "Tiêu chuẩn Quốc Tế",
-        description: "Sự kết hợp hoàn hảo giữa vật liệu cao cấp và giải pháp không gian thông minh cho căn hộ diện tích vừa phải."
+        standard: "Tiêu chuẩn Nhật Bản",
+        description: "Căn hộ 1 ngủ A0 1002 A THE TEN - Becamex Tokyu"
     },
     {
         id: 6,
@@ -72,7 +72,7 @@ const PROJECTS = [
         image: "/images/projects/model-house-2br-v2/B1.webp",
         images: Array.from({ length: 12 }, (_, i) => `/images/projects/model-house-2br-v2/B${i + 1}.webp`),
         standard: "Tiêu chuẩn Nhật Bản",
-        description: "Không gian sống sang trọng cho gia đình với đầy đủ công năng, thể hiện đẳng cấp qua từng chi tiết thiết kế."
+        description: "Căn hộ 2 ngủ B0 802 A THE TEN - Becamex Tokyu"
     }
 ];
 
@@ -92,7 +92,7 @@ const FeaturedProjectsSection = () => {
                     <span className="inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-semibold mb-4 md:mb-6">
                         DỰ ÁN TIÊU BIỂU
                     </span>
-                    <h2 className="text-2xl md:text-4xl lg:text-5xl font-black mb-6 md:mb-8">
+                    <h2 className="text-[5.5vw] md:text-4xl lg:text-5xl font-black mb-6 md:mb-8">
                         Kiến Tạo <span className="gradient-gold-text">Không Gian Đẳng Cấp</span>
                     </h2>
 
@@ -137,27 +137,40 @@ const FeaturedProjectsSection = () => {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
 
                                 {/* Standard Badge */}
-                                <div className="absolute top-4 left-4">
-                                    <span className="inline-block bg-primary/90 backdrop-blur-md text-primary-foreground text-[10px] font-bold px-3 py-1 uppercase tracking-widest rounded-md shadow-lg">
+                                <div className="absolute top-4 left-4 z-20">
+                                    <span className="inline-block bg-black/40 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1.5 uppercase tracking-widest rounded-md border border-white/20 shadow-xl">
                                         {project.standard}
                                     </span>
                                 </div>
 
-                                {/* Hover Overlay Info */}
-                                <div className="absolute inset-x-0 bottom-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                    <div className="flex items-center gap-4 text-white/90 text-[10px] font-bold uppercase tracking-widest mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                        <div className="flex items-center gap-1.5">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                                            {project.location}
-                                        </div>
-                                        <div className="flex items-center gap-1.5">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                                            {project.area}
+                                {/* Project Info - Always Visible */}
+                                <div className="absolute inset-x-0 bottom-0 p-5 md:p-6 z-20">
+                                    {/* Extra gradient for readability */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent -z-10" />
+
+                                    <div className="flex flex-col gap-2 relative border-l-2 border-primary/60 pl-4">
+                                        {/* Title on top */}
+                                        <h3 className="text-[4vw] md:text-xl font-black text-white group-hover:text-primary transition-colors duration-300 leading-tight">
+                                            {project.title}
+                                        </h3>
+
+                                        {/* Description below title */}
+                                        <span className="text-primary text-[2.5vw] md:text-[11px] font-bold uppercase tracking-[0.2em] drop-shadow-sm">
+                                            {project.description}
+                                        </span>
+
+                                        {/* Meta info - subtle, brightens on hover */}
+                                        <div className="flex items-center gap-4 text-white/50 text-[10px] font-bold uppercase tracking-widest transition-all duration-500 group-hover:text-white/80">
+                                            <div className="flex items-center gap-1.5">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                                                {project.location}
+                                            </div>
+                                            <div className="flex items-center gap-1.5">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                                                {project.area}
+                                            </div>
                                         </div>
                                     </div>
-                                    <h3 className="text-lg md:text-xl font-bold text-white group-hover:text-primary transition-colors duration-300">
-                                        {project.title}
-                                    </h3>
                                 </div>
 
                                 {/* View Full Icon */}

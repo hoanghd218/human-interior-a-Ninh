@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, Building2, Shield, Users, ArrowRight } from "lucide-react";
+import { CheckCircle2, Building2, Shield, Users, ArrowRight, Share2 } from "lucide-react";
 
 const benefits = [
   {
@@ -23,6 +23,28 @@ const benefits = [
 ];
 
 const SolutionSection = () => {
+  const handleShare = async (title: string, text: string, url: string) => {
+    const shareData = { title, text, url };
+
+    try {
+      if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+        await navigator.share(shareData);
+      } else {
+        await navigator.clipboard.writeText(url);
+        const { toast } = await import("sonner");
+        toast.success("Đã sao chép liên kết vào bộ nhớ tạm!");
+      }
+    } catch (err) {
+      console.error("Error sharing:", err);
+      // Fallback for user cancellation or other errors
+      if ((err as Error).name !== 'AbortError') {
+        await navigator.clipboard.writeText(url);
+        const { toast } = await import("sonner");
+        toast.success("Đã sao chép liên kết!");
+      }
+    }
+  };
+
   return (
     <section className="py-12 md:py-24 bg-card relative overflow-hidden">
       {/* Background glow */}
@@ -39,41 +61,46 @@ const SolutionSection = () => {
           <span className="inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary/10 text-primary text-[10px] md:text-sm font-semibold mb-4 md:mb-6 tracking-wide md:tracking-wider">
             GIẢI PHÁP
           </span>
-          <h2 className="text-xl md:text-3xl lg:text-4xl xl:text-5xl font-black mb-4 md:mb-6 leading-tight px-2">
+          <h2 className="text-[5.5vw] md:text-3xl lg:text-4xl xl:text-5xl font-black mb-4 md:mb-6 leading-tight px-2">
             <span className="text-primary font-black">Human Interior</span>
             <br />
-            <span className="block mt-2 text-foreground/90 font-bold text-lg md:text-2xl lg:text-3xl">
+            <span className="block mt-2 text-foreground/90 font-bold text-[4.5vw] md:text-2xl lg:text-3xl">
               Nơi Bạn Không{" "}
-              <span className="text-foreground font-black text-xl md:text-3xl lg:text-4xl">CẦN LÀM NHIỀU</span>
+              <span className="text-foreground font-black text-[5vw] md:text-3xl lg:text-4xl">CẦN LÀM NHIỀU</span>
             </span>
             <span className="gradient-gold-text block mt-2 font-black">VẪN CÓ KHÁCH</span>
             <br />
-            <span className="block mt-3 text-foreground font-bold text-base md:text-xl lg:text-2xl">
+            <span className="block mt-3 text-foreground font-bold text-[3.5vw] md:text-xl lg:text-2xl">
               BẠN CHỈ CẦN LÀM{" "}
-              <span className="text-primary font-black text-lg md:text-2xl lg:text-3xl">1 ĐIỀU DUY NHẤT</span>
+              <span className="text-primary font-black text-[4.5vw] md:text-2xl lg:text-3xl">1 ĐIỀU DUY NHẤT</span>
             </span>
           </h2>
-          <motion.a
-            href="https://mienphi.hispace.ai/"
-            target="_blank"
-            rel="noopener noreferrer"
+          <motion.button
+            onClick={() => handleShare(
+              'HiSpace - Serving Star-Rating Living Spaces',
+              'Gửi link ỨNG DỤNG THIẾT KẾ AI cho khách trải nghiệm miễn phí',
+              'https://app.hispace.ai/'
+            )}
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
-            className="inline-block mt-6 px-6 py-4 md:px-12 md:py-6 rounded-2xl bg-gradient-to-r from-[#B8860B] via-[#DAA520] to-[#B8860B] text-white font-black text-sm md:text-lg lg:text-xl shadow-2xl hover:shadow-[#DAA520]/50 transition-all duration-300 relative overflow-hidden group"
+            className="inline-block mt-6 px-6 py-4 md:px-12 md:py-6 rounded-2xl bg-gradient-to-r from-[#B8860B] via-[#DAA520] to-[#B8860B] text-white font-black text-[3.2vw] md:text-lg lg:text-xl shadow-2xl hover:shadow-[#DAA520]/50 transition-all duration-300 relative overflow-hidden group cursor-pointer"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
             <span className="relative z-10 flex flex-wrap items-center justify-center gap-1.5 md:gap-3 text-center leading-tight">
-              <span className="font-bold text-white/90 text-xs md:text-base">Gửi link</span>
-              <span className="font-black text-white text-base md:text-xl lg:text-2xl tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">ỨNG DỤNG THIẾT KẾ AI</span>
-              <span className="font-bold text-white/90 text-xs md:text-base">cho khách</span>
-              <span className="font-bold text-white text-xs md:text-base">trải nghiệm miễn phí</span>
-              <ArrowRight className="w-5 h-5 md:w-7 md:h-7 group-hover:translate-x-2 transition-transform flex-shrink-0" />
+              <span className="font-bold text-white/90 text-[2.8vw] md:text-base">Gửi link</span>
+              <span className="font-black text-white text-[3.5vw] md:text-xl lg:text-2xl tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">ỨNG DỤNG THIẾT KẾ AI</span>
+              <span className="font-bold text-white/90 text-[2.8vw] md:text-base">cho khách</span>
+              <span className="font-bold text-white text-[2.8vw] md:text-base">trải nghiệm miễn phí</span>
+              <div className="flex items-center gap-2">
+                <Share2 className="w-4 h-4 md:w-5 md:h-5 text-white/80" />
+                <ArrowRight className="w-5 h-5 md:w-7 md:h-7 group-hover:translate-x-2 transition-transform flex-shrink-0" />
+              </div>
             </span>
             <div className="absolute -bottom-1 -right-1 w-24 h-24 bg-white/10 blur-3xl rounded-full"></div>
-          </motion.a>
+          </motion.button>
         </motion.div>
 
         <motion.div
@@ -82,7 +109,7 @@ const SolutionSection = () => {
           viewport={{ once: true }}
           className="text-center mb-10 md:mb-16"
         >
-          <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold leading-relaxed">
+          <p className="text-[5vw] md:text-2xl lg:text-3xl xl:text-4xl font-bold leading-relaxed">
             <span className="text-foreground/80">Trải nghiệm</span>{" "}
             <span className="text-primary font-black">THỰC TẾ</span>{" "}
             <span className="text-foreground/80">dành cho</span>{" "}
@@ -113,11 +140,11 @@ const SolutionSection = () => {
               </div>
 
               <div className="pt-6 md:pt-8">
-                <h3 className="text-base md:text-xl font-bold text-foreground mb-3 md:mb-4 flex items-start gap-2">
+                <h3 className="text-[3.5vw] md:text-xl font-bold text-foreground mb-3 md:mb-4 flex items-start gap-2">
                   <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0 mt-0.5" />
                   <span>{benefit.title}</span>
                 </h3>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                <p className="text-[3vw] md:text-base text-muted-foreground leading-relaxed">
                   {benefit.description}
                 </p>
               </div>
@@ -133,7 +160,7 @@ const SolutionSection = () => {
           className="text-center"
         >
           <a
-            href="https://mienphi.hispace.ai/"
+            href="https://app.hispace.ai/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block group cursor-pointer"
@@ -146,7 +173,7 @@ const SolutionSection = () => {
               {/* Shimmer effect on hover */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
 
-              <p className="text-lg md:text-2xl lg:text-3xl font-bold text-foreground flex flex-col items-center gap-1 md:gap-2 relative z-10">
+              <p className="text-[4.5vw] md:text-2xl lg:text-3xl font-bold text-foreground flex flex-col items-center gap-1 md:gap-2 relative z-10">
                 <span className="flex items-center gap-2 group-hover:text-primary transition-colors duration-300">
                   <motion.span
                     animate={{ x: [0, 5, 0] }}

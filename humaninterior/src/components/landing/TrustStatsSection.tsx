@@ -9,7 +9,7 @@ const TrustStatsSection = () => {
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 text-center divide-x divide-white/10">
                     {/* Stat 1 */}
                     <div className="flex flex-col items-center gap-2 p-4">
-                        <span className="text-4xl md:text-5xl font-bold text-[#D4AF37] font-display">
+                        <span className="text-[7vw] md:text-5xl font-bold text-[#D4AF37] font-display">
                             <Counter end={350} suffix="+" />
                         </span>
                         <span className="text-xs md:text-sm text-gray-400 uppercase tracking-widest font-medium">

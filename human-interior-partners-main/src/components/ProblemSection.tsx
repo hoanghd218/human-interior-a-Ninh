@@ -38,7 +38,7 @@ const ProblemSection = () => {
           viewport={{ once: true }}
           className="text-center mb-8 md:mb-16"
         >
-          <h2 className="text-lg md:text-3xl lg:text-4xl xl:text-5xl font-black mb-4 md:mb-6 leading-tight px-2">
+          <h2 className="text-[5vw] md:text-3xl lg:text-4xl xl:text-5xl font-black mb-4 md:mb-6 leading-tight px-2">
             <span className="block mb-2">Nếu bạn đang làm sale mà thấy mình trong những điều này…</span>
             <span className="gradient-gold-text">thì đây là lý do bạn cần đọc tiếp</span>
           </h2>
@@ -62,10 +62,10 @@ const ProblemSection = () => {
               <div className="flex items-start gap-3 md:gap-4">
                 <span className="text-2xl md:text-3xl flex-shrink-0"><XCircle className="w-5 h-5 md:w-8 md:h-8 text-destructive" /></span>
                 <div>
-                  <h3 className="text-sm md:text-xl font-bold text-foreground mb-2 md:mb-3 leading-snug">
+                  <h3 className="text-[3.5vw] md:text-xl font-bold text-foreground mb-2 md:mb-3 leading-snug">
                     {point.title}
                   </h3>
-                  <p className="text-xs md:text-base text-muted-foreground leading-relaxed">
+                  <p className="text-[3vw] md:text-base text-muted-foreground leading-relaxed">
                     {point.description}
                   </p>
                 </div>
@@ -82,13 +82,13 @@ const ProblemSection = () => {
           className="mt-8 md:mt-16 text-center"
         >
           <div className="inline-block bg-secondary/50 border border-primary/30 rounded-xl md:rounded-2xl p-5 md:p-8 max-w-3xl">
-            <p className="text-lg md:text-2xl lg:text-3xl font-bold text-foreground mb-2 md:mb-4">
+            <p className="text-[4.5vw] md:text-2xl lg:text-3xl font-bold text-foreground mb-2 md:mb-4">
               Sự thật đau lòng:
             </p>
-            <p className="text-base md:text-xl text-muted-foreground mb-1 md:mb-2">
+            <p className="text-[3.5vw] md:text-xl text-muted-foreground mb-1 md:mb-2">
               Không phải bạn kém
             </p>
-            <p className="text-lg md:text-2xl font-bold gradient-gold-text flex items-center justify-center gap-2">
+            <p className="text-[4vw] md:text-2xl font-bold gradient-gold-text flex items-center justify-center gap-2">
               <ArrowRight className="w-5 h-5 md:w-6 md:h-6" /> Bạn chọn sai mô hình để hợp tác.
             </p>
           </div>

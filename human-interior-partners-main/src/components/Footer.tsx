@@ -44,11 +44,11 @@ const Footer = () => {
           >
             <div className="relative inline-block">
               <div className="absolute -inset-2 bg-gradient-to-r from-primary/20 via-primary/30 to-primary/20 blur-xl opacity-50"></div>
-              <h3 className="relative text-xs md:text-xl font-bold tracking-[0.1em] md:tracking-[0.15em] uppercase text-primary/90 leading-relaxed">
+              <h3 className="relative text-[3vw] md:text-xl font-bold tracking-[0.1em] md:tracking-[0.15em] uppercase text-primary/90 leading-relaxed">
                 Mô hình Đại lý bán hàng Nội thất Đầu tiên tại Việt Nam
               </h3>
             </div>
-            <p className="text-xs md:text-base text-muted-foreground font-medium max-w-3xl leading-relaxed px-2">
+            <p className="text-[3vw] md:text-base text-muted-foreground font-medium max-w-3xl leading-relaxed px-2">
               Ứng dụng A.I hỗ trợ kiếm khách & theo dõi thu nhập minh bạch
             </p>
           </motion.div>
@@ -70,7 +70,7 @@ const Footer = () => {
                 </div>
                 <div className="flex flex-col items-center md:items-start">
                   <span className="text-[14px] font-black text-primary tracking-[0.2em] uppercase mb-1">Hotline</span>
-                  <a href="tel:0981463839" className="text-xl md:text-4xl font-black text-foreground hover:text-primary transition-colors duration-300 tracking-tight">
+                  <a href="tel:0981463839" className="text-[5vw] md:text-4xl font-black text-foreground hover:text-primary transition-colors duration-300 tracking-tight">
                     0981.46.38.39
                   </a>
                 </div>
@@ -89,7 +89,7 @@ const Footer = () => {
                 </div>
                 <div className="flex flex-col items-center md:items-start">
                   <span className="text-[14px] font-black text-primary tracking-[0.2em] uppercase mb-1.5 md:mb-2 text-center">Địa chỉ</span>
-                  <p className="text-foreground/80 font-bold text-xs md:text-base leading-relaxed max-w-sm md:max-w-none">
+                  <p className="text-foreground/80 font-bold text-[3vw] md:text-base leading-relaxed max-w-sm md:max-w-none">
                     Shophouse HR01-1E [Số Nhà 27], Khu Đô Thị MIDORI PARK HARUKA, Khu Phố Hòa Phú 2, Đường Bùi Thị Xuân, Phường Bình Dương, Thành Phố Hồ Chí Minh.
                   </p>
                 </div>
@@ -115,7 +115,7 @@ const Footer = () => {
                     className="group flex items-center gap-2.5 px-2 py-1 transition-all duration-300"
                   >
                     <div className="h-1.5 w-1.5 rounded-full bg-primary/30 group-hover:bg-primary group-hover:scale-150 transition-all duration-300 hidden md:block" />
-                    <span className="text-[13px] md:text-[14px] font-black text-muted-foreground/70 group-hover:text-primary tracking-widest md:tracking-wide uppercase transition-colors text-center">
+                    <span className="text-[3vw] md:text-[14px] font-black text-muted-foreground/70 group-hover:text-primary tracking-widest md:tracking-wide uppercase transition-colors text-center">
                       {link.label}
                     </span>
                   </motion.a>

@@ -56,7 +56,7 @@ const OfferSection = () => {
           <span className="inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-semibold mb-4 md:mb-6">
             ĐẶC QUYỀN ĐẠI LÝ
           </span>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black mb-3 md:mb-4 leading-tight">
+          <h2 className="text-[5vw] md:text-3xl lg:text-4xl xl:text-5xl font-black mb-3 md:mb-4 leading-tight">
             <span className="block">Gia Nhập Ngay –</span>
             <span className="gradient-gold-text">Nhận Trọn NỀN TẢNG HỖ TRỢ ĐẠI LÝ NỘI THẤT</span>
             <span className="block">Giúp bạn trở thành chuyên gia, tạo sức hút dễ dàng với khách hàng</span>
@@ -96,7 +96,7 @@ const OfferSection = () => {
                   <offer.icon className="w-6 h-6 md:w-8 md:h-8 text-background" />
                 </div>
 
-                <h3 className="text-base md:text-xl font-bold text-foreground mb-4 md:mb-6">
+                <h3 className="text-[3.5vw] md:text-xl font-bold text-foreground mb-4 md:mb-6">
                   {offer.title}
                 </h3>
 
@@ -104,7 +104,7 @@ const OfferSection = () => {
                   {offer.items.map((item, i) => (
                     <li key={i} className="flex items-start gap-2 md:gap-3">
                       <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm md:text-base text-muted-foreground">{item}</span>
+                      <span className="text-[3vw] md:text-base text-muted-foreground">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -147,20 +147,20 @@ const OfferSection = () => {
 
               {/* Text content */}
               <div className="flex-1">
-                <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-foreground mb-4 md:mb-6">
+                <h3 className="text-[5vw] md:text-2xl lg:text-3xl font-black text-foreground mb-4 md:mb-6">
                   SỰ KIỆN & CHIẾN DỊCH
                 </h3>
 
                 <ul className="space-y-4 md:space-y-5">
                   <li className="flex items-start gap-3 md:gap-4">
                     <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0 mt-1" />
-                    <span className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed">
+                    <span className="text-[3.5vw] md:text-lg lg:text-xl text-muted-foreground leading-relaxed">
                       Liên tục tổ chức các Sự kiện Tư vấn miễn phí cùng Đội ngũ Kiến trúc sư tại Showroom. Hỗ trợ Đại lý chốt khách trong sự An tâm
                     </span>
                   </li>
                   <li className="flex items-start gap-3 md:gap-4">
                     <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0 mt-1" />
-                    <span className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed">
+                    <span className="text-[3.5vw] md:text-lg lg:text-xl text-muted-foreground leading-relaxed">
                       Được nhận Lead Khách hàng Chiến dịch Quảng cáo theo Sự kiện
                     </span>
                   </li>
@@ -187,7 +187,7 @@ const OfferSection = () => {
             href="https://event.hispace.ai"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl bg-gradient-to-r from-purple-500 to-pink-400 text-background font-bold text-base md:text-lg lg:text-xl shadow-lg hover:shadow-xl transition-all duration-300"
+            className="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl bg-gradient-to-r from-purple-500 to-pink-400 text-background font-bold text-[3.5vw] md:text-lg lg:text-xl shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Mẫu website mời khách đến sự kiện
           </a>

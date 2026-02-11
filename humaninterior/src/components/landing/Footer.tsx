@@ -35,7 +35,7 @@ const Footer = () => {
                             <span className="font-medium text-white/90">Phụng Sự Không Gian Sống Chuẩn Sao</span>
                         </p>
                         <div className="flex gap-4">
-                            <a href="https://www.facebook.com/p/Human-Interior-61580810607571" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#E05C3E] transition-colors">
+                            <a href="https://www.facebook.com/p/Human-Interior-61580810607571" target="_blank" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#E05C3E] transition-colors">
                                 <span className="text-sm font-bold">Fb</span>
                             </a>
                             <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#E05C3E] transition-colors">
@@ -49,7 +49,7 @@ const Footer = () => {
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="text-lg font-bold mb-6 font-display">Liên hệ nhượng quyền / mở chi nhánh</h4>
+                        <h4 className="text-[4vw] md:text-lg font-bold mb-6 font-display">Liên hệ nhượng quyền / mở chi nhánh</h4>
                         <ul className="space-y-3 text-gray-400 text-sm">
                             <li><Link href="https://hispaces.ai" target="_blank" className="hover:text-[#E05C3E] transition-colors">Website nhượng quyền / mở chi nhánh</Link></li>
                             <li><Link href="https://humaninterior.vn" target="_blank" className="hover:text-[#E05C3E] transition-colors">Website thành viên / chi nhánh</Link></li>
@@ -58,7 +58,7 @@ const Footer = () => {
 
                     {/* Contact Info */}
                     <div>
-                        <h4 className="text-lg font-bold mb-6 font-display">Thông Tin Liên Hệ</h4>
+                        <h4 className="text-[4vw] md:text-lg font-bold mb-6 font-display">Thông Tin Liên Hệ</h4>
                         <ul className="space-y-4 text-gray-400 text-sm">
                             <li className="flex items-start gap-3">
                                 <span className="material-symbols-outlined text-[#E05C3E] mt-0.5">location_on</span>

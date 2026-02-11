@@ -19,11 +19,11 @@ const ValuePropsSection = () => {
                             <span className="material-symbols-outlined text-[56px] text-[#D4AF37] font-thin group-hover:scale-110 transition-transform duration-500">visibility</span>
                         </div>
                         <div className="space-y-3">
-                            <h3 className="text-lg md:text-xl font-display font-semibold uppercase text-white tracking-widest">
+                            <h3 className="text-[4vw] md:text-xl font-display font-semibold uppercase text-white tracking-widest">
                                 Thay Đổi Vật Liệu
                             </h3>
                             <div className="space-y-1">
-                                <p className="text-gray-300 text-base font-light leading-relaxed font-sans">
+                                <p className="text-gray-300 text-[3.2vw] md:text-base font-light leading-relaxed font-sans">
                                     Tùy chỉnh 3D theo vật liệu thực tế lựa chọn <span className="text-white font-medium">trong 30s</span>.
                                 </p>
                             </div>
@@ -40,10 +40,10 @@ const ValuePropsSection = () => {
                                 Thay Đổi Nội Thất
                             </h3>
                             <div className="space-y-1">
-                                <p className="text-gray-300 text-base font-light leading-relaxed font-sans">
+                                <p className="text-gray-300 text-[3.2vw] md:text-base font-light leading-relaxed font-sans">
                                     Nhìn thấy đồ đẹp ghép vào thiết ngay <span className="text-white font-medium">trong 1 phút</span>.
                                 </p>
-                                <p className="text-gray-300 text-base font-light leading-relaxed font-sans">
+                                <p className="text-gray-300 text-[3.2vw] md:text-base font-light leading-relaxed font-sans">
                                     Tránh lãng phí khi chọn sai sofa, bàn ăn, ...
                                 </p>
                             </div>
@@ -59,7 +59,7 @@ const ValuePropsSection = () => {
                             <h3 className="text-lg md:text-xl font-display font-semibold uppercase text-white tracking-widest">
                                 Thay Đổi Từng Đồ Decor
                             </h3>
-                            <p className="text-gray-300 text-base font-light leading-relaxed font-sans">
+                            <p className="text-gray-300 text-[3.2vw] md:text-base font-light leading-relaxed font-sans">
                                 Thấy được, chạm được, ưng ý là <span className="text-white font-medium">thay ngay trong 3D</span>.
                             </p>
                         </div>
@@ -73,7 +73,8 @@ const ValuePropsSection = () => {
                     <div className="absolute -inset-4 bg-[#D4AF37]/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
                     <a
-                        href="https://mienphi.hispace.ai/"
+                        href="https://app.hispace.ai/"
+                        target="_blank"
                         className="btn-gradient-gold relative inline-flex items-center gap-4 px-10 py-5 text-white rounded-2xl font-display font-bold transition-all duration-500 shadow-[0_10px_30px_rgba(212,175,55,0.3)] hover:shadow-[0_20px_50px_-10px_rgba(212,175,55,0.5)] hover:-translate-y-1.5 active:scale-95 overflow-hidden group"
                     >
                         {/* Skew Shimmer Layer (aligned with Giữ Chỗ VIP style) */}

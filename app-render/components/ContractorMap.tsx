@@ -12,8 +12,8 @@ const containerStyle = {
 };
 
 const center = {
-    lat: 21.0285, // Hồ Gươm, Hà Nội
-    lng: 105.8522,
+    lat: 16.0, // Center of Vietnam
+    lng: 106.0,
 };
 
 interface ContractorMapProps {
@@ -32,15 +32,15 @@ export default function ContractorMap({ contractors, selectedContractorId }: Con
 
     const onLoad = useCallback(
         (map: google.maps.Map) => {
-            // Set fixed center and zoom to Hồ Gươm area
+            // Set fixed center and zoom to show all Vietnam
             map.setCenter(center);
-            map.setZoom(15);
+            map.setZoom(6); // Lower zoom to show entire country
             setMap(map);
         },
         []
     );
 
-    const onUnmount = useCallback(function callback(map: google.maps.Map) {
+    const onUnmount = useCallback(function callback() {
         setMap(null);
     }, []);
 
@@ -71,7 +71,7 @@ export default function ContractorMap({ contractors, selectedContractorId }: Con
         <GoogleMap
             mapContainerStyle={containerStyle}
             center={center}
-            zoom={15}
+            zoom={6} // Lower zoom to show entire Vietnam
             onLoad={onLoad}
             onUnmount={onUnmount}
             options={{

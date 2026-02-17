@@ -86,7 +86,7 @@ export const contractors: Contractor[] = [
         name: "Kisato",
         avatar: "https://randomuser.me/api/portraits/women/44.jpg",
         location: "TP. Hồ Chí Minh",
-        coordinates: { lat: 21.0275, lng: 105.8510 }, // Near Hồ Gươm
+        coordinates: { lat: 10.7769, lng: 106.7009 }, // Ho Chi Minh City center
         services: ["Thiết kế nội thất", "Cải tạo"],
         experienceYears: 5,
         companySize: 15,
@@ -117,7 +117,7 @@ export const contractors: Contractor[] = [
         name: "Ecogreen",
         avatar: "https://randomuser.me/api/portraits/men/85.jpg",
         location: "Đà Nẵng",
-        coordinates: { lat: 21.0300, lng: 105.8515 }, // Near Hồ Gươm
+        coordinates: { lat: 16.0544, lng: 108.2022 }, // Da Nang center
         services: ["Xây thô", "Hoàn thiện"],
         experienceYears: 15,
         companySize: 100,
@@ -164,7 +164,7 @@ export const contractors: Contractor[] = [
         name: "Hoang Constructor",
         avatar: "https://randomuser.me/api/portraits/men/22.jpg",
         location: "TP. Hồ Chí Minh",
-        coordinates: { lat: 21.0290, lng: 105.8545 }, // Near Hồ Gươm
+        coordinates: { lat: 10.7625, lng: 106.6822 }, // Ho Chi Minh City
         services: ["Thi công trọn gói", "Xây thô", "Cơ điện"],
         experienceYears: 20,
         companySize: 500,
@@ -214,7 +214,7 @@ export const contractors: Contractor[] = [
         name: "Ricons",
         avatar: "https://randomuser.me/api/portraits/men/60.jpg",
         location: "TP. Hồ Chí Minh",
-        coordinates: { lat: 21.0320, lng: 105.8540 }, // Near Hồ Gươm
+        coordinates: { lat: 10.7720, lng: 106.6980 }, // Ho Chi Minh City
         services: ["Thi công trọn gói", "Xây dựng hạ tầng", "Bất động sản"],
         experienceYears: 22,
         companySize: 1500,
@@ -262,7 +262,7 @@ export const contractors: Contractor[] = [
         name: "Newtecons",
         avatar: "https://randomuser.me/api/portraits/men/50.jpg",
         location: "TP. Hồ Chí Minh",
-        coordinates: { lat: 21.0280, lng: 105.8550 }, // Near Hồ Gươm
+        coordinates: { lat: 10.7645, lng: 106.6912 }, // Ho Chi Minh City
         services: ["Thi công trọn gói", "Xây dựng công nghiệp", "M&E"],
         experienceYears: 24,
         companySize: 1200,
@@ -278,7 +278,7 @@ export const contractors: Contractor[] = [
         name: "Phúc Khang",
         avatar: "https://randomuser.me/api/portraits/women/48.jpg",
         location: "TP. Hồ Chí Minh",
-        coordinates: { lat: 21.0315, lng: 105.8550 }, // Near Hồ Gươm
+        coordinates: { lat: 10.7790, lng: 106.6950 }, // Ho Chi Minh City
         services: ["Thi công trọn gói", "Thiết kế kiến trúc", "Xây dựng dân dụng"],
         experienceYears: 19,
         companySize: 900,
@@ -294,7 +294,7 @@ export const contractors: Contractor[] = [
         name: "Hưng Thịnh",
         avatar: "https://randomuser.me/api/portraits/men/55.jpg",
         location: "TP. Hồ Chí Minh",
-        coordinates: { lat: 21.0255, lng: 105.8525 }, // Near Hồ Gươm
+        coordinates: { lat: 10.7580, lng: 106.7050 }, // Ho Chi Minh City
         services: ["Thi công trọn gói", "Đầu tư BĐS", "Phát triển dự án"],
         experienceYears: 21,
         companySize: 1600,
